@@ -25,6 +25,8 @@
 		BE06AF9D19DCBA970045C011 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE06AF9A19DCBA970045C011 /* Parse.framework */; };
 		BE06AF9E19DCBA970045C011 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE06AF9B19DCBA970045C011 /* ParseFacebookUtils.framework */; };
 		BE2214DA19DDBBC200429F22 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214D919DDBBC200429F22 /* LaunchViewController.swift */; };
+		BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DB19DDBFE600429F22 /* Settings.swift */; };
+		BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		BE06AF9A19DCBA970045C011 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		BE06AF9B19DCBA970045C011 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		BE2214D919DDBBC200429F22 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		BE2214DB19DDBFE600429F22 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				BE2214D919DDBBC200429F22 /* LaunchViewController.swift */,
+				BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */,
+				BE2214DB19DDBFE600429F22 /* Settings.swift */,
 			);
 			name = Launch;
 			sourceTree = "<group>";
@@ -278,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */,
 				BE06AF4019DCB35A0045C011 /* AppDelegate.swift in Sources */,
 				BE2214DA19DDBBC200429F22 /* LaunchViewController.swift in Sources */,
+				BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

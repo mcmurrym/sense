@@ -15,34 +15,34 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupLaunchImage()
+//        setupLaunchImage()
         
     }
 
 
-    func setupLaunchImage() {
-        var launchImage: String
-        
-        var height: CGFloat = UIScreen.mainScreen().bounds.size.height
-
-        switch height {
-        case 667.0:
-            launchImage = "LaunchImage-800-667h"
-        case 736.0:
-            launchImage = "LaunchImage-800-Portrait-736h"
-        case 568.0:
-            launchImage = "LaunchImage-700-568h"
-        default:
-            launchImage = "LaunchImage-700"
-        }
-        
-        var image = UIImage(named: launchImage)
-        
-        self.imageView.image = image
-    }
-    
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        self.setupLaunchImage()
-    }
+//    func setupLaunchImage() {
+//        var launchImage: String
+//        
+//        var height: CGFloat = UIScreen.mainScreen().bounds.size.height
+//
+//        switch height {
+//        case 667.0:
+//            launchImage = "LaunchImage-800-667h"
+//        case 736.0:
+//            launchImage = "LaunchImage-800-Portrait-736h"
+//        case 568.0:
+//            launchImage = "LaunchImage-700-568h"
+//        default:
+//            launchImage = "LaunchImage-700"
+//        }
+//        
+//        var image = UIImage(named: launchImage)
+//        
+//        self.imageView.image = image
+//    }
+//    
+//    override func prepareForInterfaceBuilder() {
+//        super.prepareForInterfaceBuilder()
+//        self.setupLaunchImage()
+//    }
 }

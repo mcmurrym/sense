@@ -30,26 +30,12 @@
                         <viewControllerLayoutGuide type="top" id="X2C-7F-3JV"/>
                         <viewControllerLayoutGuide type="bottom" id="BVN-rR-uGc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0m9-03-Ans">
+                    <view key="view" contentMode="scaleToFill" id="0m9-03-Ans" customClass="LaunchBackgroundView" customModule="sense" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nh8-wl-cLM">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BVN-rR-uGc" firstAttribute="top" secondItem="nh8-wl-cLM" secondAttribute="bottom" id="DZu-74-9hn"/>
-                            <constraint firstAttribute="trailing" secondItem="nh8-wl-cLM" secondAttribute="trailing" id="SJT-jx-C7T"/>
-                            <constraint firstItem="nh8-wl-cLM" firstAttribute="top" secondItem="X2C-7F-3JV" secondAttribute="bottom" id="k7k-eE-jtR"/>
-                            <constraint firstItem="nh8-wl-cLM" firstAttribute="leading" secondItem="0m9-03-Ans" secondAttribute="leading" id="uRG-g6-niC"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t4c-UJ-Ger"/>
-                    <connections>
-                        <outlet property="imageView" destination="nh8-wl-cLM" id="4uE-dt-3iu"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0D-rb-KZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
