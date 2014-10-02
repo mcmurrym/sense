@@ -11,7 +11,6 @@
 		BE06AF4219DCB35A0045C011 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE06AF4119DCB35A0045C011 /* ViewController.swift */; };
 		BE06AF4519DCB35A0045C011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE06AF4319DCB35A0045C011 /* Main.storyboard */; };
 		BE06AF4719DCB35A0045C011 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE06AF4619DCB35A0045C011 /* Images.xcassets */; };
-		BE06AF4A19DCB35A0045C011 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE06AF4819DCB35A0045C011 /* LaunchScreen.xib */; };
 		BE06AF5619DCB35A0045C011 /* senseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE06AF5519DCB35A0045C011 /* senseTests.swift */; };
 		BE06AF8B19DCB7FE0045C011 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE06AF8119DCB7FE0045C011 /* AudioToolbox.framework */; };
 		BE06AF8C19DCB7FE0045C011 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE06AF8219DCB7FE0045C011 /* CFNetwork.framework */; };
@@ -45,7 +44,6 @@
 		BE06AF4119DCB35A0045C011 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE06AF4419DCB35A0045C011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE06AF4619DCB35A0045C011 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BE06AF4919DCB35A0045C011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BE06AF4F19DCB35A0045C011 /* senseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = senseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE06AF5419DCB35A0045C011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE06AF5519DCB35A0045C011 /* senseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senseTests.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				BE06AF4119DCB35A0045C011 /* ViewController.swift */,
 				BE06AF4319DCB35A0045C011 /* Main.storyboard */,
 				BE06AF4619DCB35A0045C011 /* Images.xcassets */,
-				BE06AF4819DCB35A0045C011 /* LaunchScreen.xib */,
 				BE06AF7A19DCB7A10045C011 /* Frameworks */,
 				BE06AF3D19DCB35A0045C011 /* Supporting Files */,
 			);
@@ -255,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE06AF4519DCB35A0045C011 /* Main.storyboard in Resources */,
-				BE06AF4A19DCB35A0045C011 /* LaunchScreen.xib in Resources */,
 				BE06AF4719DCB35A0045C011 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,14 +302,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BE06AF4819DCB35A0045C011 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE06AF4919DCB35A0045C011 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -351,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -387,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
