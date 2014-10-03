@@ -25,17 +25,16 @@ class LaunchBackgroundView: UIView {
             
             let colors: [AnyObject] = [topColor, bottomColor]
             
-            gradientLayer.colors = colors //NSArray(objects: topColor.CGColor, bottomColor.CGColor)
+            gradientLayer.colors = colors
             gradientLayer.locations = [0.0, 1.0]
             
-            var startPoint = CGPointMake(CGRectGetMidX(self.bounds), 0)
-            var endPoint = CGPointMake(CGRectGetMidX(self.bounds), self.bounds.size.height)
+            var startPoint = CGPointMake(0.5, 0)
+            var endPoint = CGPointMake(0.5, 1)
             
             gradientLayer.startPoint = startPoint
             gradientLayer.endPoint = endPoint
 
-//            self.layer.addSublayer(gradientLayer)
-            self.layer.insertSublayer(gradientLayer, atIndex: 1)
+            self.layer.addSublayer(gradientLayer)
         }
     }
 }

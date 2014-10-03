@@ -10,39 +10,27 @@ import UIKit
 
 class LaunchViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var simpleLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
 
-//        setupLaunchImage()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
+        var labelTranslateDistance = self.view.bounds.size.width - self.simpleLabel.frame.origin.x
+        
+        var labelTranslate = CGAffineTransformMakeTranslation(labelTranslateDistance, 0)
+        
+        self.simpleLabel.transform = labelTranslate
+        
+        UIView.animateWithDuration(0.50,
+            delay: 0.2,
+            options: UIViewAnimationOptions.CurveEaseOut,
+            animations: { () -> Void in
+                self.simpleLabel.transform = CGAffineTransformIdentity
+                
+                self.logoImageView.alpha = 0.0
+            }) { (completed: Bool) -> Void in
+            
+        }
     }
-
-
-//    func setupLaunchImage() {
-//        var launchImage: String
-//        
-//        var height: CGFloat = UIScreen.mainScreen().bounds.size.height
-//
-//        switch height {
-//        case 667.0:
-//            launchImage = "LaunchImage-800-667h"
-//        case 736.0:
-//            launchImage = "LaunchImage-800-Portrait-736h"
-//        case 568.0:
-//            launchImage = "LaunchImage-700-568h"
-//        default:
-//            launchImage = "LaunchImage-700"
-//        }
-//        
-//        var image = UIImage(named: launchImage)
-//        
-//        self.imageView.image = image
-//    }
-//    
-//    override func prepareForInterfaceBuilder() {
-//        super.prepareForInterfaceBuilder()
-//        self.setupLaunchImage()
-//    }
 }
