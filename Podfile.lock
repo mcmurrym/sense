@@ -1,0 +1,19 @@
+PODS:
+  - Bolts (1.1.2)
+  - Parse (1.4.1):
+    - Bolts (~> 1.1.2)
+  - UIColor+Hex (1.0.1):
+    - UIColor+Hex/NSColor
+    - UIColor+Hex/UIColor
+  - UIColor+Hex/UIColor (1.0.1)
+
+DEPENDENCIES:
+  - Parse (~> 1.4)
+  - UIColor+Hex (~> 1.0)
+
+SPEC CHECKSUMS:
+  Bolts: 2635e8698a630774689441047f3465d78c48d485
+  Parse: db1a09c832b7509edcc88a65dc07229f5e578c73
+  UIColor+Hex: ac7e1ae4eeea4f522fe3f6eda35de4af69244432
+
+COCOAPODS: 0.33.1

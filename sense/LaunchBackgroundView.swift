@@ -20,8 +20,8 @@ class LaunchBackgroundView: UIView {
             let gradientLayer = CAGradientLayer()
             gradientLayer.frame = self.frame
             
-            let topColor = UIColor(red: 247/255, green: 147/255, blue: 30/255, alpha: 1.0).CGColor
-            let bottomColor = UIColor(red: 255/255, green: 29/255, blue: 37/255, alpha: 1.0).CGColor
+            let topColor = UIColor(hex: 0xF7931E).CGColor
+            let bottomColor = UIColor(hex: 0xFF1D25).CGColor
             
             let colors: [AnyObject] = [topColor, bottomColor]
             
