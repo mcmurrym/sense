@@ -4,6 +4,7 @@
 target "sense" do
 
 pod 'Parse', '~> 1.4'
+pod 'ParseFacebookUtils', '~> 1.4'
 pod 'UIColor+Hex', '~> 1.0'
 
 end

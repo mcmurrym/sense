@@ -1,7 +1,12 @@
 PODS:
   - Bolts (1.1.2)
+  - Facebook-iOS-SDK (3.17.0):
+    - Bolts
   - Parse (1.4.1):
     - Bolts (~> 1.1.2)
+  - ParseFacebookUtils (1.4.1):
+    - Facebook-iOS-SDK (~> 3.17.0)
+    - Parse (~> 1.4.1)
   - UIColor+Hex (1.0.1):
     - UIColor+Hex/NSColor
     - UIColor+Hex/UIColor
@@ -9,11 +14,14 @@ PODS:
 
 DEPENDENCIES:
   - Parse (~> 1.4)
+  - ParseFacebookUtils (~> 1.4)
   - UIColor+Hex (~> 1.0)
 
 SPEC CHECKSUMS:
   Bolts: 2635e8698a630774689441047f3465d78c48d485
+  Facebook-iOS-SDK: f20274d809f112ba540842e2b6cbe50128d51b7b
   Parse: db1a09c832b7509edcc88a65dc07229f5e578c73
+  ParseFacebookUtils: 625da00d0f36a34e25ebae7f543385a0f19ccf1e
   UIColor+Hex: ac7e1ae4eeea4f522fe3f6eda35de4af69244432
 
 COCOAPODS: 0.33.1
