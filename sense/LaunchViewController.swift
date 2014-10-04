@@ -31,6 +31,11 @@ class LaunchViewController: UIViewController {
                 self.logoImageView.alpha = 0.0
             }) { (completed: Bool) -> Void in
             
+                var popTime = dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+                    var storyBoard = UIStoryboard(name: "signin", bundle: nil)
+                    self.navigationController?.pushViewController(storyBoard.instantiateInitialViewController() as UIViewController, animated: true)
+                })
         }
     }
 }

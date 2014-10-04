@@ -16,6 +16,8 @@
 		BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DB19DDBFE600429F22 /* Settings.swift */; };
 		BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */; };
 		BE4825D819DED457008B56DE /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */; };
+		BE4825DB19DF02E1008B56DE /* signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4825DA19DF02E1008B56DE /* signin.storyboard */; };
+		BE4825DD19DF0FD9008B56DE /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		BE2214DB19DDBFE600429F22 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchBackgroundView.swift; sourceTree = "<group>"; };
 		BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		BE4825DA19DF02E1008B56DE /* signin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = signin.storyboard; sourceTree = "<group>"; };
+		BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +100,9 @@
 		BE06AF3C19DCB35A0045C011 /* sense */ = {
 			isa = PBXGroup;
 			children = (
+				BE4825D919DF02C8008B56DE /* Signup/in */,
 				BE2214D819DDBB0F00429F22 /* Launch */,
 				BE06AF3F19DCB35A0045C011 /* AppDelegate.swift */,
-				BE06AF4319DCB35A0045C011 /* Main.storyboard */,
 				BE06AF4619DCB35A0045C011 /* Images.xcassets */,
 				BE06AF7A19DCB7A10045C011 /* Resources */,
 				BE06AF3D19DCB35A0045C011 /* Supporting Files */,
@@ -143,6 +147,7 @@
 		BE2214D819DDBB0F00429F22 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				BE06AF4319DCB35A0045C011 /* Main.storyboard */,
 				BE2214D919DDBBC200429F22 /* LaunchViewController.swift */,
 				BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */,
 				BE2214DB19DDBFE600429F22 /* Settings.swift */,
@@ -153,9 +158,18 @@
 		BE4825D619DED2D4008B56DE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */,
 				BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		BE4825D919DF02C8008B56DE /* Signup/in */ = {
+			isa = PBXGroup;
+			children = (
+				BE4825DA19DF02E1008B56DE /* signin.storyboard */,
+			);
+			name = Signup/in;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4825DB19DF02E1008B56DE /* signin.storyboard in Resources */,
 				BE06AF4519DCB35A0045C011 /* Main.storyboard in Resources */,
+				BE4825DD19DF0FD9008B56DE /* Roboto-Light.ttf in Resources */,
 				BE06AF4719DCB35A0045C011 /* Images.xcassets in Resources */,
 				BE4825D819DED457008B56DE /* Roboto-Thin.ttf in Resources */,
 			);

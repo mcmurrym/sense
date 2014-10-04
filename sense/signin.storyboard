@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ocd-We-rOG">
+    <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </mutableArray>
+        <mutableArray key="Roboto-Thin.ttf">
+            <string>Roboto-Thin</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="XUc-CP-aoQ">
+            <objects>
+                <viewController id="Ocd-We-rOG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xU1-IC-faC"/>
+                        <viewControllerLayoutGuide type="bottom" id="jPH-7p-EUv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vM8-wr-R1b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoColor" translatesAutoresizingMaskIntoConstraints="NO" id="MMu-Ic-uUK">
+                                <rect key="frame" x="230" y="82" width="140" height="53"/>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="330" y="62" width="140" height="53"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with your phone number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="uWt-gW-2NA">
+                                <rect key="frame" x="178" y="212" width="244" height="87.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87.5" id="HLT-D4-7Uo"/>
+                                    <constraint firstAttribute="width" constant="244" id="Wj5-oP-s6n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
+                                <color key="textColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-41-jhg">
+                                <rect key="frame" x="192.5" y="360" width="222.5" height="44"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="OSE-41-jhg" secondAttribute="centerX" constant="-3.5" id="2Ia-BP-coc"/>
+                            <constraint firstItem="OSE-41-jhg" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="250" constant="360" id="3aT-40-2WX"/>
+                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MMu-Ic-uUK" secondAttribute="bottom" constant="395" id="DBN-a1-aKc"/>
+                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uWt-gW-2NA" secondAttribute="bottom" constant="286" id="KpS-mS-ffP"/>
+                            <constraint firstItem="MMu-Ic-uUK" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="82" id="X31-On-BKO"/>
+                            <constraint firstItem="uWt-gW-2NA" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="212" id="fAk-qR-ste"/>
+                            <constraint firstAttribute="centerX" secondItem="uWt-gW-2NA" secondAttribute="centerX" id="fMu-RP-pbA"/>
+                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OSE-41-jhg" secondAttribute="bottom" constant="222" id="mTq-S8-QGE"/>
+                            <constraint firstAttribute="centerX" secondItem="MMu-Ic-uUK" secondAttribute="centerX" id="zDl-Uu-7DB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DBN-a1-aKc"/>
+                                <exclude reference="KpS-mS-ffP"/>
+                                <exclude reference="mTq-S8-QGE"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="DBN-a1-aKc"/>
+                                <include reference="KpS-mS-ffP"/>
+                                <include reference="mTq-S8-QGE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZk-FV-wdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="355" y="633"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logoColor" width="140" height="53"/>
+    </resources>
+</document>
