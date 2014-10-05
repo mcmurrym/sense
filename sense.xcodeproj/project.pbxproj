@@ -18,6 +18,8 @@
 		BE4825D819DED457008B56DE /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */; };
 		BE4825DB19DF02E1008B56DE /* signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4825DA19DF02E1008B56DE /* signin.storyboard */; };
 		BE4825DD19DF0FD9008B56DE /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */; };
+		BE71453119E08FD800B3A042 /* SignInPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */; };
+		BE71453519E09D2B00B3A042 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453419E09D2B00B3A042 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		BE4825DA19DF02E1008B56DE /* signin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = signin.storyboard; sourceTree = "<group>"; };
 		BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInPhoneNumberViewController.swift; sourceTree = "<group>"; };
+		BE71453419E09D2B00B3A042 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 		BE06AF7A19DCB7A10045C011 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE71453319E09D1500B3A042 /* Shared */,
 				BE4825D619DED2D4008B56DE /* Fonts */,
 			);
 			name = Resources;
@@ -168,8 +173,17 @@
 			isa = PBXGroup;
 			children = (
 				BE4825DA19DF02E1008B56DE /* signin.storyboard */,
+				BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */,
 			);
 			name = Signup/in;
+			sourceTree = "<group>";
+		};
+		BE71453319E09D1500B3A042 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BE71453419E09D2B00B3A042 /* String.swift */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,10 +323,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE71453519E09D2B00B3A042 /* String.swift in Sources */,
 				BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */,
 				BE06AF4019DCB35A0045C011 /* AppDelegate.swift in Sources */,
 				BE2214DA19DDBBC200429F22 /* LaunchViewController.swift in Sources */,
 				BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */,
+				BE71453119E08FD800B3A042 /* SignInPhoneNumberViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

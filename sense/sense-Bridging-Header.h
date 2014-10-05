@@ -4,3 +4,4 @@
 
 #import <Parse/Parse.h>
 #import <UIColor+Hex/UIColor+Hex.h>
+#import <libPhoneNumber-iOS/NBAsYouTypeFormatter.h>
