@@ -5,3 +5,5 @@
 #import <Parse/Parse.h>
 #import <UIColor+Hex/UIColor+Hex.h>
 #import <libPhoneNumber-iOS/NBAsYouTypeFormatter.h>
+#import <libPhoneNumber-iOS/NBPhoneNumberUtil.h>
+#import <libPhoneNumber-iOS/NBPhoneNumber.h>
