@@ -20,6 +20,7 @@
 		BE4825DD19DF0FD9008B56DE /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */; };
 		BE71453119E08FD800B3A042 /* SignInPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */; };
 		BE71453519E09D2B00B3A042 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453419E09D2B00B3A042 /* String.swift */; };
+		BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453719E0CECC00B3A042 /* PillButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		BE71453419E09D2B00B3A042 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		BE71453719E0CECC00B3A042 /* PillButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		BE06AF3C19DCB35A0045C011 /* sense */ = {
 			isa = PBXGroup;
 			children = (
+				BE71453619E0CEB000B3A042 /* Shared */,
 				BE4825D919DF02C8008B56DE /* Signup/in */,
 				BE2214D819DDBB0F00429F22 /* Launch */,
 				BE06AF3F19DCB35A0045C011 /* AppDelegate.swift */,
@@ -182,6 +185,14 @@
 			isa = PBXGroup;
 			children = (
 				BE71453419E09D2B00B3A042 /* String.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		BE71453619E0CEB000B3A042 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BE71453719E0CECC00B3A042 /* PillButton.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -329,6 +340,7 @@
 				BE2214DA19DDBBC200429F22 /* LaunchViewController.swift in Sources */,
 				BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */,
 				BE71453119E08FD800B3A042 /* SignInPhoneNumberViewController.swift in Sources */,
+				BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
