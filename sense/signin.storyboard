@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ocd-We-rOG">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
         </mutableArray>
@@ -42,15 +48,15 @@
                                 <color key="textColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-41-jhg">
-                                <rect key="frame" x="192" y="380" width="223" height="44"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-41-jhg">
+                                <rect key="frame" x="192" y="359" width="223" height="44"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Ocd-We-rOG" id="5JG-xi-jOz"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90e-zi-OwJ" customClass="PillButton" customModule="sense" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90e-zi-OwJ" customClass="PillButton" customModule="sense" customModuleProvider="target">
                                 <rect key="frame" x="217" y="432" width="166" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="og9-dE-8wU"/>
@@ -90,7 +96,6 @@
                                 <exclude reference="o4K-nN-qs0"/>
                                 <exclude reference="2sc-aZ-E4B"/>
                                 <exclude reference="5rb-UI-EbK"/>
-                                <exclude reference="qVX-Y1-sJo"/>
                                 <exclude reference="xxj-LA-eZA"/>
                             </mask>
                         </variation>
@@ -111,14 +116,94 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="phoneNumberTextField" destination="OSE-41-jhg" id="q9i-kH-lOd"/>
+                        <segue destination="Cbv-h2-HUk" kind="show" id="LWE-fr-i15"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZk-FV-wdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69" y="328"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="0lM-9a-who">
+            <objects>
+                <viewController id="Cbv-h2-HUk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bCN-Tp-h2k"/>
+                        <viewControllerLayoutGuide type="bottom" id="dGv-8H-u75"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OT1-KZ-oT4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM7-KP-kFo">
+                                <rect key="frame" x="213" y="63" width="174" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TM7-KP-kFo" secondAttribute="height" multiplier="99:25" id="Gaw-Tn-bxu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="healthIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LHz-NH-wsW">
+                                <rect key="frame" x="234" y="205" width="133" height="133"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Feelzy to gain access to health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byx-qu-6an">
+                                <rect key="frame" x="192" y="346" width="216" height="158"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="158" id="QvL-1k-T7r"/>
+                                    <constraint firstAttribute="width" constant="216" id="u3I-zV-82J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoY-fb-J6M" customClass="PillButton" customModule="sense" customModuleProvider="target">
+                                <rect key="frame" x="217" y="512" width="166" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="N3A-hz-S2f"/>
+                                    <constraint firstAttribute="height" constant="50" id="oA5-lx-YfJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                                <state key="normal" title="Connect">
+                                    <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-zx-h3Y" customClass="PillButton" customModule="sense" customModuleProvider="target">
+                                <rect key="frame" x="234" y="550" width="133" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="LpT-I6-IpQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="vNk-MY-cay"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                                <state key="normal" title="Later">
+                                    <color key="titleColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="TM7-KP-kFo" secondAttribute="centerX" id="BOw-KT-dCa"/>
+                            <constraint firstItem="byx-qu-6an" firstAttribute="top" secondItem="LHz-NH-wsW" secondAttribute="bottom" constant="8" id="IA8-Sz-DbZ"/>
+                            <constraint firstAttribute="centerX" secondItem="fY6-zx-h3Y" secondAttribute="centerX" id="Nzf-sz-vtz"/>
+                            <constraint firstAttribute="centerX" secondItem="LHz-NH-wsW" secondAttribute="centerX" constant="-0.5" id="QFB-4I-ldz"/>
+                            <constraint firstAttribute="centerX" secondItem="HoY-fb-J6M" secondAttribute="centerX" id="d2h-C8-Ekm"/>
+                            <constraint firstItem="LHz-NH-wsW" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="205" id="el0-Vm-Q76"/>
+                            <constraint firstAttribute="centerX" secondItem="byx-qu-6an" secondAttribute="centerX" id="kUP-7f-EjW"/>
+                            <constraint firstItem="fY6-zx-h3Y" firstAttribute="top" secondItem="HoY-fb-J6M" secondAttribute="bottom" constant="8" id="mYQ-DK-oSl"/>
+                            <constraint firstItem="TM7-KP-kFo" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="63" id="rOR-9N-lkY"/>
+                            <constraint firstItem="HoY-fb-J6M" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="512" id="xZB-PS-ii5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xIT-4K-Hdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="331"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="healthIcon" width="133" height="133"/>
         <image name="logoColor" width="140" height="53"/>
     </resources>
 </document>
