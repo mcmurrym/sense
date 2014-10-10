@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ocd-We-rOG">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -129,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="69" y="328"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up Health Connect View Controller-->
         <scene sceneID="0lM-9a-who">
             <objects>
-                <viewController id="Cbv-h2-HUk" sceneMemberID="viewController">
+                <viewController id="Cbv-h2-HUk" customClass="SignUpHealthConnectViewController" customModule="sense" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bCN-Tp-h2k"/>
                         <viewControllerLayoutGuide type="bottom" id="dGv-8H-u75"/>
@@ -173,6 +172,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="connectToHealth:" destination="Cbv-h2-HUk" eventType="touchUpInside" id="xfA-uP-rdw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-zx-h3Y" customClass="PillButton" customModule="sense" customModuleProvider="target">
                                 <rect key="frame" x="117" y="664" width="166" height="50"/>
