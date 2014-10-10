@@ -22,5 +22,12 @@ class PillButton: UIButton {
         self.layer.cornerRadius = self.frame.size.height / 2
         
         self.layer.borderWidth = 1
+        
+        if self.highlighted {
+            self.backgroundColor = self.titleColorForState(UIControlState.Normal)
+        } else {
+            self.backgroundColor = self.titleColorForState(UIControlState.Highlighted)
+            
+        }
     }
 }

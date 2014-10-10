@@ -40,6 +40,7 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         self.phoneNumberTextField.addTarget(self,
             action: "textFieldChanged:",
             forControlEvents: UIControlEvents.EditingChanged)
+                        self.performSegueWithIdentifier("toHealth", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,7 +70,7 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         
         if verifyMode {
             if self.phoneNumberTextField.text == verifyCode {
-                println("move forward")
+                self.performSegueWithIdentifier("toHealth", sender: nil)
             } else {
                 println("try again")
             }

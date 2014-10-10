@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ocd-We-rOG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ocd-We-rOG">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -13,9 +13,9 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
-            <string>Roboto-Light</string>
         </mutableArray>
         <mutableArray key="Roboto-Thin.ttf">
+            <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
         </mutableArray>
     </customFonts>
@@ -39,7 +39,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with your phone number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="uWt-gW-2NA">
-                                <rect key="frame" x="178" y="251" width="244" height="88"/>
+                                <rect key="frame" x="178" y="277" width="244" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87.5" id="HLT-D4-7Uo"/>
                                     <constraint firstAttribute="width" constant="244" id="Wj5-oP-s6n"/>
@@ -48,16 +48,16 @@
                                 <color key="textColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-41-jhg">
-                                <rect key="frame" x="192" y="359" width="223" height="44"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-41-jhg">
+                                <rect key="frame" x="192" y="381" width="222.5" height="44"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Ocd-We-rOG" id="5JG-xi-jOz"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90e-zi-OwJ" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="217" y="432" width="166" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90e-zi-OwJ" customClass="PillButton" customModule="sense" customModuleProvider="target">
+                                <rect key="frame" x="217" y="457" width="166" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="og9-dE-8wU"/>
                                     <constraint firstAttribute="width" constant="166" id="qMh-bx-yct"/>
@@ -66,6 +66,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="Ocd-We-rOG" eventType="touchUpInside" id="b2c-QC-ZxB"/>
@@ -79,13 +82,15 @@
                             </constraint>
                             <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OSE-41-jhg" secondAttribute="bottom" constant="280" id="2sc-aZ-E4B"/>
                             <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MMu-Ic-uUK" secondAttribute="bottom" constant="412" id="5rb-UI-EbK"/>
-                            <constraint firstItem="uWt-gW-2NA" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="251" id="QNI-gt-0Xw"/>
+                            <constraint firstItem="90e-zi-OwJ" firstAttribute="top" secondItem="OSE-41-jhg" secondAttribute="bottom" priority="750" constant="32" id="Jlg-7i-Kvd"/>
+                            <constraint firstItem="uWt-gW-2NA" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="277" id="QNI-gt-0Xw"/>
                             <constraint firstItem="MMu-Ic-uUK" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="62" id="X31-On-BKO"/>
                             <constraint firstAttribute="centerX" secondItem="90e-zi-OwJ" secondAttribute="centerX" id="aFc-HE-QMF"/>
                             <constraint firstAttribute="centerX" secondItem="uWt-gW-2NA" secondAttribute="centerX" id="fMu-RP-pbA"/>
                             <constraint firstItem="OSE-41-jhg" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="359" id="fO0-G4-2FC"/>
+                            <constraint firstItem="OSE-41-jhg" firstAttribute="top" secondItem="uWt-gW-2NA" secondAttribute="bottom" priority="250" constant="16" id="jWy-jH-8Xd"/>
                             <constraint firstItem="90e-zi-OwJ" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="417" id="o4K-nN-qs0"/>
-                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="90e-zi-OwJ" secondAttribute="bottom" multiplier="1.1" constant="201" id="qVX-Y1-sJo"/>
+                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="90e-zi-OwJ" secondAttribute="bottom" multiplier="1.5" constant="69.799999999999955" id="qVX-Y1-sJo"/>
                             <constraint firstItem="OSE-41-jhg" firstAttribute="top" relation="lessThanOrEqual" secondItem="uWt-gW-2NA" secondAttribute="bottom" constant="20" id="wPh-48-OKE"/>
                             <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uWt-gW-2NA" secondAttribute="bottom" multiplier="1.6" constant="231" id="xxj-LA-eZA"/>
                             <constraint firstAttribute="centerX" secondItem="MMu-Ic-uUK" secondAttribute="centerX" id="zDl-Uu-7DB"/>
@@ -96,6 +101,7 @@
                                 <exclude reference="o4K-nN-qs0"/>
                                 <exclude reference="2sc-aZ-E4B"/>
                                 <exclude reference="5rb-UI-EbK"/>
+                                <exclude reference="qVX-Y1-sJo"/>
                                 <exclude reference="xxj-LA-eZA"/>
                             </mask>
                         </variation>
@@ -116,7 +122,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="phoneNumberTextField" destination="OSE-41-jhg" id="q9i-kH-lOd"/>
-                        <segue destination="Cbv-h2-HUk" kind="show" id="LWE-fr-i15"/>
+                        <segue destination="Cbv-h2-HUk" kind="show" identifier="toHealth" id="LWE-fr-i15"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZk-FV-wdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,33 +138,29 @@
                         <viewControllerLayoutGuide type="bottom" id="dGv-8H-u75"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OT1-KZ-oT4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM7-KP-kFo">
-                                <rect key="frame" x="213" y="63" width="174" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="TM7-KP-kFo" secondAttribute="height" multiplier="99:25" id="Gaw-Tn-bxu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="healthIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LHz-NH-wsW">
-                                <rect key="frame" x="234" y="205" width="133" height="133"/>
+                                <rect key="frame" x="134" y="222" width="133" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="hcm-QY-OFL"/>
+                                    <constraint firstAttribute="height" constant="133" id="vPc-Oo-xGf"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Feelzy to gain access to health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byx-qu-6an">
-                                <rect key="frame" x="192" y="346" width="216" height="158"/>
+                                <rect key="frame" x="96" y="384" width="207" height="132"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="158" id="QvL-1k-T7r"/>
-                                    <constraint firstAttribute="width" constant="216" id="u3I-zV-82J"/>
+                                    <constraint firstAttribute="height" constant="132" id="QvL-1k-T7r"/>
+                                    <constraint firstAttribute="width" constant="207" id="u3I-zV-82J"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoY-fb-J6M" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="217" y="512" width="166" height="50"/>
+                                <rect key="frame" x="117" y="598" width="166" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="N3A-hz-S2f"/>
                                     <constraint firstAttribute="height" constant="50" id="oA5-lx-YfJ"/>
@@ -168,11 +170,14 @@
                                     <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-zx-h3Y" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="234" y="550" width="133" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-zx-h3Y" customClass="PillButton" customModule="sense" customModuleProvider="target">
+                                <rect key="frame" x="117" y="664" width="166" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="LpT-I6-IpQ"/>
+                                    <constraint firstAttribute="width" constant="166" id="LpT-I6-IpQ"/>
                                     <constraint firstAttribute="height" constant="50" id="vNk-MY-cay"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
@@ -180,26 +185,57 @@
                                     <color key="titleColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM7-KP-kFo">
+                                <rect key="frame" x="113" y="54" width="174" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TM7-KP-kFo" secondAttribute="height" multiplier="99:25" id="Gaw-Tn-bxu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LHz-NH-wsW" secondAttribute="bottom" multiplier="1.5" constant="205" id="5O8-Op-fbB"/>
                             <constraint firstAttribute="centerX" secondItem="TM7-KP-kFo" secondAttribute="centerX" id="BOw-KT-dCa"/>
-                            <constraint firstItem="byx-qu-6an" firstAttribute="top" secondItem="LHz-NH-wsW" secondAttribute="bottom" constant="8" id="IA8-Sz-DbZ"/>
+                            <constraint firstItem="byx-qu-6an" firstAttribute="top" secondItem="LHz-NH-wsW" secondAttribute="bottom" constant="29" id="IA8-Sz-DbZ"/>
                             <constraint firstAttribute="centerX" secondItem="fY6-zx-h3Y" secondAttribute="centerX" id="Nzf-sz-vtz"/>
                             <constraint firstAttribute="centerX" secondItem="LHz-NH-wsW" secondAttribute="centerX" constant="-0.5" id="QFB-4I-ldz"/>
                             <constraint firstAttribute="centerX" secondItem="HoY-fb-J6M" secondAttribute="centerX" id="d2h-C8-Ekm"/>
-                            <constraint firstItem="LHz-NH-wsW" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="205" id="el0-Vm-Q76"/>
+                            <constraint firstItem="LHz-NH-wsW" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="222" id="el0-Vm-Q76"/>
+                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TM7-KP-kFo" secondAttribute="bottom" multiplier="2.9" constant="355" id="hKu-Gf-xAs"/>
+                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fY6-zx-h3Y" secondAttribute="bottom" multiplier="1.1" constant="-33" id="k3T-DW-1Dc"/>
                             <constraint firstAttribute="centerX" secondItem="byx-qu-6an" secondAttribute="centerX" id="kUP-7f-EjW"/>
-                            <constraint firstItem="fY6-zx-h3Y" firstAttribute="top" secondItem="HoY-fb-J6M" secondAttribute="bottom" constant="8" id="mYQ-DK-oSl"/>
-                            <constraint firstItem="TM7-KP-kFo" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="63" id="rOR-9N-lkY"/>
-                            <constraint firstItem="HoY-fb-J6M" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="512" id="xZB-PS-ii5"/>
+                            <constraint firstItem="fY6-zx-h3Y" firstAttribute="top" secondItem="HoY-fb-J6M" secondAttribute="bottom" constant="16" id="mYQ-DK-oSl"/>
+                            <constraint firstItem="TM7-KP-kFo" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="54" id="rOR-9N-lkY"/>
+                            <constraint firstItem="HoY-fb-J6M" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="598" id="xZB-PS-ii5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5O8-Op-fbB"/>
+                                <exclude reference="hKu-Gf-xAs"/>
+                                <exclude reference="k3T-DW-1Dc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="5O8-Op-fbB"/>
+                                <include reference="hKu-Gf-xAs"/>
+                                <include reference="k3T-DW-1Dc"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="800"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIT-4K-Hdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="331"/>
+            <point key="canvasLocation" x="877" y="328"/>
         </scene>
     </scenes>
     <resources>
