@@ -1,5 +1,5 @@
 PODS:
-  - Bolts (1.1.2)
+  - Bolts (1.1.3)
   - Facebook-iOS-SDK (3.17.0):
     - Bolts
   - libPhoneNumber-iOS (0.7.3)
@@ -20,7 +20,7 @@ DEPENDENCIES:
   - UIColor+Hex (~> 1.0)
 
 SPEC CHECKSUMS:
-  Bolts: 2635e8698a630774689441047f3465d78c48d485
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
   Facebook-iOS-SDK: f20274d809f112ba540842e2b6cbe50128d51b7b
   libPhoneNumber-iOS: 98fc07d70c8fdb5e6a8e3442c37e97353065c20e
   Parse: db1a09c832b7509edcc88a65dc07229f5e578c73
