@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -12,9 +13,10 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
-            <string>Roboto-Light</string>
         </mutableArray>
         <mutableArray key="Roboto-Thin.ttf">
+            <string>Roboto-Thin</string>
+            <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
         </mutableArray>
@@ -32,36 +34,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoColor" translatesAutoresizingMaskIntoConstraints="NO" id="MMu-Ic-uUK">
-                                <rect key="frame" x="230" y="62" width="140" height="53"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="90" y="62" width="220" height="83"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="330" y="62" width="140" height="53"/>
-                                </variation>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with your phone number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="uWt-gW-2NA">
-                                <rect key="frame" x="178" y="277" width="244" height="88"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="87.5" id="HLT-D4-7Uo"/>
-                                    <constraint firstAttribute="width" constant="244" id="Wj5-oP-s6n"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
-                                <color key="textColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-41-jhg">
-                                <rect key="frame" x="192" y="381" width="222.5" height="44"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="92" y="247" width="227" height="39"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="Ocd-We-rOG" id="5JG-xi-jOz"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90e-zi-OwJ" customClass="PillButton" customModule="sense" customModuleProvider="target">
                                 <rect key="frame" x="217" y="457" width="166" height="50"/>
                                 <constraints>
@@ -80,46 +52,92 @@
                                     <action selector="buttonTapped:" destination="Ocd-We-rOG" eventType="touchUpInside" id="b2c-QC-ZxB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vS-ug-uTm">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2vS-ug-uTm" secondAttribute="height" multiplier="95:44" id="BRD-mo-9ZF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BRD-mo-9ZF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="BRD-mo-9ZF"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-41-jhg">
+                                <rect key="frame" x="160.5" y="225" width="280.5" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OSE-41-jhg" secondAttribute="height" multiplier="5:1" id="6eZ-et-0aU"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="42"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ocd-We-rOG" id="5JG-xi-jOz"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with your phone number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="uWt-gW-2NA">
+                                <rect key="frame" x="206" y="299" width="188" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="bfe-HC-eUW"/>
+                                    <constraint firstAttribute="width" constant="188" id="z89-g1-W6k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="25"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="OSE-41-jhg" secondAttribute="centerX" constant="-3.5" id="2Ia-BP-coc">
-                                <variation key="widthClass=compact" constant="-5.5"/>
-                            </constraint>
-                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OSE-41-jhg" secondAttribute="bottom" constant="280" id="2sc-aZ-E4B"/>
-                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MMu-Ic-uUK" secondAttribute="bottom" constant="412" id="5rb-UI-EbK"/>
-                            <constraint firstItem="90e-zi-OwJ" firstAttribute="top" secondItem="OSE-41-jhg" secondAttribute="bottom" priority="750" constant="32" id="Jlg-7i-Kvd"/>
-                            <constraint firstItem="uWt-gW-2NA" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="277" id="QNI-gt-0Xw"/>
-                            <constraint firstItem="MMu-Ic-uUK" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="62" id="X31-On-BKO"/>
+                            <constraint firstAttribute="centerX" secondItem="OSE-41-jhg" secondAttribute="centerX" constant="-0.75" id="07x-Eu-VcZ"/>
+                            <constraint firstAttribute="centerX" secondItem="uWt-gW-2NA" secondAttribute="centerX" constant="-0.5" id="8VV-y7-akZ"/>
+                            <constraint firstItem="OSE-41-jhg" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="225" id="8dI-iS-Yxl"/>
+                            <constraint firstItem="2vS-ug-uTm" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="63" id="9Io-9p-qUb"/>
+                            <constraint firstItem="90e-zi-OwJ" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="457" id="Ntk-pS-75D"/>
                             <constraint firstAttribute="centerX" secondItem="90e-zi-OwJ" secondAttribute="centerX" id="aFc-HE-QMF"/>
-                            <constraint firstAttribute="centerX" secondItem="uWt-gW-2NA" secondAttribute="centerX" id="fMu-RP-pbA"/>
-                            <constraint firstItem="OSE-41-jhg" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="359" id="fO0-G4-2FC"/>
-                            <constraint firstItem="OSE-41-jhg" firstAttribute="top" secondItem="uWt-gW-2NA" secondAttribute="bottom" priority="250" constant="16" id="jWy-jH-8Xd"/>
+                            <constraint firstItem="uWt-gW-2NA" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="299" id="bKd-tR-T9b"/>
                             <constraint firstItem="90e-zi-OwJ" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="417" id="o4K-nN-qs0"/>
-                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="90e-zi-OwJ" secondAttribute="bottom" multiplier="1.5" constant="69.799999999999955" id="qVX-Y1-sJo"/>
-                            <constraint firstItem="OSE-41-jhg" firstAttribute="top" relation="lessThanOrEqual" secondItem="uWt-gW-2NA" secondAttribute="bottom" constant="20" id="wPh-48-OKE"/>
-                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uWt-gW-2NA" secondAttribute="bottom" multiplier="1.6" constant="231" id="xxj-LA-eZA"/>
-                            <constraint firstAttribute="centerX" secondItem="MMu-Ic-uUK" secondAttribute="centerX" id="zDl-Uu-7DB"/>
+                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OSE-41-jhg" secondAttribute="bottom" constant="309" id="qSR-LJ-s0D">
+                                <variation key="widthClass=compact" constant="350"/>
+                            </constraint>
+                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="90e-zi-OwJ" secondAttribute="bottom" multiplier="1.2" constant="149.80000305175781" id="qVX-Y1-sJo"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="OSE-41-jhg" secondAttribute="trailing" constant="1" id="rKe-y7-oxu"/>
+                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2vS-ug-uTm" secondAttribute="bottom" multiplier="2.8" constant="324" id="rv7-UE-Z5j"/>
+                            <constraint firstItem="OSE-41-jhg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vM8-wr-R1b" secondAttribute="leadingMargin" constant="1" id="xbZ-CC-3m6"/>
+                            <constraint firstAttribute="centerX" secondItem="2vS-ug-uTm" secondAttribute="centerX" id="ySB-PE-jmF"/>
+                            <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uWt-gW-2NA" secondAttribute="bottom" constant="285" id="zwp-To-rpi"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="2vS-ug-uTm"/>
+                            </mask>
                             <mask key="constraints">
-                                <exclude reference="fO0-G4-2FC"/>
+                                <exclude reference="ySB-PE-jmF"/>
                                 <exclude reference="o4K-nN-qs0"/>
-                                <exclude reference="2sc-aZ-E4B"/>
-                                <exclude reference="5rb-UI-EbK"/>
+                                <exclude reference="qSR-LJ-s0D"/>
                                 <exclude reference="qVX-Y1-sJo"/>
-                                <exclude reference="xxj-LA-eZA"/>
+                                <exclude reference="rv7-UE-Z5j"/>
+                                <exclude reference="zwp-To-rpi"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="2vS-ug-uTm"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="fO0-G4-2FC"/>
-                                <include reference="wPh-48-OKE"/>
+                                <include reference="ySB-PE-jmF"/>
                                 <include reference="o4K-nN-qs0"/>
-                                <include reference="2sc-aZ-E4B"/>
-                                <include reference="5rb-UI-EbK"/>
+                                <include reference="qSR-LJ-s0D"/>
                                 <include reference="qVX-Y1-sJo"/>
-                                <include reference="xxj-LA-eZA"/>
+                                <include reference="rv7-UE-Z5j"/>
+                                <include reference="zwp-To-rpi"/>
                             </mask>
                         </variation>
                     </view>
@@ -255,6 +273,5 @@
     </scenes>
     <resources>
         <image name="healthIcon" width="133" height="133"/>
-        <image name="logoColor" width="140" height="53"/>
     </resources>
 </document>

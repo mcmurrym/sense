@@ -41,7 +41,7 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         self.phoneNumberTextField.addTarget(self,
             action: "textFieldChanged:",
             forControlEvents: UIControlEvents.EditingChanged)
-        self.performSegueWithIdentifier("toHealth", sender: nil)
+//        self.performSegueWithIdentifier("toHealth", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,7 +73,7 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
             if self.phoneNumberTextField.text == verifyCode {
                 
                 if HKHealthStore.isHealthDataAvailable() {
-                    self.performSegueWithIdentifier("toHealth", sender: nil)
+//                    self.performSegueWithIdentifier("toHealth", sender: nil)
                 } else {
                     //skip health kit
                 }
