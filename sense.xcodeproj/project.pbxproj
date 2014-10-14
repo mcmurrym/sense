@@ -24,6 +24,7 @@
 		BE71453119E08FD800B3A042 /* SignInPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */; };
 		BE71453519E09D2B00B3A042 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453419E09D2B00B3A042 /* String.swift */; };
 		BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453719E0CECC00B3A042 /* PillButton.swift */; };
+		BEF632CB19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		BE71453419E09D2B00B3A042 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BE71453719E0CECC00B3A042 /* PillButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
+		BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpLocationPermissionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				BE4825DA19DF02E1008B56DE /* signin.storyboard */,
 				BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */,
 				BE0A82A119E8534D005392E2 /* SignUpHealthConnectViewController.swift */,
+				BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */,
 			);
 			name = Signup/in;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF632CB19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift in Sources */,
 				BE71453519E09D2B00B3A042 /* String.swift in Sources */,
 				BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */,
 				BE06AF4019DCB35A0045C011 /* AppDelegate.swift in Sources */,
