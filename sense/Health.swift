@@ -19,10 +19,25 @@ class Health {
         return SharedInstance.instance
     }
     
-    let health = HKHealthStore()
-    let birthdayType = HKObjectType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierDateOfBirth)
-    let biologicalSexType = HKObjectType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierBiologicalSex)
-    let steps = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
+    class func isHealthDataAvailable() -> Bool {
+        if NSClassFromString("HKHealthStore") != nil {
+            return HKHealthStore.isHealthDataAvailable()
+        } else {
+            return false
+        }
+    }
+    
+    let health: HKHealthStore
+    let birthdayType: HKCharacteristicType
+    let biologicalSexType: HKCharacteristicType
+    let steps: HKQuantityType
+    
+    init() {
+        health = HKHealthStore()
+        birthdayType = HKObjectType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierDateOfBirth)
+        biologicalSexType = HKObjectType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierBiologicalSex)
+        steps = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
+    }
     
     func getPermission(completion: (Bool, NSError!) -> Void) {
         

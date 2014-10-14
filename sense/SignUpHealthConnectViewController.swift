@@ -28,13 +28,13 @@ class SignUpHealthConnectViewController: UIViewController {
     
     @IBAction func connectToHealth(sender: AnyObject) {
         Health.sharedInstance.getPermission { (completed: Bool, error: NSError!) -> Void in
-            
+            if completed {
+                self.performSegueWithIdentifier("toLocation", sender: nil)
+            }
         }
-        
     }
 
     @IBAction func skipHealthConnection(sender: AnyObject) {
-        
-        
+        self.performSegueWithIdentifier("toLocation", sender: nil)
     }
 }

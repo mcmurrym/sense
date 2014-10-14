@@ -147,6 +147,7 @@
                     <connections>
                         <outlet property="phoneNumberTextField" destination="OSE-41-jhg" id="q9i-kH-lOd"/>
                         <segue destination="Cbv-h2-HUk" kind="show" identifier="toHealth" id="LWE-fr-i15"/>
+                        <segue destination="aSF-zL-YDC" kind="show" identifier="toLocationFromSignIn" id="kY3-pI-nqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZk-FV-wdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,14 +267,37 @@
                     <size key="freeformSize" width="400" height="800"/>
                     <connections>
                         <outlet property="healthIcon" destination="LHz-NH-wsW" id="PbE-8i-7RJ"/>
+                        <segue destination="aSF-zL-YDC" kind="show" identifier="toLocation" id="Y6U-zk-ZU6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIT-4K-Hdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876" y="328"/>
+            <point key="canvasLocation" x="771" y="728"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n9E-dr-hE4">
+            <objects>
+                <viewController id="aSF-zL-YDC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sgS-et-cle"/>
+                        <viewControllerLayoutGuide type="bottom" id="WSa-jA-GLZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7cZ-e4-43t">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gFt-By-Lid"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3lY-Qc-dlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1425" y="126"/>
         </scene>
     </scenes>
     <resources>
         <image name="healthIcon" width="132" height="132"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kY3-pI-nqN"/>
+    </inferredMetricsTieBreakers>
 </document>
