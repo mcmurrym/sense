@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
 
@@ -40,7 +41,7 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         self.phoneNumberTextField.addTarget(self,
             action: "textFieldChanged:",
             forControlEvents: UIControlEvents.EditingChanged)
-                        self.performSegueWithIdentifier("toHealth", sender: nil)
+        self.performSegueWithIdentifier("toHealth", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,7 +71,12 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         
         if verifyMode {
             if self.phoneNumberTextField.text == verifyCode {
-                self.performSegueWithIdentifier("toHealth", sender: nil)
+                
+                if HKHealthStore.isHealthDataAvailable() {
+                    self.performSegueWithIdentifier("toHealth", sender: nil)
+                } else {
+                    //skip health kit
+                }
             } else {
                 println("try again")
             }

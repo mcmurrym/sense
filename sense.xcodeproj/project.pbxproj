@@ -14,6 +14,7 @@
 		BE06AF5619DCB35A0045C011 /* senseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE06AF5519DCB35A0045C011 /* senseTests.swift */; };
 		BE0A82A219E8534D005392E2 /* SignUpHealthConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A82A119E8534D005392E2 /* SignUpHealthConnectViewController.swift */; };
 		BE0A82A519E854A3005392E2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0A82A419E854A3005392E2 /* HealthKit.framework */; };
+		BE0A82AE19EC375B005392E2 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A82AD19EC375B005392E2 /* Health.swift */; };
 		BE2214DA19DDBBC200429F22 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214D919DDBBC200429F22 /* LaunchViewController.swift */; };
 		BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DB19DDBFE600429F22 /* Settings.swift */; };
 		BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */; };
@@ -50,6 +51,7 @@
 		BE0A82A119E8534D005392E2 /* SignUpHealthConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpHealthConnectViewController.swift; sourceTree = "<group>"; };
 		BE0A82A319E8548B005392E2 /* sense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sense.entitlements; sourceTree = "<group>"; };
 		BE0A82A419E854A3005392E2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		BE0A82AD19EC375B005392E2 /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
 		BE2214D919DDBBC200429F22 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		BE2214DB19DDBFE600429F22 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchBackgroundView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				BE71453719E0CECC00B3A042 /* PillButton.swift */,
+				BE0A82AD19EC375B005392E2 /* Health.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */,
 				BE71453119E08FD800B3A042 /* SignInPhoneNumberViewController.swift in Sources */,
 				BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */,
+				BE0A82AE19EC375B005392E2 /* Health.swift in Sources */,
 				BE0A82A219E8534D005392E2 /* SignUpHealthConnectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

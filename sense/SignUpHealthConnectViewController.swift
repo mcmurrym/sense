@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SignUpHealthConnectViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,20 +23,14 @@ class SignUpHealthConnectViewController: UIViewController {
     }
     
     @IBAction func connectToHealth(sender: AnyObject) {
-        
+        Health.sharedInstance.getPermission { (completed: Bool, error: NSError!) -> Void in
+            
+        }
         
     }
 
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func skipHealthConnection(sender: AnyObject) {
+        
+        
     }
-    */
-
 }
