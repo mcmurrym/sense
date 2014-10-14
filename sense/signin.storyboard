@@ -12,9 +12,9 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
-            <string>Roboto-Light</string>
         </mutableArray>
         <mutableArray key="Roboto-Thin.ttf">
+            <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
@@ -166,19 +166,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="healthIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LHz-NH-wsW">
-                                <rect key="frame" x="134" y="222" width="133" height="133"/>
+                                <rect key="frame" x="134" y="219" width="133" height="133"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="133" id="hcm-QY-OFL"/>
                                     <constraint firstAttribute="height" constant="133" id="vPc-Oo-xGf"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Feelzy to gain access to health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byx-qu-6an">
-                                <rect key="frame" x="96" y="384" width="207" height="132"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect to Health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byx-qu-6an">
+                                <rect key="frame" x="96" y="392" width="207" height="132"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="132" id="QvL-1k-T7r"/>
+                                    <constraint firstAttribute="height" constant="132" id="QvL-1k-T7r">
+                                        <variation key="widthClass=compact" constant="37"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="207" id="u3I-zV-82J"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="25"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -220,32 +222,29 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM7-KP-kFo">
-                                <rect key="frame" x="113" y="54" width="174" height="44"/>
+                                <rect key="frame" x="113" y="63" width="174" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TM7-KP-kFo" secondAttribute="height" multiplier="99:25" id="Gaw-Tn-bxu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="118" y="54" width="166" height="42"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LHz-NH-wsW" secondAttribute="bottom" multiplier="1.5" constant="205" id="5O8-Op-fbB"/>
+                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LHz-NH-wsW" secondAttribute="bottom" multiplier="1.5" constant="120" id="5O8-Op-fbB"/>
                             <constraint firstAttribute="centerX" secondItem="TM7-KP-kFo" secondAttribute="centerX" id="BOw-KT-dCa"/>
-                            <constraint firstItem="byx-qu-6an" firstAttribute="top" secondItem="LHz-NH-wsW" secondAttribute="bottom" constant="29" id="IA8-Sz-DbZ"/>
+                            <constraint firstItem="byx-qu-6an" firstAttribute="top" secondItem="LHz-NH-wsW" secondAttribute="bottom" constant="40" id="IA8-Sz-DbZ"/>
                             <constraint firstAttribute="centerX" secondItem="fY6-zx-h3Y" secondAttribute="centerX" id="Nzf-sz-vtz"/>
                             <constraint firstAttribute="centerX" secondItem="LHz-NH-wsW" secondAttribute="centerX" constant="-0.5" id="QFB-4I-ldz"/>
                             <constraint firstAttribute="centerX" secondItem="HoY-fb-J6M" secondAttribute="centerX" id="d2h-C8-Ekm"/>
-                            <constraint firstItem="LHz-NH-wsW" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="222" id="el0-Vm-Q76"/>
-                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TM7-KP-kFo" secondAttribute="bottom" multiplier="2.9" constant="355" id="hKu-Gf-xAs"/>
+                            <constraint firstItem="LHz-NH-wsW" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="219" id="el0-Vm-Q76"/>
+                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TM7-KP-kFo" secondAttribute="bottom" multiplier="2.8" constant="324" id="hKu-Gf-xAs"/>
                             <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fY6-zx-h3Y" secondAttribute="bottom" multiplier="1.1" constant="-33" id="k3T-DW-1Dc"/>
                             <constraint firstAttribute="centerX" secondItem="byx-qu-6an" secondAttribute="centerX" id="kUP-7f-EjW"/>
                             <constraint firstItem="fY6-zx-h3Y" firstAttribute="top" secondItem="HoY-fb-J6M" secondAttribute="bottom" constant="16" id="mYQ-DK-oSl"/>
-                            <constraint firstItem="TM7-KP-kFo" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="54" id="rOR-9N-lkY"/>
+                            <constraint firstItem="TM7-KP-kFo" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="63" id="rOR-9N-lkY"/>
                             <constraint firstItem="HoY-fb-J6M" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="598" id="xZB-PS-ii5"/>
                         </constraints>
                         <variation key="default">
@@ -265,13 +264,16 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="800"/>
+                    <connections>
+                        <outlet property="healthIcon" destination="LHz-NH-wsW" id="PbE-8i-7RJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIT-4K-Hdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="328"/>
+            <point key="canvasLocation" x="876" y="328"/>
         </scene>
     </scenes>
     <resources>
-        <image name="healthIcon" width="133" height="133"/>
+        <image name="healthIcon" width="132" height="132"/>
     </resources>
 </document>

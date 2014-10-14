@@ -11,9 +11,13 @@ import UIKit
 
 class SignUpHealthConnectViewController: UIViewController {
 
+    @IBOutlet weak var healthIcon: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.healthIcon.layer.shadowColor = UIColor.blackColor().CGColor
+        self.healthIcon.layer.shadowOffset = CGSizeMake(0, 4)
+        self.healthIcon.layer.shadowOpacity = 0.3
         // Do any additional setup after loading the view.
     }
 
