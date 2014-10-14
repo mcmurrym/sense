@@ -25,6 +25,7 @@
 		BE71453519E09D2B00B3A042 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453419E09D2B00B3A042 /* String.swift */; };
 		BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453719E0CECC00B3A042 /* PillButton.swift */; };
 		BEF632CB19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */; };
+		BEF632CD19EDD6C000D683A2 /* SignUpGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF632CC19EDD6C000D683A2 /* SignUpGenderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		BE71453419E09D2B00B3A042 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BE71453719E0CECC00B3A042 /* PillButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 		BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpLocationPermissionViewController.swift; sourceTree = "<group>"; };
+		BEF632CC19EDD6C000D683A2 /* SignUpGenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpGenderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				BE4825DA19DF02E1008B56DE /* signin.storyboard */,
+				BEF632CC19EDD6C000D683A2 /* SignUpGenderViewController.swift */,
 				BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */,
 				BE0A82A119E8534D005392E2 /* SignUpHealthConnectViewController.swift */,
 				BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */,
@@ -369,6 +372,7 @@
 				BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */,
 				BE71453119E08FD800B3A042 /* SignInPhoneNumberViewController.swift in Sources */,
 				BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */,
+				BEF632CD19EDD6C000D683A2 /* SignUpGenderViewController.swift in Sources */,
 				BE0A82AE19EC375B005392E2 /* Health.swift in Sources */,
 				BE0A82A219E8534D005392E2 /* SignUpHealthConnectViewController.swift in Sources */,
 			);

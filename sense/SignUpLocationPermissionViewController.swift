@@ -22,10 +22,10 @@ class SignUpLocationPermissionViewController: UIViewController {
     }
     
     @IBAction func connectToLocation(sender: AnyObject) {
-    
+        self.performSegueWithIdentifier("toGender", sender: nil)
     }
 
     @IBAction func skipLocationConnection(sender: AnyObject) {
-  
+        self.performSegueWithIdentifier("toGender", sender: nil)
     }
 }
