@@ -43,12 +43,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="deS-BK-EvX">
-                        <barButtonItem key="rightBarButtonItem" image="addMood" id="Oz8-yY-m1z"/>
+                        <barButtonItem key="rightBarButtonItem" image="addMood" id="Oz8-yY-m1z">
+                            <connections>
+                                <segue destination="uoL-jZ-UhV" kind="presentation" id="2dr-Jw-h1M"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9g-xO-82q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="616" y="377"/>
+        </scene>
+        <!--Mood Log View Controller-->
+        <scene sceneID="nsk-T9-PNt">
+            <objects>
+                <viewController id="uoL-jZ-UhV" customClass="MoodLogViewController" customModule="sense" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J1M-wn-SwB"/>
+                        <viewControllerLayoutGuide type="bottom" id="EGi-D4-6dd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X4p-GT-uQY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A6l-La-bFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="4"/>
         </scene>
     </scenes>
     <resources>
