@@ -65,15 +65,31 @@
                     <view key="view" contentMode="scaleToFill" id="X4p-GT-uQY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMU-xl-bmG">
+                                <rect key="frame" x="560" y="31" width="17" height="22"/>
+                                <state key="normal" image="moodClose">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelLogging:" destination="uoL-jZ-UhV" eventType="touchUpInside" id="ijj-8a-kCE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nMU-xl-bmG" secondAttribute="trailing" constant="23" id="Mo7-yV-ZhV"/>
+                            <constraint firstItem="nMU-xl-bmG" firstAttribute="top" secondItem="J1M-wn-SwB" secondAttribute="bottom" constant="31" id="in6-MV-6rb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6l-La-bFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="4"/>
+            <point key="canvasLocation" x="609" y="-480"/>
         </scene>
     </scenes>
     <resources>
         <image name="addMood" width="25" height="25"/>
+        <image name="moodClose" width="17" height="17"/>
     </resources>
 </document>

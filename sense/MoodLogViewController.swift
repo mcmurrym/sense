@@ -15,8 +15,6 @@ class MoodLogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.greenColor()
-        
         self.smile.opaque = false
         self.view.addSubview(self.smile)
         
@@ -27,11 +25,34 @@ class MoodLogViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        var startPoint = CGPointMake(self.view.center.x, self.smile.bounds.size.height / 2)
+        
+        self.smile.center = startPoint
+        
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        self.updateColors()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func cancelLogging(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    //MARK: - panhandling
+    
     func panned(panGesture: UIPanGestureRecognizer) {
         
         if panGesture.state == UIGestureRecognizerState.Began {
-            println("began")
-            
             var touchPoint = panGesture.locationInView(self.view)
             
             var newPoint = self.smile.center
@@ -46,14 +67,9 @@ class MoodLogViewController: UIViewController {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.smile.center = newPoint
             })
-            
-
-            
         } else if panGesture.state == UIGestureRecognizerState.Changed {
-            println("changed")
+//            println("changed")
         } else if panGesture.state == UIGestureRecognizerState.Ended {
-            println("ended")
-            
             var newPoint = self.smile.center
             newPoint.x = self.view.center.x
             UIView.animateWithDuration(0.3, animations: { () -> Void in
@@ -75,6 +91,8 @@ class MoodLogViewController: UIViewController {
         
         updateColors()
     }
+    
+    //MARK: - color updates
     
     func updateColors () {
         var maxTravelHeight = self.view.bounds.size.height - self.smile.bounds.size.height
@@ -126,21 +144,5 @@ class MoodLogViewController: UIViewController {
             self.smile.updateStrokeColor(midColor)
         }
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        var startPoint = CGPointMake(self.view.center.x, self.smile.bounds.size.height / 2)
-        
-        self.smile.center = startPoint
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
