@@ -11,6 +11,9 @@ import UIKit
 
 class SignUpHealthConnectViewController: UIViewController {
 
+    @IBOutlet weak var laterButton: PillButton!
+    @IBOutlet weak var connectButton: PillButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var healthIcon: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +30,18 @@ class SignUpHealthConnectViewController: UIViewController {
     }
     
     @IBAction func connectToHealth(sender: AnyObject) {
+        self.connectButton.enabled = false
+        self.laterButton.enabled = false
+        
+        self.activityIndicator.hidden = false
+        self.activityIndicator.startAnimating()
         Health.sharedInstance.getPermission { (completed: Bool, error: NSError!) -> Void in
+            self.activityIndicator.stopAnimating()
             if completed {
                 self.performSegueWithIdentifier("toLocation", sender: nil)
+            } else {
+                self.connectButton.enabled = true
+                self.laterButton.enabled = true
             }
         }
     }

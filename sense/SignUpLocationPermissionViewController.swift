@@ -22,6 +22,7 @@ class SignUpLocationPermissionViewController: UIViewController {
     }
     
     @IBAction func connectToLocation(sender: AnyObject) {
+        Location.sharedInstance.requestAuthorization()
         self.performSegueWithIdentifier("toGender", sender: nil)
     }
 

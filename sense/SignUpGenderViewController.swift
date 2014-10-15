@@ -12,6 +12,7 @@ class SignUpGenderViewController: UIViewController {
 
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var femaleButton: UIButton!
+    @IBOutlet weak var next: PillButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,12 @@ class SignUpGenderViewController: UIViewController {
     }
     
     @IBAction func next(sender: AnyObject) {
-        self.performSegueWithIdentifier("toBirthdate", sender: nil)
+        
+        if !self.maleButton.selected && !self.femaleButton.selected {
+            self.next.bump()
+        } else {
+            self.performSegueWithIdentifier("toBirthdate", sender: nil)
+        }
     }
     
 }

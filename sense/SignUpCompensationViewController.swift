@@ -13,6 +13,7 @@ class SignUpCompensationViewController: UIViewController {
     @IBOutlet weak var hourlyButton: UIButton!
     @IBOutlet weak var salaryButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
+    @IBOutlet weak var next: PillButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,8 @@ class SignUpCompensationViewController: UIViewController {
     }
     
     @IBAction func next(sender: AnyObject) {
-        //sign up be done
+        if !self.salaryButton.selected && !self.hourlyButton.selected && !self.otherButton.selected {
+            self.next.bump()
+        }
     }
 }

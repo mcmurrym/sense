@@ -10,10 +10,19 @@ import UIKit
 
 class SignUpBirthdateViewController: UIViewController {
 
+    @IBOutlet weak var next: PillButton!
+    @IBOutlet weak var monthTextField: UITextField!
+    @IBOutlet weak var dayTextField: UITextField!
+    @IBOutlet weak var yearTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.monthTextField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,17 +31,30 @@ class SignUpBirthdateViewController: UIViewController {
     }
     
     @IBAction func next(sender: AnyObject) {
-        self.performSegueWithIdentifier("toCompensation", sender: nil)
+        
+        if countElements(self.monthTextField.text) > 1 &&
+           countElements(self.dayTextField.text) > 1 &&
+           countElements(self.yearTextField.text) > 1 {
+                self.performSegueWithIdentifier("toCompensation", sender: nil)
+        } else {
+            self.next.bump()
+        }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func monthChanged(sender: AnyObject) {
+        if countElements(self.monthTextField.text) > 1 {
+            self.dayTextField.becomeFirstResponder()
+        }
     }
-    */
+   
+    @IBAction func dayChanged(sender: AnyObject) {
+        if countElements(self.dayTextField.text) > 1 {
+            self.yearTextField.becomeFirstResponder()
+        }
+    }
 
+    @IBAction func yearChanged(sender: AnyObject) {
+    }
+    
+    
 }

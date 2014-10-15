@@ -34,13 +34,15 @@
 		<string>armv7</string>
 		<string>healthkit</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Feelzy wants your location for help in getting information like weather and understanding your mood.</string>
+	<key>CFBundleDisplayName</key>
+	<string>Feelzy</string>
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

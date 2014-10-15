@@ -40,7 +40,6 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         self.phoneNumberTextField.addTarget(self,
             action: "textFieldChanged:",
             forControlEvents: UIControlEvents.EditingChanged)
-        self.performSegueWithIdentifier("toLocationFromSignIn", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {
