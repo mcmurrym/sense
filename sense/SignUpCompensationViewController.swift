@@ -47,6 +47,9 @@ class SignUpCompensationViewController: UIViewController {
     @IBAction func next(sender: AnyObject) {
         if !self.salaryButton.selected && !self.hourlyButton.selected && !self.otherButton.selected {
             self.next.bump()
+        } else {
+            let storyBoard = UIStoryboard(name: "dashboard", bundle: nil)
+            self.navigationController?.setViewControllers([storyBoard.instantiateViewControllerWithIdentifier("dashboard")], animated: true)
         }
     }
 }

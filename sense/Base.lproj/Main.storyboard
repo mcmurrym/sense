@@ -16,9 +16,14 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="hyB-nP-ZXI" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pae-cM-eAS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pae-cM-eAS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="2UL-JY-8UH" kind="relationship" relationship="rootViewController" id="vbh-cA-WPT"/>
@@ -47,8 +52,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Zut-hS-JfP">
                                 <rect key="frame" x="190" y="258" width="220" height="83"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simply capture how you feel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-Ku-dwQ">
-                                <rect key="frame" x="172.5" y="50.5" width="257.5" height="499"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Simply capture how you feel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-Ku-dwQ">
+                                <rect key="frame" x="173" y="51" width="258" height="499"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1FS-Ku-dwQ" secondAttribute="height" multiplier="16:31" id="4Tr-Ai-sMt"/>
                                 </constraints>

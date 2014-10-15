@@ -28,6 +28,8 @@
 		BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453719E0CECC00B3A042 /* PillButton.swift */; };
 		BEF4483019EEE1EB00767339 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4482F19EEE1EB00767339 /* Location.swift */; };
 		BEF4483419EEEC1C00767339 /* SharedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4483319EEEC1C00767339 /* SharedUIView.swift */; };
+		BEF4483919EEFA7300767339 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4483819EEFA7300767339 /* DashboardViewController.swift */; };
+		BEF4483B19EEFA8A00767339 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF4483A19EEFA8A00767339 /* dashboard.storyboard */; };
 		BEF632CB19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */; };
 		BEF632CD19EDD6C000D683A2 /* SignUpGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF632CC19EDD6C000D683A2 /* SignUpGenderViewController.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,8 @@
 		BE71453719E0CECC00B3A042 /* PillButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 		BEF4482F19EEE1EB00767339 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		BEF4483319EEEC1C00767339 /* SharedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedUIView.swift; sourceTree = "<group>"; };
+		BEF4483819EEFA7300767339 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		BEF4483A19EEFA8A00767339 /* dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
 		BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpLocationPermissionViewController.swift; sourceTree = "<group>"; };
 		BEF632CC19EDD6C000D683A2 /* SignUpGenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpGenderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +133,7 @@
 			children = (
 				BE0A82A319E8548B005392E2 /* sense.entitlements */,
 				BE71453619E0CEB000B3A042 /* Shared */,
+				BEF4483519EEFA1300767339 /* Dash */,
 				BE4825D919DF02C8008B56DE /* Signup/in */,
 				BE2214D819DDBB0F00429F22 /* Launch */,
 				BE06AF3F19DCB35A0045C011 /* AppDelegate.swift */,
@@ -227,6 +232,15 @@
 			name = Shared;
 			sourceTree = "<group>";
 		};
+		BEF4483519EEFA1300767339 /* Dash */ = {
+			isa = PBXGroup;
+			children = (
+				BEF4483A19EEFA8A00767339 /* dashboard.storyboard */,
+				BEF4483819EEFA7300767339 /* DashboardViewController.swift */,
+			);
+			name = Dash;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE4825DB19DF02E1008B56DE /* signin.storyboard in Resources */,
+				BEF4483B19EEFA8A00767339 /* dashboard.storyboard in Resources */,
 				BE06AF4519DCB35A0045C011 /* Main.storyboard in Resources */,
 				BE4825DD19DF0FD9008B56DE /* Roboto-Light.ttf in Resources */,
 				BE06AF4719DCB35A0045C011 /* Images.xcassets in Resources */,
@@ -391,6 +406,7 @@
 				BEF632CD19EDD6C000D683A2 /* SignUpGenderViewController.swift in Sources */,
 				BE0A82AE19EC375B005392E2 /* Health.swift in Sources */,
 				BE0A82A219E8534D005392E2 /* SignUpHealthConnectViewController.swift in Sources */,
+				BEF4483919EEFA7300767339 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
