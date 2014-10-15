@@ -71,27 +71,8 @@
                                     <action selector="buttonTapped:" destination="Ocd-We-rOG" eventType="touchUpInside" id="b2c-QC-ZxB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vS-ug-uTm">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2vS-ug-uTm" secondAttribute="height" multiplier="95:44" id="BRD-mo-9ZF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="BRD-mo-9ZF"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="BRD-mo-9ZF"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-41-jhg">
-                                <rect key="frame" x="160.5" y="225" width="280.5" height="56"/>
+                                <rect key="frame" x="160" y="225" width="280.5" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OSE-41-jhg" secondAttribute="height" multiplier="5:1" id="6eZ-et-0aU"/>
                                 </constraints>
@@ -112,6 +93,16 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vS-ug-uTm">
+                                <rect key="frame" x="252.5" y="63" width="95.5" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2vS-ug-uTm" secondAttribute="height" multiplier="95:44" id="BRD-mo-9ZF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -122,7 +113,6 @@
                             <constraint firstItem="90e-zi-OwJ" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="457" id="Ntk-pS-75D"/>
                             <constraint firstAttribute="centerX" secondItem="90e-zi-OwJ" secondAttribute="centerX" id="aFc-HE-QMF"/>
                             <constraint firstItem="uWt-gW-2NA" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="299" id="bKd-tR-T9b"/>
-                            <constraint firstItem="90e-zi-OwJ" firstAttribute="top" secondItem="xU1-IC-faC" secondAttribute="bottom" priority="750" constant="417" id="o4K-nN-qs0"/>
                             <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OSE-41-jhg" secondAttribute="bottom" constant="309" id="qSR-LJ-s0D">
                                 <variation key="widthClass=compact" constant="350"/>
                             </constraint>
@@ -134,12 +124,7 @@
                             <constraint firstItem="jPH-7p-EUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uWt-gW-2NA" secondAttribute="bottom" constant="285" id="zwp-To-rpi"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="2vS-ug-uTm"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="ySB-PE-jmF"/>
-                                <exclude reference="o4K-nN-qs0"/>
                                 <exclude reference="qSR-LJ-s0D"/>
                                 <exclude reference="qVX-Y1-sJo"/>
                                 <exclude reference="rv7-UE-Z5j"/>
@@ -147,12 +132,7 @@
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="2vS-ug-uTm"/>
-                            </mask>
                             <mask key="constraints">
-                                <include reference="ySB-PE-jmF"/>
-                                <include reference="o4K-nN-qs0"/>
                                 <include reference="qSR-LJ-s0D"/>
                                 <include reference="qVX-Y1-sJo"/>
                                 <include reference="rv7-UE-Z5j"/>
@@ -192,7 +172,7 @@
                                     <constraint firstAttribute="height" constant="133" id="vPc-Oo-xGf"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect to Health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byx-qu-6an">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect to Health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="207" translatesAutoresizingMaskIntoConstraints="NO" id="byx-qu-6an">
                                 <rect key="frame" x="196" y="392" width="207" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="QvL-1k-T7r">
@@ -241,7 +221,7 @@
                                     <action selector="skipHealthConnection:" destination="Cbv-h2-HUk" eventType="touchUpInside" id="YuW-QY-RhA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM7-KP-kFo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="174" translatesAutoresizingMaskIntoConstraints="NO" id="TM7-KP-kFo">
                                 <rect key="frame" x="213" y="63" width="174" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TM7-KP-kFo" secondAttribute="height" multiplier="99:25" id="Gaw-Tn-bxu"/>
@@ -303,7 +283,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR0-76-F1q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="122.5" translatesAutoresizingMaskIntoConstraints="NO" id="QR0-76-F1q">
                                 <rect key="frame" x="239" y="63" width="122.5" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QR0-76-F1q" secondAttribute="height" multiplier="61:22" id="5mR-rE-17k"/>
@@ -315,7 +295,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationPin" translatesAutoresizingMaskIntoConstraints="NO" id="IWi-Mr-0gL">
                                 <rect key="frame" x="248" y="179" width="105" height="151"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUg-E8-Uyh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="159" translatesAutoresizingMaskIntoConstraints="NO" id="MUg-E8-Uyh">
                                 <rect key="frame" x="221" y="376" width="159" height="99"/>
                                 <string key="text">Allow feelzy to 
 gain access to
@@ -417,7 +397,7 @@ your location</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Etp-Yk-zJA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="103" translatesAutoresizingMaskIntoConstraints="NO" id="Etp-Yk-zJA">
                                 <rect key="frame" x="249" y="63" width="103" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Etp-Yk-zJA" secondAttribute="height" multiplier="103:44" id="x0H-T7-2iB"/>
@@ -524,7 +504,7 @@ your location</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hQ-00-dnc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="129" translatesAutoresizingMaskIntoConstraints="NO" id="9hQ-00-dnc">
                                 <rect key="frame" x="236" y="63" width="129" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9hQ-00-dnc" secondAttribute="height" multiplier="129:44" id="hqo-AS-p1h"/>
@@ -654,7 +634,7 @@ your location</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compensation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qq-ZE-ENm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compensation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="209" translatesAutoresizingMaskIntoConstraints="NO" id="6qq-ZE-ENm">
                                 <rect key="frame" x="196" y="63" width="209" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6qq-ZE-ENm" secondAttribute="height" multiplier="19:4" id="Dy9-Rm-WG2"/>
@@ -787,6 +767,6 @@ your location</string>
         <image name="maleOutline" width="137" height="194"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y6U-zk-ZU6"/>
+        <segue reference="kY3-pI-nqN"/>
     </inferredMetricsTieBreakers>
 </document>
