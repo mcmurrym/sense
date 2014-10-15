@@ -14,11 +14,13 @@ class EmotionView: UIView {
     var leftEyeShape: CAShapeLayer
     var rightEyeShape: CAShapeLayer
     var strokeColor: UIColor
+    var centerOffset: CGFloat
+    
     override init(frame: CGRect) {
         self.smileShape = CAShapeLayer()
         self.leftEyeShape = CAShapeLayer()
         self.rightEyeShape = CAShapeLayer()
-        
+        self.centerOffset = 0
         self.strokeColor = UIColor.blackColor()
         super.init(frame: frame)
         
@@ -29,7 +31,7 @@ class EmotionView: UIView {
         self.smileShape = CAShapeLayer()
         self.leftEyeShape = CAShapeLayer()
         self.rightEyeShape = CAShapeLayer()
-        
+        self.centerOffset = 0
         self.strokeColor = UIColor.blackColor()
         super.init(coder: aDecoder)
         
@@ -47,8 +49,12 @@ class EmotionView: UIView {
         self.smileShape.speed = 1
         self.smileShape.strokeColor = self.strokeColor.CGColor
         self.smileShape.speed = 0
+        
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
         self.leftEyeShape.fillColor = self.strokeColor.CGColor
         self.rightEyeShape.fillColor = self.strokeColor.CGColor
+        CATransaction.commit()
     }
     
     func setup() {
@@ -174,7 +180,7 @@ class EmotionView: UIView {
                 self.smileShape.addAnimation(basic, forKey: "morph")
             }
         } else if yDiff > 0 {
-            var maxYDiff = self.superview!.frame.size.height / 2 - self.frame.size.height / 2
+            var maxYDiff = (self.superview!.frame.size.height - self.centerOffset) / 2 - self.frame.size.height / 2
             
             var percentageToCenter = yDiff / maxYDiff
             

@@ -10,27 +10,41 @@ import UIKit
 
 class MoodLogViewController: UIViewController {
 
+    @IBOutlet weak var howAreYouLabel: UILabel!
     var smile: EmotionView = EmotionView(frame: CGRectMake(0, 0, 122, 122))
+    var smileLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.smile.hidden = true
         self.smile.opaque = false
         self.view.addSubview(self.smile)
+        self.smile.centerOffset = 40
         
         var pan = UIPanGestureRecognizer(target: self, action: "panned:")
         self.view.addGestureRecognizer(pan)
         
+        self.smileLabel = UILabel()
+        self.smileLabel?.font = UIFont(name: "Roboto-Light", size: 33.0)
+        self.smileLabel?.textColor = UIColor.whiteColor()
+        self.smileLabel?.textAlignment = NSTextAlignment.Center
+        self.smileLabel?.text = "Pretty dang good"
+        self.smileLabel?.alpha = 0.0
+        self.smileLabel?.sizeToFit()
+        self.view.addSubview(self.smileLabel!)
+
         updateColors()
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        var startPoint = CGPointMake(self.view.center.x, self.smile.bounds.size.height / 2)
+        var startPoint = CGPointMake(self.view.center.x, self.view.bounds.size.height / 2)
         
         self.smile.center = startPoint
+        
+        self.smile.hidden = false
         
     }
     
@@ -53,6 +67,13 @@ class MoodLogViewController: UIViewController {
     func panned(panGesture: UIPanGestureRecognizer) {
         
         if panGesture.state == UIGestureRecognizerState.Began {
+            
+            self.smileLabel?.alpha = 0.0
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.howAreYouLabel.alpha = 0.0
+
+            })
+            
             var touchPoint = panGesture.locationInView(self.view)
             
             var newPoint = self.smile.center
@@ -74,17 +95,21 @@ class MoodLogViewController: UIViewController {
             newPoint.x = self.view.center.x
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.smile.center = newPoint
+                self.smileLabel?.alpha = 1.0
             })
-
-            
         }
         
         var translation = panGesture.translationInView(self.view)
         
         var newCenter = CGPointMake(self.smile.center.x, self.smile.center.y + translation.y)
         
-        if  newCenter.y - self.smile.bounds.size.height / 2 >= 0 && newCenter.y < self.view.bounds.size.height - self.smile.bounds.size.height / 2 {
+        if  newCenter.y - self.smile.bounds.size.height / 2 >= 0 && newCenter.y < self.view.bounds.size.height - self.smile.bounds.size.height / 2 - 40 {
             self.smile.center = newCenter
+            
+            var labelCenter = newCenter
+            labelCenter.y += 80
+            
+            self.smileLabel?.center = labelCenter
         }
         
         panGesture.setTranslation(CGPointZero, inView: self.view)
