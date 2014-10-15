@@ -41,4 +41,9 @@ class SignUpGenderViewController: UIViewController {
         
         self.femaleButton.selected = !self.femaleButton.selected
     }
+    
+    @IBAction func next(sender: AnyObject) {
+        self.performSegueWithIdentifier("toBirthdate", sender: nil)
+    }
+    
 }
