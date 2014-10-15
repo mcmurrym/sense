@@ -18,6 +18,8 @@
 		BE2214DA19DDBBC200429F22 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214D919DDBBC200429F22 /* LaunchViewController.swift */; };
 		BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DB19DDBFE600429F22 /* Settings.swift */; };
 		BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */; };
+		BE41080219EE2A5F006F8DB1 /* SignUpBirthdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41080119EE2A5F006F8DB1 /* SignUpBirthdateViewController.swift */; };
+		BE41080419EE2E6E006F8DB1 /* SignUpCompensationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41080319EE2E6E006F8DB1 /* SignUpCompensationViewController.swift */; };
 		BE4825D819DED457008B56DE /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */; };
 		BE4825DB19DF02E1008B56DE /* signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4825DA19DF02E1008B56DE /* signin.storyboard */; };
 		BE4825DD19DF0FD9008B56DE /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */; };
@@ -57,6 +59,8 @@
 		BE2214D919DDBBC200429F22 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		BE2214DB19DDBFE600429F22 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchBackgroundView.swift; sourceTree = "<group>"; };
+		BE41080119EE2A5F006F8DB1 /* SignUpBirthdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBirthdateViewController.swift; sourceTree = "<group>"; };
+		BE41080319EE2E6E006F8DB1 /* SignUpCompensationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCompensationViewController.swift; sourceTree = "<group>"; };
 		BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		BE4825DA19DF02E1008B56DE /* signin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = signin.storyboard; sourceTree = "<group>"; };
 		BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				BE4825DA19DF02E1008B56DE /* signin.storyboard */,
+				BE41080319EE2E6E006F8DB1 /* SignUpCompensationViewController.swift */,
+				BE41080119EE2A5F006F8DB1 /* SignUpBirthdateViewController.swift */,
 				BEF632CC19EDD6C000D683A2 /* SignUpGenderViewController.swift */,
 				BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */,
 				BE0A82A119E8534D005392E2 /* SignUpHealthConnectViewController.swift */,
@@ -366,6 +372,8 @@
 			files = (
 				BEF632CB19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift in Sources */,
 				BE71453519E09D2B00B3A042 /* String.swift in Sources */,
+				BE41080219EE2A5F006F8DB1 /* SignUpBirthdateViewController.swift in Sources */,
+				BE41080419EE2E6E006F8DB1 /* SignUpCompensationViewController.swift in Sources */,
 				BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */,
 				BE06AF4019DCB35A0045C011 /* AppDelegate.swift in Sources */,
 				BE2214DA19DDBBC200429F22 /* LaunchViewController.swift in Sources */,

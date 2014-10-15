@@ -19,8 +19,13 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
         </mutableArray>
         <mutableArray key="Roboto-Thin.ttf">
+            <string>Roboto-Thin</string>
+            <string>Roboto-Thin</string>
+            <string>Roboto-Thin</string>
+            <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
@@ -431,9 +436,6 @@ your location</string>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="selected" image="maleFill"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="37" y="257" width="137" height="194"/>
-                                </variation>
                                 <connections>
                                     <action selector="maleButtonTap:" destination="AeV-gq-m8N" eventType="touchUpInside" id="t1o-Vu-5TC"/>
                                 </connections>
@@ -510,10 +512,10 @@ your location</string>
             </objects>
             <point key="canvasLocation" x="2204" y="126"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up Birthdate View Controller-->
         <scene sceneID="NId-Oz-mTf">
             <objects>
-                <viewController id="XoU-4q-fTf" sceneMemberID="viewController">
+                <viewController id="XoU-4q-fTf" customClass="SignUpBirthdateViewController" customModule="sense" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hqb-zU-Uhe"/>
                         <viewControllerLayoutGuide type="bottom" id="jCf-AQ-4cG"/>
@@ -572,7 +574,7 @@ your location</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZg-NM-NnO" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="217" y="598" width="166" height="50"/>
+                                <rect key="frame" x="217" y="421" width="166" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Jc0-8M-vjg"/>
@@ -587,7 +589,7 @@ your location</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="connectToLocation:" destination="aSF-zL-YDC" eventType="touchUpInside" id="ZdP-ks-hiN"/>
+                                    <action selector="next:" destination="XoU-4q-fTf" eventType="touchUpInside" id="4KR-Ye-In3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -632,13 +634,151 @@ your location</string>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="ytC-bY-7f5" kind="show" identifier="toCompensation" id="Kuj-ee-e1E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbA-SL-Ayn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2943" y="126"/>
         </scene>
+        <!--Sign Up Compensation View Controller-->
+        <scene sceneID="nGm-nS-D9z">
+            <objects>
+                <viewController id="ytC-bY-7f5" customClass="SignUpCompensationViewController" customModule="sense" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="abd-ZZ-FEN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Czs-bt-2bw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q3T-L1-Kuv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compensation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qq-ZE-ENm">
+                                <rect key="frame" x="196" y="63" width="209" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6qq-ZE-ENm" secondAttribute="height" multiplier="19:4" id="Dy9-Rm-WG2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSg-Pk-VjK">
+                                <rect key="frame" x="308" y="206" width="151" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wSg-Pk-VjK" secondAttribute="height" multiplier="1:1" id="Ihf-w7-jAm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
+                                <state key="normal" title="Salary" backgroundImage="compensationCircle">
+                                    <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Salary" backgroundImage="compensationFill">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="salaryButtonTapped:" destination="ytC-bY-7f5" eventType="touchUpInside" id="joK-tN-6Ik"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9RD-ev-UHO">
+                                <rect key="frame" x="225" y="360" width="151" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9RD-ev-UHO" secondAttribute="height" multiplier="1:1" id="ePu-U2-Aek"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
+                                <state key="normal" title="Other" backgroundImage="compensationCircle">
+                                    <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="compensationFill">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="otherButtonTapped:" destination="ytC-bY-7f5" eventType="touchUpInside" id="w0u-3g-Hax"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhR-jD-JfU">
+                                <rect key="frame" x="141" y="206" width="151" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IhR-jD-JfU" secondAttribute="height" multiplier="1:1" id="zki-Lu-cci"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
+                                <state key="normal" title="Hourly" backgroundImage="compensationCircle">
+                                    <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="compensationFill">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hourlyButtonTapped:" destination="ytC-bY-7f5" eventType="touchUpInside" id="aVU-Ev-0Bb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usW-Ol-LQV" customClass="PillButton" customModule="sense" customModuleProvider="target">
+                                <rect key="frame" x="217" y="598" width="166" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="1dO-Te-Hkc"/>
+                                    <constraint firstAttribute="height" constant="50" id="FsI-og-MxP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="next:" destination="ytC-bY-7f5" eventType="touchUpInside" id="cIF-xk-Uc8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="IhR-jD-JfU" secondAttribute="centerX" constant="83.5" id="8dj-1Q-K9k"/>
+                            <constraint firstItem="6qq-ZE-ENm" firstAttribute="top" secondItem="abd-ZZ-FEN" secondAttribute="bottom" priority="750" constant="63" id="CXi-3A-BZL"/>
+                            <constraint firstItem="IhR-jD-JfU" firstAttribute="top" secondItem="abd-ZZ-FEN" secondAttribute="bottom" priority="750" constant="206" id="EDS-V0-3pr"/>
+                            <constraint firstItem="wSg-Pk-VjK" firstAttribute="centerY" secondItem="IhR-jD-JfU" secondAttribute="centerY" id="Luu-lc-HQd"/>
+                            <constraint firstItem="wSg-Pk-VjK" firstAttribute="leading" secondItem="IhR-jD-JfU" secondAttribute="trailing" constant="16" id="Psf-yt-dUn"/>
+                            <constraint firstItem="Czs-bt-2bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="usW-Ol-LQV" secondAttribute="bottom" multiplier="1.1" constant="-33" id="T2S-h5-Eyf"/>
+                            <constraint firstAttribute="centerX" secondItem="6qq-ZE-ENm" secondAttribute="centerX" priority="750" id="bmI-8v-xmL"/>
+                            <constraint firstAttribute="centerX" secondItem="9RD-ev-UHO" secondAttribute="centerX" constant="-0.5" id="eS8-R9-zEt"/>
+                            <constraint firstAttribute="centerX" secondItem="usW-Ol-LQV" secondAttribute="centerX" id="gGs-2N-lGY"/>
+                            <constraint firstItem="Czs-bt-2bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IhR-jD-JfU" secondAttribute="bottom" constant="228" id="skp-h2-G11"/>
+                            <constraint firstItem="usW-Ol-LQV" firstAttribute="top" secondItem="abd-ZZ-FEN" secondAttribute="bottom" priority="750" constant="598" id="vKE-Q3-x5j"/>
+                            <constraint firstItem="9RD-ev-UHO" firstAttribute="top" secondItem="IhR-jD-JfU" secondAttribute="bottom" constant="3" id="zvp-S1-OPt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="skp-h2-G11"/>
+                                <exclude reference="T2S-h5-Eyf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="skp-h2-G11"/>
+                                <include reference="T2S-h5-Eyf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="hourlyButton" destination="IhR-jD-JfU" id="LeG-p1-oMg"/>
+                        <outlet property="otherButton" destination="9RD-ev-UHO" id="uNq-Sh-UMp"/>
+                        <outlet property="salaryButton" destination="wSg-Pk-VjK" id="T3g-ac-iTS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k8s-GA-8Gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3650" y="126"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="compensationCircle" width="151" height="151"/>
+        <image name="compensationFill" width="150" height="150"/>
         <image name="femaleFill" width="173" height="204"/>
         <image name="femaleOutline" width="175" height="205"/>
         <image name="healthIcon" width="132" height="132"/>
