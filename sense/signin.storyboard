@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ocd-We-rOG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ocd-We-rOG">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -79,9 +79,6 @@
                                 <color key="textColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="42"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="60" y="194" width="281" height="56"/>
-                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="Ocd-We-rOG" id="5JG-xi-jOz"/>
                                 </connections>
@@ -104,9 +101,6 @@
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="150" y="52" width="101" height="47"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,7 +184,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoY-fb-J6M" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="217" y="563" width="166" height="50"/>
+                                <rect key="frame" x="217" y="534" width="166" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="N3A-hz-S2f"/>
@@ -209,7 +203,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-zx-h3Y" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="217" y="629" width="166" height="50"/>
+                                <rect key="frame" x="217" y="600" width="166" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="LpT-I6-IpQ"/>
                                     <constraint firstAttribute="height" constant="50" id="vNk-MY-cay"/>
@@ -236,7 +230,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UgS-ZF-ZB9">
-                                <rect key="frame" x="282" y="504" width="37" height="37"/>
+                                <rect key="frame" x="282" y="350" width="37" height="37"/>
                                 <color key="color" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -257,7 +251,7 @@
                             <constraint firstItem="fY6-zx-h3Y" firstAttribute="top" secondItem="HoY-fb-J6M" secondAttribute="bottom" constant="16" id="mYQ-DK-oSl"/>
                             <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UgS-ZF-ZB9" secondAttribute="bottom" multiplier="1.4" constant="95" id="pL9-ng-Ctv"/>
                             <constraint firstItem="TM7-KP-kFo" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="63" id="rOR-9N-lkY"/>
-                            <constraint firstItem="HoY-fb-J6M" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="543" id="xZB-PS-ii5"/>
+                            <constraint firstItem="HoY-fb-J6M" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="534" id="xZB-PS-ii5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -301,34 +295,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="122.5" translatesAutoresizingMaskIntoConstraints="NO" id="QR0-76-F1q">
-                                <rect key="frame" x="239" y="63" width="122.5" height="44"/>
+                                <rect key="frame" x="239" y="63" width="123" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QR0-76-F1q" secondAttribute="height" multiplier="61:22" id="5mR-rE-17k"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="136" y="53" width="128" height="46"/>
-                                </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationPin" translatesAutoresizingMaskIntoConstraints="NO" id="IWi-Mr-0gL">
                                 <rect key="frame" x="248" y="179" width="105" height="151"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="159" translatesAutoresizingMaskIntoConstraints="NO" id="MUg-E8-Uyh">
                                 <rect key="frame" x="221" y="376" width="159" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MUg-E8-Uyh" secondAttribute="height" multiplier="53:33" id="Wbz-Y0-06t"/>
+                                </constraints>
                                 <string key="text">Allow feelzy to 
 gain access to
 your location</string>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="25"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="128" y="309" width="146" height="146"/>
-                                </variation>
+                                <variation key="widthClass=compact"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTs-qj-pTw" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="217" y="598" width="166" height="50"/>
+                                <rect key="frame" x="217" y="534" width="166" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HCN-sc-r0a"/>
@@ -347,7 +339,7 @@ your location</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkr-2v-cda" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="217" y="664" width="166" height="50"/>
+                                <rect key="frame" x="217" y="600" width="166" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Af6-l5-Wuv"/>
                                     <constraint firstAttribute="width" constant="166" id="o1r-Hd-cvj"/>
@@ -373,14 +365,14 @@ your location</string>
                             <constraint firstAttribute="centerX" secondItem="LTs-qj-pTw" secondAttribute="centerX" id="GGb-Lh-FYH"/>
                             <constraint firstItem="MUg-E8-Uyh" firstAttribute="top" secondItem="sgS-et-cle" secondAttribute="bottom" priority="750" constant="376" id="Qhn-QB-yyJ"/>
                             <constraint firstItem="Mkr-2v-cda" firstAttribute="top" secondItem="LTs-qj-pTw" secondAttribute="bottom" constant="16" id="SqZ-vV-fru"/>
-                            <constraint firstItem="WSa-jA-GLZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IWi-Mr-0gL" secondAttribute="bottom" constant="264" id="TdQ-b2-BA9"/>
-                            <constraint firstItem="LTs-qj-pTw" firstAttribute="top" secondItem="sgS-et-cle" secondAttribute="bottom" priority="750" constant="598" id="VpX-CX-DYv"/>
+                            <constraint firstItem="WSa-jA-GLZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IWi-Mr-0gL" secondAttribute="bottom" constant="345" id="TdQ-b2-BA9"/>
+                            <constraint firstItem="LTs-qj-pTw" firstAttribute="top" secondItem="sgS-et-cle" secondAttribute="bottom" priority="750" constant="534" id="VpX-CX-DYv"/>
                             <constraint firstAttribute="centerX" secondItem="Mkr-2v-cda" secondAttribute="centerX" id="Xm6-Y9-wmA"/>
                             <constraint firstAttribute="centerX" secondItem="QR0-76-F1q" secondAttribute="centerX" id="c80-A7-1S6"/>
                             <constraint firstItem="WSa-jA-GLZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QR0-76-F1q" secondAttribute="bottom" multiplier="2.8" constant="324" id="caK-95-A60"/>
                             <constraint firstItem="IWi-Mr-0gL" firstAttribute="top" secondItem="sgS-et-cle" secondAttribute="bottom" priority="750" constant="179" id="gIP-dH-Dav"/>
-                            <constraint firstItem="WSa-jA-GLZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MUg-E8-Uyh" secondAttribute="bottom" constant="145" id="oMZ-LS-nyg"/>
-                            <constraint firstItem="WSa-jA-GLZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Mkr-2v-cda" secondAttribute="bottom" multiplier="1.1" constant="-33" id="toa-6w-157"/>
+                            <constraint firstItem="WSa-jA-GLZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MUg-E8-Uyh" secondAttribute="bottom" constant="177" id="oMZ-LS-nyg"/>
+                            <constraint firstItem="WSa-jA-GLZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Mkr-2v-cda" secondAttribute="bottom" multiplier="1.1" constant="-2" id="toa-6w-157"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -428,28 +420,11 @@ your location</string>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="145" y="52" width="110" height="47"/>
-                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V9-Pv-b7F">
-                                <rect key="frame" x="141" y="244" width="137" height="194"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="7V9-Pv-b7F" secondAttribute="height" multiplier="137:194" id="zMg-aW-7oc"/>
-                                </constraints>
-                                <state key="normal" image="maleOutline">
-                                    <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="maleFill"/>
-                                <connections>
-                                    <action selector="maleButtonTap:" destination="AeV-gq-m8N" eventType="touchUpInside" id="t1o-Vu-5TC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jQ-yr-nCk">
                                 <rect key="frame" x="303" y="233" width="175" height="205"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="6jQ-yr-nCk" secondAttribute="height" multiplier="35:41" id="pfZ-sO-Ig7"/>
+                                    <constraint firstAttribute="width" secondItem="6jQ-yr-nCk" secondAttribute="height" multiplier="35:41" id="5jS-zC-qBa"/>
                                 </constraints>
                                 <state key="normal" image="femaleOutline">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -478,23 +453,40 @@ your location</string>
                                     <action selector="next:" destination="AeV-gq-m8N" eventType="touchUpInside" id="veL-bh-R85"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V9-Pv-b7F">
+                                <rect key="frame" x="141" y="244" width="137" height="194"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7V9-Pv-b7F" secondAttribute="height" multiplier="137:194" id="7g7-sS-X50"/>
+                                </constraints>
+                                <state key="normal" image="maleOutline">
+                                    <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="maleFill"/>
+                                <connections>
+                                    <action selector="maleButtonTap:" destination="AeV-gq-m8N" eventType="touchUpInside" id="t1o-Vu-5TC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6jQ-yr-nCk" firstAttribute="bottom" secondItem="7V9-Pv-b7F" secondAttribute="bottom" id="5Ci-3s-txQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6jQ-yr-nCk" secondAttribute="trailing" constant="5" id="IHq-4A-PoF"/>
                             <constraint firstAttribute="centerX" secondItem="Eba-Nc-PWa" secondAttribute="centerX" id="M9y-B3-8cO"/>
+                            <constraint firstItem="7V9-Pv-b7F" firstAttribute="top" secondItem="6jQ-yr-nCk" secondAttribute="top" constant="11" id="QMc-SC-XSE"/>
                             <constraint firstItem="6jQ-yr-nCk" firstAttribute="top" secondItem="awy-ix-Hd4" secondAttribute="bottom" priority="750" constant="233" id="QVc-bW-tXZ"/>
                             <constraint firstItem="LT7-Nv-mYr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Etp-Yk-zJA" secondAttribute="bottom" multiplier="2.8" constant="324" id="TUF-8m-xbS"/>
                             <constraint firstItem="LT7-Nv-mYr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6jQ-yr-nCk" secondAttribute="bottom" constant="171" id="XEL-Ff-F7B"/>
-                            <constraint firstAttribute="centerX" secondItem="6jQ-yr-nCk" secondAttribute="centerX" constant="-90.5" id="cms-oC-Fd9"/>
+                            <constraint firstAttribute="centerX" secondItem="6jQ-yr-nCk" secondAttribute="centerX" constant="-81.5" id="cms-oC-Fd9"/>
                             <constraint firstItem="Eba-Nc-PWa" firstAttribute="top" secondItem="awy-ix-Hd4" secondAttribute="bottom" priority="750" constant="598" id="eZI-eE-eHT"/>
                             <constraint firstAttribute="centerX" secondItem="Etp-Yk-zJA" secondAttribute="centerX" constant="-0.25" id="j8E-jr-gpG"/>
                             <constraint firstItem="Etp-Yk-zJA" firstAttribute="top" secondItem="awy-ix-Hd4" secondAttribute="bottom" priority="750" constant="63" id="vJn-rl-apq"/>
                             <constraint firstItem="6jQ-yr-nCk" firstAttribute="leading" secondItem="7V9-Pv-b7F" secondAttribute="trailing" constant="25" id="wRT-qB-fzx"/>
-                            <constraint firstItem="LT7-Nv-mYr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Eba-Nc-PWa" secondAttribute="bottom" multiplier="1.1" constant="-33" id="x4G-Oh-hbA"/>
+                            <constraint firstItem="LT7-Nv-mYr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Eba-Nc-PWa" secondAttribute="bottom" multiplier="1.1" constant="-2" id="x4G-Oh-hbA"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="IHq-4A-PoF"/>
                                 <exclude reference="TUF-8m-xbS"/>
                                 <exclude reference="XEL-Ff-F7B"/>
                                 <exclude reference="x4G-Oh-hbA"/>
@@ -502,6 +494,7 @@ your location</string>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <include reference="IHq-4A-PoF"/>
                                 <include reference="TUF-8m-xbS"/>
                                 <include reference="XEL-Ff-F7B"/>
                                 <include reference="x4G-Oh-hbA"/>
@@ -539,9 +532,6 @@ your location</string>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="133" y="52" width="136" height="47"/>
-                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y22-0O-brO">
                                 <rect key="frame" x="185" y="301" width="58" height="43"/>
@@ -579,27 +569,18 @@ your location</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="95" y="260" width="38" height="16"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-vK-xB2">
                                 <rect key="frame" x="373" y="364" width="26" height="18"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="274" y="260" width="26" height="16"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZf-VR-gN4">
                                 <rect key="frame" x="289" y="364" width="22" height="18"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="189" y="260" width="23" height="16"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZg-NM-NnO" customClass="PillButton" customModule="sense" customModuleProvider="target">
                                 <rect key="frame" x="217" y="421" width="166" height="50"/>
@@ -694,9 +675,6 @@ your location</string>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="92" y="63" width="216" height="45"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSg-Pk-VjK">
                                 <rect key="frame" x="308" y="206" width="151" height="151"/>
@@ -779,11 +757,11 @@ your location</string>
                             <constraint firstItem="IhR-jD-JfU" firstAttribute="top" secondItem="abd-ZZ-FEN" secondAttribute="bottom" priority="750" constant="206" id="EDS-V0-3pr"/>
                             <constraint firstItem="wSg-Pk-VjK" firstAttribute="centerY" secondItem="IhR-jD-JfU" secondAttribute="centerY" id="Luu-lc-HQd"/>
                             <constraint firstItem="wSg-Pk-VjK" firstAttribute="leading" secondItem="IhR-jD-JfU" secondAttribute="trailing" constant="16" id="Psf-yt-dUn"/>
-                            <constraint firstItem="Czs-bt-2bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="usW-Ol-LQV" secondAttribute="bottom" multiplier="1.1" constant="-33" id="T2S-h5-Eyf"/>
+                            <constraint firstItem="Czs-bt-2bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="usW-Ol-LQV" secondAttribute="bottom" multiplier="1.1" constant="-2" id="T2S-h5-Eyf"/>
                             <constraint firstAttribute="centerX" secondItem="6qq-ZE-ENm" secondAttribute="centerX" priority="750" id="bmI-8v-xmL"/>
                             <constraint firstAttribute="centerX" secondItem="9RD-ev-UHO" secondAttribute="centerX" constant="-0.5" id="eS8-R9-zEt"/>
                             <constraint firstAttribute="centerX" secondItem="usW-Ol-LQV" secondAttribute="centerX" id="gGs-2N-lGY"/>
-                            <constraint firstItem="Czs-bt-2bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IhR-jD-JfU" secondAttribute="bottom" constant="228" id="skp-h2-G11"/>
+                            <constraint firstItem="Czs-bt-2bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IhR-jD-JfU" secondAttribute="bottom" constant="262" id="skp-h2-G11"/>
                             <constraint firstItem="usW-Ol-LQV" firstAttribute="top" secondItem="abd-ZZ-FEN" secondAttribute="bottom" priority="750" constant="598" id="vKE-Q3-x5j"/>
                             <constraint firstItem="9RD-ev-UHO" firstAttribute="top" secondItem="IhR-jD-JfU" secondAttribute="bottom" constant="3" id="zvp-S1-OPt"/>
                         </constraints>
