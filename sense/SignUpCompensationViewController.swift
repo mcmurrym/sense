@@ -14,11 +14,34 @@ class SignUpCompensationViewController: UIViewController {
     @IBOutlet weak var salaryButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
     @IBOutlet weak var next: PillButton!
+    var pageControl: FXPageControl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.pageControl = self.navigationController?.view.viewWithTag(pageControlTag) as? FXPageControl
+        
+        if let aPageControl = pageControl {
+            aPageControl.currentPage = 4
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let aPageControl = self.pageControl {
+            UIView.animateWithDuration(0.1, delay: 0.1, options: UIViewAnimationOptions.allZeros, animations: { () -> Void in
+                aPageControl.alpha = 0.0
+            }, completion: { (completed: Bool) -> Void in
+                aPageControl.removeFromSuperview()
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {

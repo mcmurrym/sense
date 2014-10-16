@@ -8,6 +8,7 @@
 
 import UIKit
 
+let pageControlTag = 121298
 
 class SignUpHealthConnectViewController: UIViewController {
 
@@ -15,25 +16,31 @@ class SignUpHealthConnectViewController: UIViewController {
     @IBOutlet weak var connectButton: PillButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var healthIcon: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.healthIcon.layer.shadowColor = UIColor.blackColor().CGColor
         self.healthIcon.layer.shadowOffset = CGSizeMake(0, 4)
         self.healthIcon.layer.shadowOpacity = 0.3
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let pageControl = FXPageControl(frame: CGRectMake(0, self.view.bounds.size.height - 50, self.view.bounds.size.width, 20))
-        pageControl.dotSpacing = 40
+        self.setupPageControl()
+    }
+    
+    func setupPageControl() {
+        let pageControl = FXPageControl(frame: CGRectMake(0, self.view.bounds.size.height - 40, self.view.bounds.size.width, 20))
+        pageControl.dotSpacing = 48
         pageControl.dotImage = UIImage(named: "strokeDot")
         pageControl.selectedDotImage = UIImage(named: "fillDot")
         pageControl.numberOfPages = 5
         pageControl.currentPage = 0
-        pageControl.backgroundColor = UIColor.whiteColor()
+        pageControl.tag = pageControlTag
+        pageControl.userInteractionEnabled = false
+        pageControl.backgroundColor = UIColor.clearColor()
         pageControl.alpha = 0.0
         self.navigationController?.view.addSubview(pageControl)
         
@@ -44,10 +51,6 @@ class SignUpHealthConnectViewController: UIViewController {
                                         pageControl.alpha = 1.0
                                    },
                                    completion: nil)
-        
-//        UIView.animateWithDuration(0.15, animations: { () -> Void in
-//            pageControl.alpha = 1.0
-//        })
     }
 
     override func didReceiveMemoryWarning() {

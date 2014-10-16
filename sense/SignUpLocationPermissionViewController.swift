@@ -15,6 +15,16 @@ class SignUpLocationPermissionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var pageControl: FXPageControl? = self.navigationController?.view.viewWithTag(pageControlTag) as? FXPageControl
+        
+        if let aPageControl = pageControl {
+            aPageControl.currentPage = 1
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

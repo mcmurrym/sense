@@ -23,6 +23,12 @@ class SignUpBirthdateViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.monthTextField.becomeFirstResponder()
+        
+        var pageControl: FXPageControl? = self.navigationController?.view.viewWithTag(pageControlTag) as? FXPageControl
+        
+        if let aPageControl = pageControl {
+            aPageControl.currentPage = 3
+        }
     }
 
     override func didReceiveMemoryWarning() {
