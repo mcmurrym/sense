@@ -78,9 +78,10 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
                 println("try again")
             }
         } else {
-            verifyMode = true
-            sendVerificationCode()
-            updateUIForCodeVerification(sender)
+            self.performSegueWithIdentifier("toHealth", sender: nil)
+//            verifyMode = true
+//            sendVerificationCode()
+//            updateUIForCodeVerification(sender)
         }
     }
     

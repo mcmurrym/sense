@@ -23,6 +23,32 @@ class SignUpHealthConnectViewController: UIViewController {
         self.healthIcon.layer.shadowOpacity = 0.3
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let pageControl = FXPageControl(frame: CGRectMake(0, self.view.bounds.size.height - 50, self.view.bounds.size.width, 20))
+        pageControl.dotSpacing = 40
+        pageControl.dotImage = UIImage(named: "strokeDot")
+        pageControl.selectedDotImage = UIImage(named: "fillDot")
+        pageControl.numberOfPages = 5
+        pageControl.currentPage = 0
+        pageControl.backgroundColor = UIColor.whiteColor()
+        pageControl.alpha = 0.0
+        self.navigationController?.view.addSubview(pageControl)
+        
+        UIView.animateWithDuration(0.15,
+                                   delay: 0.15,
+                                   options: UIViewAnimationOptions.allZeros,
+                                   animations: { () -> Void in
+                                        pageControl.alpha = 1.0
+                                   },
+                                   completion: nil)
+        
+//        UIView.animateWithDuration(0.15, animations: { () -> Void in
+//            pageControl.alpha = 1.0
+//        })
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

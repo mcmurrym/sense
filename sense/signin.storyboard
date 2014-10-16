@@ -190,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoY-fb-J6M" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="217" y="598" width="166" height="50"/>
+                                <rect key="frame" x="217" y="563" width="166" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="N3A-hz-S2f"/>
@@ -209,7 +209,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-zx-h3Y" customClass="PillButton" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="217" y="664" width="166" height="50"/>
+                                <rect key="frame" x="217" y="629" width="166" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="LpT-I6-IpQ"/>
                                     <constraint firstAttribute="height" constant="50" id="vNk-MY-cay"/>
@@ -242,7 +242,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UgS-ZF-ZB9" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="504" id="1La-WF-be7"/>
+                            <constraint firstItem="UgS-ZF-ZB9" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="350" id="1La-WF-be7"/>
                             <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LHz-NH-wsW" secondAttribute="bottom" multiplier="1.5" constant="120" id="5O8-Op-fbB"/>
                             <constraint firstAttribute="centerX" secondItem="TM7-KP-kFo" secondAttribute="centerX" id="BOw-KT-dCa"/>
                             <constraint firstItem="byx-qu-6an" firstAttribute="top" secondItem="LHz-NH-wsW" secondAttribute="bottom" constant="40" id="IA8-Sz-DbZ"/>
@@ -251,13 +251,13 @@
                             <constraint firstAttribute="centerX" secondItem="HoY-fb-J6M" secondAttribute="centerX" id="d2h-C8-Ekm"/>
                             <constraint firstItem="LHz-NH-wsW" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="219" id="el0-Vm-Q76"/>
                             <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TM7-KP-kFo" secondAttribute="bottom" multiplier="2.8" constant="324" id="hKu-Gf-xAs"/>
-                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fY6-zx-h3Y" secondAttribute="bottom" multiplier="1.1" constant="-33" id="k3T-DW-1Dc"/>
+                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fY6-zx-h3Y" secondAttribute="bottom" multiplier="1.1" constant="-2" id="k3T-DW-1Dc"/>
                             <constraint firstAttribute="centerX" secondItem="byx-qu-6an" secondAttribute="centerX" id="kUP-7f-EjW"/>
                             <constraint firstAttribute="centerX" secondItem="UgS-ZF-ZB9" secondAttribute="centerX" constant="-0.5" id="klS-w4-lia"/>
                             <constraint firstItem="fY6-zx-h3Y" firstAttribute="top" secondItem="HoY-fb-J6M" secondAttribute="bottom" constant="16" id="mYQ-DK-oSl"/>
-                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UgS-ZF-ZB9" secondAttribute="bottom" multiplier="1.3" constant="30" id="pL9-ng-Ctv"/>
+                            <constraint firstItem="dGv-8H-u75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UgS-ZF-ZB9" secondAttribute="bottom" multiplier="1.4" constant="95" id="pL9-ng-Ctv"/>
                             <constraint firstItem="TM7-KP-kFo" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="63" id="rOR-9N-lkY"/>
-                            <constraint firstItem="HoY-fb-J6M" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="598" id="xZB-PS-ii5"/>
+                            <constraint firstItem="HoY-fb-J6M" firstAttribute="top" secondItem="bCN-Tp-h2k" secondAttribute="bottom" priority="750" constant="543" id="xZB-PS-ii5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

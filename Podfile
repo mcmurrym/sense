@@ -7,6 +7,7 @@ pod 'Parse', '~> 1.4'
 pod 'ParseFacebookUtils', '~> 1.4'
 pod 'UIColor+Hex', '~> 1.0'
 pod 'libPhoneNumber-iOS', '~> 0.7'
+pod 'FXPageControl', '~> 1.3'
 
 end
 

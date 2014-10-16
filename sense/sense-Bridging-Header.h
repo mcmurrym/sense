@@ -7,3 +7,4 @@
 #import <libPhoneNumber-iOS/NBAsYouTypeFormatter.h>
 #import <libPhoneNumber-iOS/NBPhoneNumberUtil.h>
 #import <libPhoneNumber-iOS/NBPhoneNumber.h>
+#import <FXPageControl/FXPageControl.h>
