@@ -539,6 +539,7 @@ your location</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="monthChanged:" destination="XoU-4q-fTf" eventType="editingChanged" id="uIW-8y-7yM"/>
+                                    <outlet property="delegate" destination="XoU-4q-fTf" id="hIU-FT-UGC"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2nG-R9-ZV8">
@@ -552,6 +553,7 @@ your location</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="dayChanged:" destination="XoU-4q-fTf" eventType="editingChanged" id="cIc-4o-bRf"/>
+                                    <outlet property="delegate" destination="XoU-4q-fTf" id="lNQ-ZQ-Fkp"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Cs-tH-Fbg">
@@ -561,6 +563,7 @@ your location</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="yearChanged:" destination="XoU-4q-fTf" eventType="editingChanged" id="RAc-La-Cjo"/>
+                                    <outlet property="delegate" destination="XoU-4q-fTf" id="7vf-60-SFV"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NW-lW-cf1">
