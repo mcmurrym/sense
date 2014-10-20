@@ -420,8 +420,8 @@ your location</string>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jQ-yr-nCk">
-                                <rect key="frame" x="303" y="233" width="175" height="205"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jQ-yr-nCk">
+                                <rect key="frame" x="294" y="233" width="175" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6jQ-yr-nCk" secondAttribute="height" multiplier="35:41" id="5jS-zC-qBa"/>
                                 </constraints>
@@ -452,8 +452,8 @@ your location</string>
                                     <action selector="next:" destination="AeV-gq-m8N" eventType="touchUpInside" id="veL-bh-R85"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V9-Pv-b7F">
-                                <rect key="frame" x="141" y="244" width="137" height="194"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V9-Pv-b7F">
+                                <rect key="frame" x="132" y="244" width="137" height="194"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7V9-Pv-b7F" secondAttribute="height" multiplier="137:194" id="7g7-sS-X50"/>
                                 </constraints>
