@@ -58,7 +58,21 @@ class SignUpGenderViewController: UIViewController {
         if !self.maleButton.selected && !self.femaleButton.selected {
             self.next.bump()
         } else {
-            self.performSegueWithIdentifier("toBirthdate", sender: nil)
+            
+            let user = PFUser.currentUser()
+            if self.maleButton.selected {
+                user["biologicalSex"] = "Male"
+            } else {
+                user["biologicalSex"] = "Female"
+            }
+            
+            user.saveEventually()
+            
+            if let birthdate: NSDate = user["birthdate"] as? NSDate {
+                self.performSegueWithIdentifier("toCompensation", sender: nil)
+            } else {
+                self.performSegueWithIdentifier("toBirthdate", sender: nil)
+            }
         }
     }
     

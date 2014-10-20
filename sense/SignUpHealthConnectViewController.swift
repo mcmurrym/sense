@@ -67,6 +67,12 @@ class SignUpHealthConnectViewController: UIViewController {
         Health.sharedInstance.getPermission { (completed: Bool, error: NSError!) -> Void in
             self.activityIndicator.stopAnimating()
             if completed {
+                
+                let user = PFUser.currentUser()
+                user["birthdate"] = Health.sharedInstance.getBirthday()
+                user["biologicalSex"] = Health.sharedInstance.getBiologicalSex()
+                
+                user.saveEventually()
                 self.performSegueWithIdentifier("toLocation", sender: nil)
             } else {
                 self.connectButton.enabled = true

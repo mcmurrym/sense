@@ -394,6 +394,8 @@ your location</string>
                     <navigationItem key="navigationItem" id="gFt-By-Lid"/>
                     <connections>
                         <segue destination="AeV-gq-m8N" kind="show" identifier="toGender" id="Duu-4T-Sxe"/>
+                        <segue destination="XoU-4q-fTf" kind="show" identifier="toBirthdate" id="M6C-Fh-5Cb"/>
+                        <segue destination="ytC-bY-7f5" kind="show" identifier="toCompensation" id="mSj-IM-cMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lY-Qc-dlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -506,6 +508,7 @@ your location</string>
                         <outlet property="maleButton" destination="7V9-Pv-b7F" id="snV-bV-E4o"/>
                         <outlet property="next" destination="Eba-Nc-PWa" id="anD-d3-kxT"/>
                         <segue destination="XoU-4q-fTf" kind="show" identifier="toBirthdate" id="vfd-df-yCH"/>
+                        <segue destination="ytC-bY-7f5" kind="show" identifier="toCompensation" id="wro-4u-0hZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxl-na-7dg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -811,5 +814,7 @@ your location</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kY3-pI-nqN"/>
+        <segue reference="M6C-Fh-5Cb"/>
+        <segue reference="mSj-IM-cMU"/>
     </inferredMetricsTieBreakers>
 </document>

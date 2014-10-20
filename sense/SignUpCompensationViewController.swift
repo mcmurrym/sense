@@ -71,8 +71,27 @@ class SignUpCompensationViewController: UIViewController {
         if !self.salaryButton.selected && !self.hourlyButton.selected && !self.otherButton.selected {
             self.next.bump()
         } else {
-            let storyBoard = UIStoryboard(name: "dashboard", bundle: nil)
-            self.navigationController?.setViewControllers([storyBoard.instantiateViewControllerWithIdentifier("dashboard")], animated: true)
+            
+            let user = PFUser.currentUser()
+            
+            let comp = self.getComp()
+            
+            user["compensation"] = comp
+            
+            user.saveInBackgroundWithBlock({ (completed: Bool, error: NSError!) -> Void in
+                let storyBoard = UIStoryboard(name: "dashboard", bundle: nil)
+                self.navigationController?.setViewControllers([storyBoard.instantiateViewControllerWithIdentifier("dashboard")], animated: true)
+            })
+        }
+    }
+    
+    func getComp() -> String {
+        if self.salaryButton.selected {
+            return "salary"
+        } else if self.hourlyButton.selected {
+            return "hourly"
+        } else {
+            return "other"
         }
     }
 }

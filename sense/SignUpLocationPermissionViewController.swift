@@ -33,10 +33,24 @@ class SignUpLocationPermissionViewController: UIViewController {
     
     @IBAction func connectToLocation(sender: AnyObject) {
         Location.sharedInstance.requestAuthorization()
-        self.performSegueWithIdentifier("toGender", sender: nil)
+        self.moveToNext()
     }
 
     @IBAction func skipLocationConnection(sender: AnyObject) {
-        self.performSegueWithIdentifier("toGender", sender: nil)
+        self.moveToNext()
+    }
+    
+    func moveToNext() {
+        let user = PFUser.currentUser()
+        
+        if let bioSex: String = user["biologicalSex"] as? String {
+            if let birthdate: NSDate = user["birthdate"] as? NSDate {
+                self.performSegueWithIdentifier("toCompensation", sender: nil)
+            } else {
+                self.performSegueWithIdentifier("toBirthdate", sender: nil)
+            }
+        } else {
+            self.performSegueWithIdentifier("toGender", sender: nil)
+        }
     }
 }

@@ -40,6 +40,13 @@ class SignUpBirthdateViewController: UIViewController, UITextFieldDelegate {
             var date: NSDate? = dateFormatter.dateFromString(dateString)
             
             if let hasDate = date {
+                
+                let user = PFUser.currentUser()
+                
+                user["birthdate"] = hasDate
+                
+                user.saveEventually()
+                
                 self.performSegueWithIdentifier("toCompensation", sender: nil)
             } else {
                 self.next.bump()

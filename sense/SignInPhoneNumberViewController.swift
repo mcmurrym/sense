@@ -65,6 +65,13 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         
         if verifyMode {
             if self.phoneNumberTextField.text == verifyCode {
+                
+                let user = PFUser()
+                user.username = self.numberToSend()
+                user.password = "common_8_Secret_()_Password_.:)"
+                user["phoneNumber"] = user.username
+                user.signUpInBackground()
+
                 if Health.isHealthDataAvailable() {
                     self.performSegueWithIdentifier("toHealth", sender: nil)
                 } else {
