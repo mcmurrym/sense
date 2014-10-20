@@ -317,7 +317,6 @@ your location</string>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="25"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTs-qj-pTw" customClass="PillButton" customModule="sense" customModuleProvider="target">
                                 <rect key="frame" x="217" y="534" width="166" height="50"/>
@@ -421,7 +420,7 @@ your location</string>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jQ-yr-nCk">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jQ-yr-nCk">
                                 <rect key="frame" x="303" y="233" width="175" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6jQ-yr-nCk" secondAttribute="height" multiplier="35:41" id="5jS-zC-qBa"/>
@@ -453,7 +452,7 @@ your location</string>
                                     <action selector="next:" destination="AeV-gq-m8N" eventType="touchUpInside" id="veL-bh-R85"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V9-Pv-b7F">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V9-Pv-b7F">
                                 <rect key="frame" x="141" y="244" width="137" height="194"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7V9-Pv-b7F" secondAttribute="height" multiplier="137:194" id="7g7-sS-X50"/>
@@ -678,9 +677,6 @@ your location</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSg-Pk-VjK">
                                 <rect key="frame" x="308" y="206" width="151" height="151"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="wSg-Pk-VjK" secondAttribute="height" multiplier="1:1" id="Ihf-w7-jAm"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <state key="normal" title="Salary" backgroundImage="compensationCircle">
                                     <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -696,9 +692,6 @@ your location</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9RD-ev-UHO">
                                 <rect key="frame" x="225" y="360" width="151" height="151"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="9RD-ev-UHO" secondAttribute="height" multiplier="1:1" id="ePu-U2-Aek"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <state key="normal" title="Other" backgroundImage="compensationCircle">
                                     <color key="titleColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -715,7 +708,7 @@ your location</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhR-jD-JfU">
                                 <rect key="frame" x="141" y="206" width="151" height="151"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="IhR-jD-JfU" secondAttribute="height" multiplier="1:1" id="zki-Lu-cci"/>
+                                    <constraint firstAttribute="width" secondItem="IhR-jD-JfU" secondAttribute="height" multiplier="1:1" id="rdg-ej-MA8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="33"/>
                                 <state key="normal" title="Hourly" backgroundImage="compensationCircle">
@@ -752,27 +745,39 @@ your location</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="IhR-jD-JfU" secondAttribute="centerX" constant="83.5" id="8dj-1Q-K9k"/>
+                            <constraint firstItem="IhR-jD-JfU" firstAttribute="height" secondItem="9RD-ev-UHO" secondAttribute="height" id="0ED-nr-HK0"/>
+                            <constraint firstItem="IhR-jD-JfU" firstAttribute="height" secondItem="wSg-Pk-VjK" secondAttribute="height" id="3x5-P6-Lht"/>
+                            <constraint firstItem="IhR-jD-JfU" firstAttribute="width" secondItem="wSg-Pk-VjK" secondAttribute="width" id="4Lb-dO-jQO"/>
+                            <constraint firstAttribute="centerX" secondItem="IhR-jD-JfU" secondAttribute="centerX" priority="750" constant="83.5" id="8dj-1Q-K9k"/>
                             <constraint firstItem="6qq-ZE-ENm" firstAttribute="top" secondItem="abd-ZZ-FEN" secondAttribute="bottom" priority="750" constant="63" id="CXi-3A-BZL"/>
                             <constraint firstItem="IhR-jD-JfU" firstAttribute="top" secondItem="abd-ZZ-FEN" secondAttribute="bottom" priority="750" constant="206" id="EDS-V0-3pr"/>
+                            <constraint firstItem="IhR-jD-JfU" firstAttribute="width" secondItem="9RD-ev-UHO" secondAttribute="width" id="Eee-CE-kBi"/>
                             <constraint firstItem="wSg-Pk-VjK" firstAttribute="centerY" secondItem="IhR-jD-JfU" secondAttribute="centerY" id="Luu-lc-HQd"/>
                             <constraint firstItem="wSg-Pk-VjK" firstAttribute="leading" secondItem="IhR-jD-JfU" secondAttribute="trailing" constant="16" id="Psf-yt-dUn"/>
+                            <constraint firstAttribute="trailing" secondItem="wSg-Pk-VjK" secondAttribute="trailing" constant="41" id="RLB-Go-svN"/>
                             <constraint firstItem="Czs-bt-2bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="usW-Ol-LQV" secondAttribute="bottom" multiplier="1.1" constant="-2" id="T2S-h5-Eyf"/>
+                            <constraint firstItem="IhR-jD-JfU" firstAttribute="leading" secondItem="q3T-L1-Kuv" secondAttribute="leading" constant="41" id="a9p-gv-S6U"/>
                             <constraint firstAttribute="centerX" secondItem="6qq-ZE-ENm" secondAttribute="centerX" priority="750" id="bmI-8v-xmL"/>
-                            <constraint firstAttribute="centerX" secondItem="9RD-ev-UHO" secondAttribute="centerX" constant="-0.5" id="eS8-R9-zEt"/>
+                            <constraint firstAttribute="centerX" secondItem="9RD-ev-UHO" secondAttribute="centerX" constant="-0.5" id="eKi-Rp-N9K"/>
                             <constraint firstAttribute="centerX" secondItem="usW-Ol-LQV" secondAttribute="centerX" id="gGs-2N-lGY"/>
+                            <constraint firstItem="IhR-jD-JfU" firstAttribute="centerX" secondItem="9RD-ev-UHO" secondAttribute="centerX" constant="-84" id="qyI-ia-NEK"/>
                             <constraint firstItem="Czs-bt-2bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IhR-jD-JfU" secondAttribute="bottom" constant="262" id="skp-h2-G11"/>
                             <constraint firstItem="usW-Ol-LQV" firstAttribute="top" secondItem="abd-ZZ-FEN" secondAttribute="bottom" priority="750" constant="598" id="vKE-Q3-x5j"/>
                             <constraint firstItem="9RD-ev-UHO" firstAttribute="top" secondItem="IhR-jD-JfU" secondAttribute="bottom" constant="3" id="zvp-S1-OPt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="a9p-gv-S6U"/>
+                                <exclude reference="qyI-ia-NEK"/>
+                                <exclude reference="RLB-Go-svN"/>
                                 <exclude reference="T2S-h5-Eyf"/>
                                 <exclude reference="skp-h2-G11"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <include reference="a9p-gv-S6U"/>
+                                <include reference="RLB-Go-svN"/>
                                 <include reference="T2S-h5-Eyf"/>
                                 <include reference="skp-h2-G11"/>
                             </mask>
