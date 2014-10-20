@@ -143,6 +143,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="next" destination="90e-zi-OwJ" id="DKe-pw-QfB"/>
                         <outlet property="phoneNumberTextField" destination="OSE-41-jhg" id="q9i-kH-lOd"/>
                         <segue destination="Cbv-h2-HUk" kind="show" identifier="toHealth" id="LWE-fr-i15"/>
                         <segue destination="aSF-zL-YDC" kind="show" identifier="toLocationFromSignIn" id="kY3-pI-nqN"/>
@@ -809,6 +810,6 @@ your location</string>
         <image name="maleOutline" width="137" height="194"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y6U-zk-ZU6"/>
+        <segue reference="kY3-pI-nqN"/>
     </inferredMetricsTieBreakers>
 </document>

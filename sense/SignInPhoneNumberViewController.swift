@@ -14,6 +14,7 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
     let verifyCode: String
     var verifyMode: Bool
     
+    @IBOutlet weak var next: PillButton!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     let numberFormatter: NBAsYouTypeFormatter
     var previousValue: String
@@ -42,11 +43,6 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
             forControlEvents: UIControlEvents.EditingChanged)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func textFieldChanged(textField: UITextField) {
         if !verifyMode {
             var textFieldLength = countElements(textField.text)
@@ -78,10 +74,32 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
                 println("try again")
             }
         } else {
-            self.performSegueWithIdentifier("toHealth", sender: nil)
-//            verifyMode = true
-//            sendVerificationCode()
-//            updateUIForCodeVerification(sender)
+            if self.numberValid() {
+                verifyMode = true
+                sendVerificationCode()
+                updateUIForCodeVerification(sender)
+            } else {
+                self.next.bump()
+            }
+        }
+    }
+    
+    func numberValid() -> Bool {
+        let numberUtil = NBPhoneNumberUtil.sharedInstance()
+        
+        var error: NSError?
+        
+        let number = numberUtil.parse(self.phoneNumberTextField.text,
+            defaultRegion: "US",
+            error: &error)
+        
+        var readyNumberError: NSError?
+        let readyNumber = numberUtil.format(number, numberFormat: NBEPhoneNumberFormatE164, error: &readyNumberError)
+        
+        if error != nil || readyNumberError != nil || countElements(readyNumber) != 12 {
+            return false
+        } else {
+            return true
         }
     }
     
@@ -119,15 +137,4 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         //change sign in text to verify
         button.setTitle("Verify", forState: UIControlState.Normal)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
