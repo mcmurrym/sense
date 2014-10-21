@@ -25,7 +25,7 @@ class MoodLogViewController: UIViewController {
         var pan = UIPanGestureRecognizer(target: self, action: "panned:")
         self.view.addGestureRecognizer(pan)
         
-        self.labelOptions = ["Pretty dang good", "Feeling good", "Meh", "Today is the worst!"]
+        self.labelOptions = ["Pretty dang good", "Feeling good", "Meh", "Bad day", "Today is the worst!"]
         
         self.smileLabel = UILabel()
         self.smileLabel?.font = UIFont(name: "Roboto-Light", size: 33.0)
@@ -37,7 +37,6 @@ class MoodLogViewController: UIViewController {
         self.view.addSubview(self.smileLabel!)
 
         updateColors()
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -127,12 +126,14 @@ class MoodLogViewController: UIViewController {
         
         var smileText = self.labelOptions![0]
         
-        if percentageTraveled > 0.25 && percentageTraveled < 0.50 {
+        if percentageTraveled > 0.2 && percentageTraveled < 0.4 {
             smileText = self.labelOptions![1]
-        } else if percentageTraveled > 0.50 && percentageTraveled < 0.75 {
+        } else if percentageTraveled > 0.40 && percentageTraveled < 0.60 {
             smileText = self.labelOptions![2]
-        } else if percentageTraveled > 0.75 {
+        } else if percentageTraveled > 0.60 && percentageTraveled < 0.80 {
             smileText = self.labelOptions![3]
+        } else if percentageTraveled > 0.80 {
+            smileText = self.labelOptions![4]
         }
         
         return smileText
