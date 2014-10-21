@@ -24,8 +24,9 @@ class LaunchViewController: UIViewController {
         
         if !self.runOnce {
             if let user = PFUser.currentUser() {
-                let storyBoard = UIStoryboard(name: "dashboard", bundle: nil)
-                self.navigationController?.setViewControllers([storyBoard.instantiateViewControllerWithIdentifier("dashboard")], animated: true)
+                if let navigationController = self.navigationController {
+                    DashboardViewController.showDashboardInNavigationController(navigationController)
+                }
             } else {
                 UIView.animateWithDuration(0.50,
                                            delay: 0.5,

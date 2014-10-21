@@ -66,15 +66,28 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         if verifyMode {
             if self.phoneNumberTextField.text == verifyCode {
                 
-                TemporaryUser.sharedInstance.phoneNumber = self.numberToSend()
-
-                if Health.isHealthDataAvailable() {
-                    self.performSegueWithIdentifier("toHealth", sender: nil)
-                } else {
-                    self.performSegueWithIdentifier("toLocationFromSignIn", sender: nil)
+                if let number = self.phoneNumber {
+                    
+                    let readyNumber = self.numberToSend(number)
+                    
+                    PFUser.logInWithUsernameInBackground(readyNumber, password: commonP, block: { (user: PFUser!, error: NSError!) -> Void in
+                        if user == nil {
+                            TemporaryUser.sharedInstance.phoneNumber = self.numberToSend(self.phoneNumber!)
+                            
+                            if Health.isHealthDataAvailable() {
+                                self.performSegueWithIdentifier("toHealth", sender: nil)
+                            } else {
+                                self.performSegueWithIdentifier("toLocationFromSignIn", sender: nil)
+                            }
+                        } else {
+                            if let navigationController = self.navigationController {
+                                DashboardViewController.showDashboardInNavigationController(navigationController)
+                            }
+                        }
+                    })
                 }
             } else {
-                println("try again")
+                self.next.bump()
             }
         } else {
             if self.numberValid() {
@@ -106,12 +119,12 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func numberToSend() -> String {
+    func numberToSend(raw: String) -> String {
         let numberUtil = NBPhoneNumberUtil.sharedInstance()
         
         var error: NSError?
         
-        let number = numberUtil.parse(self.phoneNumberTextField.text,
+        let number = numberUtil.parse(raw,
             defaultRegion: "US",
             error: &error)
         
@@ -122,7 +135,7 @@ class SignInPhoneNumberViewController: UIViewController, UITextFieldDelegate {
     }
     
     func sendVerificationCode() {
-        let readyNumber = numberToSend()
+        let readyNumber = numberToSend(self.phoneNumberTextField.text)
         
         PFCloud.callFunctionInBackground("smsVerify", withParameters: ["phoneNumber" : readyNumber, "verification" : verifyCode] ) {
             (resp: AnyObject!, error: NSError!) -> Void in

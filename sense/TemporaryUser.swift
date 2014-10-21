@@ -8,6 +8,8 @@
 
 import Foundation
 
+let commonP = "common_8_Yellow _ ()_Joe_.:)"
+
 class TemporaryUser {
 
     class var sharedInstance: TemporaryUser {
@@ -27,13 +29,12 @@ class TemporaryUser {
         let user = PFUser()
 
         user.username = self.phoneNumber!
-        user.password = "common_8_Secret_()_Password_.:)"
+        user.password = commonP
         user["phoneNumber"] = user.username
         user["biologicalSex"] = self.biologicalSex!
         user["birthdate"] = self.birthdate!
         user["compensation"] = self.compensation
         user.signUpInBackground()
-        
         return user
     }
 }

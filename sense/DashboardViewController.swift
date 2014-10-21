@@ -16,6 +16,11 @@ class DashboardViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    class func showDashboardInNavigationController(navigationController: UINavigationController) {
+        let storyBoard = UIStoryboard(name: "dashboard", bundle: nil)
+        navigationController.setViewControllers([storyBoard.instantiateViewControllerWithIdentifier("dashboard")], animated: true)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         

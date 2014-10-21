@@ -80,10 +80,9 @@ class SignUpCompensationViewController: UIViewController {
             
             let pfUser = user.convertToPFUser()
 
-            pfUser.saveInBackgroundWithBlock({ (completed: Bool, error: NSError!) -> Void in
-                let storyBoard = UIStoryboard(name: "dashboard", bundle: nil)
-                self.navigationController?.setViewControllers([storyBoard.instantiateViewControllerWithIdentifier("dashboard")], animated: true)
-            })
+            if let navigationController = self.navigationController {
+                DashboardViewController.showDashboardInNavigationController(navigationController)
+            }
         }
     }
     
