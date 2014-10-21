@@ -13,6 +13,7 @@ class MoodLogViewController: UIViewController {
     @IBOutlet weak var howAreYouLabel: UILabel!
     var smile: EmotionView = EmotionView(frame: CGRectMake(0, 0, 122, 122))
     var smileLabel: UILabel?
+    var labelOptions: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +25,13 @@ class MoodLogViewController: UIViewController {
         var pan = UIPanGestureRecognizer(target: self, action: "panned:")
         self.view.addGestureRecognizer(pan)
         
+        self.labelOptions = ["Pretty dang good", "Feeling good", "Meh", "Today is the worst!"]
+        
         self.smileLabel = UILabel()
         self.smileLabel?.font = UIFont(name: "Roboto-Light", size: 33.0)
         self.smileLabel?.textColor = UIColor.whiteColor()
         self.smileLabel?.textAlignment = NSTextAlignment.Center
-        self.smileLabel?.text = "Pretty dang good"
+        self.smileLabel?.text = self.labelOptions![0]
         self.smileLabel?.alpha = 0.0
         self.smileLabel?.sizeToFit()
         self.view.addSubview(self.smileLabel!)
@@ -93,6 +96,8 @@ class MoodLogViewController: UIViewController {
         } else if panGesture.state == UIGestureRecognizerState.Ended {
             var newPoint = self.smile.center
             newPoint.x = self.view.center.x
+            self.smileLabel?.text = self.currentSmileLabelValue()
+            self.smileLabel?.sizeToFit()
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.smile.center = newPoint
                 self.smileLabel?.alpha = 1.0
@@ -117,13 +122,37 @@ class MoodLogViewController: UIViewController {
         updateColors()
     }
     
-    //MARK: - color updates
+    func currentSmileLabelValue() -> String {
+        var percentageTraveled = self.percentageTraveled()
+        
+        println(percentageTraveled)
+        
+        var smileText = self.labelOptions![0]
+        
+        if percentageTraveled > 0.25 && percentageTraveled < 0.50 {
+            smileText = self.labelOptions![1]
+        } else if percentageTraveled > 0.50 && percentageTraveled < 0.75 {
+            smileText = self.labelOptions![2]
+        } else if percentageTraveled > 0.75 {
+            smileText = self.labelOptions![3]
+        }
+        
+        return smileText
+    }
     
-    func updateColors () {
+    func percentageTraveled() -> CGFloat {
         var maxTravelHeight = self.view.bounds.size.height - self.smile.bounds.size.height
         var travelBeginOffset = self.smile.bounds.size.height / 2
         
         var percentageTraveled: CGFloat = (self.smile.center.y - travelBeginOffset) / maxTravelHeight
+        
+        return percentageTraveled
+    }
+    
+    //MARK: - color updates
+    
+    func updateColors () {
+        var percentageTraveled = self.percentageTraveled()
         
         var midRed: CGFloat = 255.0/255.0
         var midGreen: CGFloat = 76.0/255.0
