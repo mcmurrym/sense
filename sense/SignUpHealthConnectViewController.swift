@@ -69,8 +69,13 @@ class SignUpHealthConnectViewController: UIViewController {
             if completed {
                 
                 let user = PFUser.currentUser()
-                user["birthdate"] = Health.sharedInstance.getBirthday()
-                user["biologicalSex"] = Health.sharedInstance.getBiologicalSex()
+                if let birthdate = Health.sharedInstance.getBirthday() {
+                    user["birthdate"] = birthdate
+                }
+
+                if let sex = Health.sharedInstance.getBiologicalSex() {
+                    user["biologicalSex"] = sex
+                }
                 
                 user.saveEventually()
                 self.performSegueWithIdentifier("toLocation", sender: nil)
