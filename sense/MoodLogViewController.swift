@@ -125,8 +125,6 @@ class MoodLogViewController: UIViewController {
     func currentSmileLabelValue() -> String {
         var percentageTraveled = self.percentageTraveled()
         
-        println(percentageTraveled)
-        
         var smileText = self.labelOptions![0]
         
         if percentageTraveled > 0.25 && percentageTraveled < 0.50 {
