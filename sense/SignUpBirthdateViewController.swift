@@ -41,11 +41,9 @@ class SignUpBirthdateViewController: UIViewController, UITextFieldDelegate {
             
             if let hasDate = date {
                 
-                let user = PFUser.currentUser()
+                let user = TemporaryUser.sharedInstance
                 
-                user["birthdate"] = hasDate
-                
-                user.saveEventually()
+                user.birthdate = hasDate
                 
                 self.performSegueWithIdentifier("toCompensation", sender: nil)
             } else {

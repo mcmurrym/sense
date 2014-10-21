@@ -32,6 +32,7 @@
 		BEF4483B19EEFA8A00767339 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF4483A19EEFA8A00767339 /* dashboard.storyboard */; };
 		BEF4483E19EF068700767339 /* MoodLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4483C19EF068700767339 /* MoodLogViewController.swift */; };
 		BEF4483F19EF068700767339 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4483D19EF068700767339 /* EmotionView.swift */; };
+		BEF548B919F6AC940063965A /* TemporaryUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF548B819F6AC940063965A /* TemporaryUser.swift */; };
 		BEF632CB19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */; };
 		BEF632CD19EDD6C000D683A2 /* SignUpGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF632CC19EDD6C000D683A2 /* SignUpGenderViewController.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		BEF4483A19EEFA8A00767339 /* dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
 		BEF4483C19EF068700767339 /* MoodLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodLogViewController.swift; sourceTree = "<group>"; };
 		BEF4483D19EF068700767339 /* EmotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
+		BEF548B819F6AC940063965A /* TemporaryUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryUser.swift; sourceTree = "<group>"; };
 		BEF632CA19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpLocationPermissionViewController.swift; sourceTree = "<group>"; };
 		BEF632CC19EDD6C000D683A2 /* SignUpGenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpGenderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 				BE0A82AD19EC375B005392E2 /* Health.swift */,
 				BEF4482F19EEE1EB00767339 /* Location.swift */,
 				BEF4483319EEEC1C00767339 /* SharedUIView.swift */,
+				BEF548B819F6AC940063965A /* TemporaryUser.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				BEF4483E19EF068700767339 /* MoodLogViewController.swift in Sources */,
 				BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */,
 				BE71453119E08FD800B3A042 /* SignInPhoneNumberViewController.swift in Sources */,
+				BEF548B919F6AC940063965A /* TemporaryUser.swift in Sources */,
 				BEF4483F19EF068700767339 /* EmotionView.swift in Sources */,
 				BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */,
 				BEF632CD19EDD6C000D683A2 /* SignUpGenderViewController.swift in Sources */,

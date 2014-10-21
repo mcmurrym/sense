@@ -72,13 +72,15 @@ class SignUpCompensationViewController: UIViewController {
             self.next.bump()
         } else {
             
-            let user = PFUser.currentUser()
+            let user = TemporaryUser.sharedInstance
             
             let comp = self.getComp()
             
-            user["compensation"] = comp
+            user.compensation = comp
             
-            user.saveInBackgroundWithBlock({ (completed: Bool, error: NSError!) -> Void in
+            let pfUser = user.convertToPFUser()
+
+            pfUser.saveInBackgroundWithBlock({ (completed: Bool, error: NSError!) -> Void in
                 let storyBoard = UIStoryboard(name: "dashboard", bundle: nil)
                 self.navigationController?.setViewControllers([storyBoard.instantiateViewControllerWithIdentifier("dashboard")], animated: true)
             })

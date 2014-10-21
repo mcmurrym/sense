@@ -59,16 +59,14 @@ class SignUpGenderViewController: UIViewController {
             self.next.bump()
         } else {
             
-            let user = PFUser.currentUser()
+            let user = TemporaryUser.sharedInstance
             if self.maleButton.selected {
-                user["biologicalSex"] = "Male"
+                user.biologicalSex = "Male"
             } else {
-                user["biologicalSex"] = "Female"
+                user.biologicalSex = "Female"
             }
             
-            user.saveEventually()
-            
-            if let birthdate: NSDate = user["birthdate"] as? NSDate {
+            if let birthdate = user.birthdate {
                 self.performSegueWithIdentifier("toCompensation", sender: nil)
             } else {
                 self.performSegueWithIdentifier("toBirthdate", sender: nil)

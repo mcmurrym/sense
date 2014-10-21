@@ -68,16 +68,14 @@ class SignUpHealthConnectViewController: UIViewController {
             self.activityIndicator.stopAnimating()
             if completed {
                 
-                let user = PFUser.currentUser()
                 if let birthdate = Health.sharedInstance.getBirthday() {
-                    user["birthdate"] = birthdate
+                    TemporaryUser.sharedInstance.birthdate = birthdate
                 }
 
                 if let sex = Health.sharedInstance.getBiologicalSex() {
-                    user["biologicalSex"] = sex
+                    TemporaryUser.sharedInstance.biologicalSex = sex
                 }
                 
-                user.saveEventually()
                 self.performSegueWithIdentifier("toLocation", sender: nil)
             } else {
                 self.connectButton.enabled = true

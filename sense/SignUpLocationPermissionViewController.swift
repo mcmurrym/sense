@@ -41,10 +41,10 @@ class SignUpLocationPermissionViewController: UIViewController {
     }
     
     func moveToNext() {
-        let user = PFUser.currentUser()
+        let user = TemporaryUser.sharedInstance
         
-        if let bioSex: String = user["biologicalSex"] as? String {
-            if let birthdate: NSDate = user["birthdate"] as? NSDate {
+        if let bioSex: String = user.biologicalSex {
+            if let birthdate: NSDate = user.birthdate {
                 self.performSegueWithIdentifier("toCompensation", sender: nil)
             } else {
                 self.performSegueWithIdentifier("toBirthdate", sender: nil)
