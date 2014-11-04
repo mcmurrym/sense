@@ -119,9 +119,10 @@ let LineChartDataStartXOffset: CGFloat = 10
 
         self.lineGraph.lineWidth = 15
         
-        let pointOffset: CGFloat = 24.0
-        let controlPointOffset: CGFloat = 12.0
-        let arcGapOffset: CGFloat = 10
+        let pointOffset: CGFloat = 10
+        let controlYPointOffset: CGFloat = 5
+        let controlXPointOffset: CGFloat = 5
+        let arcGapOffset: CGFloat = 20
         
         if let points = self.dataSource?.intersectsForLinechart(self) {
             let pointsFinal = points.sorted({ (first: CGPoint, second: CGPoint) -> Bool in
@@ -172,6 +173,11 @@ let LineChartDataStartXOffset: CGFloat = 10
                                         bezierPath.addLineToPoint(currentPoint)
                                     } else {
                                         
+                                        var currentXControlOffset = controlXPointOffset
+                                        if previousPoint.y < currentPoint.y {
+                                            currentXControlOffset *= -1
+                                        }
+                                        
                                         let translateTransform = CGAffineTransformMakeTranslation(currentPoint.x, currentPoint.y)
                                         
                                         var leftAngle = atan2f(Float(currentPoint.x - previousPoint.x),
@@ -208,7 +214,7 @@ let LineChartDataStartXOffset: CGFloat = 10
 
                                         let c1customRotation = CGAffineTransformConcat(CGAffineTransformConcat(CGAffineTransformInvert(translateTransform), c1rotationTransform), translateTransform)
 
-                                        let cInitialPoint = CGPointMake(currentPoint.x, currentPoint.y - controlPointOffset)
+                                        var cInitialPoint = CGPointMake(currentPoint.x - currentXControlOffset, currentPoint.y - controlYPointOffset)
 
                                         var c1Point = CGPointApplyAffineTransform(cInitialPoint, c1customRotation)
 //
@@ -218,7 +224,9 @@ let LineChartDataStartXOffset: CGFloat = 10
                                         let c2rotationTransform = CGAffineTransformMakeRotation(CGFloat(c2Angle))
 
                                         let c2customRotation = CGAffineTransformConcat(CGAffineTransformConcat(CGAffineTransformInvert(translateTransform), c2rotationTransform), translateTransform)
-
+                                        
+                                        cInitialPoint.x += currentXControlOffset * 2
+                                        
                                         var c2Point = CGPointApplyAffineTransform(cInitialPoint, c2customRotation)
                                         
 //                                        bezierPath.addLineToPoint(c1Point)
