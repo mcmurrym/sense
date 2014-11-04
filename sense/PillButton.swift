@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class PillButton: UIButton {
 
     override func layoutSubviews() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchBackgroundView: UIView {
+@IBDesignable class LaunchBackgroundView: UIView {
 
     var layerAdded = false
     

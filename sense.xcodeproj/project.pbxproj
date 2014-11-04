@@ -26,6 +26,8 @@
 		BE71453119E08FD800B3A042 /* SignInPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */; };
 		BE71453519E09D2B00B3A042 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453419E09D2B00B3A042 /* String.swift */; };
 		BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453719E0CECC00B3A042 /* PillButton.swift */; };
+		BEAC9A9C19F725790096A297 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9A9B19F725790096A297 /* LineChart.swift */; };
+		BEDE7AE219F9727100BB6B1A /* AllMoodColorGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE7AE119F9727100BB6B1A /* AllMoodColorGradientView.swift */; };
 		BEF4483019EEE1EB00767339 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4482F19EEE1EB00767339 /* Location.swift */; };
 		BEF4483419EEEC1C00767339 /* SharedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4483319EEEC1C00767339 /* SharedUIView.swift */; };
 		BEF4483919EEFA7300767339 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4483819EEFA7300767339 /* DashboardViewController.swift */; };
@@ -74,6 +76,8 @@
 		BE71453019E08FD800B3A042 /* SignInPhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		BE71453419E09D2B00B3A042 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BE71453719E0CECC00B3A042 /* PillButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
+		BEAC9A9B19F725790096A297 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		BEDE7AE119F9727100BB6B1A /* AllMoodColorGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMoodColorGradientView.swift; sourceTree = "<group>"; };
 		BEF4482F19EEE1EB00767339 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		BEF4483319EEEC1C00767339 /* SharedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedUIView.swift; sourceTree = "<group>"; };
 		BEF4483819EEFA7300767339 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 				BEF4482F19EEE1EB00767339 /* Location.swift */,
 				BEF4483319EEEC1C00767339 /* SharedUIView.swift */,
 				BEF548B819F6AC940063965A /* TemporaryUser.swift */,
+				BEAC9A9B19F725790096A297 /* LineChart.swift */,
+				BEDE7AE119F9727100BB6B1A /* AllMoodColorGradientView.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -403,7 +409,9 @@
 				BEF632CB19EDBA3600D683A2 /* SignUpLocationPermissionViewController.swift in Sources */,
 				BE71453519E09D2B00B3A042 /* String.swift in Sources */,
 				BE41080219EE2A5F006F8DB1 /* SignUpBirthdateViewController.swift in Sources */,
+				BEDE7AE219F9727100BB6B1A /* AllMoodColorGradientView.swift in Sources */,
 				BE41080419EE2E6E006F8DB1 /* SignUpCompensationViewController.swift in Sources */,
+				BEAC9A9C19F725790096A297 /* LineChart.swift in Sources */,
 				BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */,
 				BE06AF4019DCB35A0045C011 /* AppDelegate.swift in Sources */,
 				BEF4483419EEEC1C00767339 /* SharedUIView.swift in Sources */,

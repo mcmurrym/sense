@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchViewController: UIViewController {
+@IBDesignable class LaunchViewController: UIViewController {
 
     var runOnce = false
     @IBOutlet weak var simpleLabel: UILabel!
