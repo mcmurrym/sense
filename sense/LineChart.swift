@@ -29,8 +29,8 @@ let LineChartDataStartXOffset: CGFloat = 10
     var setNeedsReload = false
     var yIntersects: Int? = 0
     var xIntersects: Int? = 0
-    var lineGraph = CAShapeLayer()
-    var graphMaskView = AllMoodColorGradientView()
+    let lineGraph = CAShapeLayer()
+    let graphMaskView = AllMoodColorGradientView()
     
     @IBInspectable var dataSource: LineChartDataSource? {
         didSet {
@@ -102,6 +102,7 @@ let LineChartDataStartXOffset: CGFloat = 10
             self.addXViews()
             self.removeLineGraph()
             self.addLineGraph()
+            self.removeMarkers()
             self.addMarkers()
 
         }
@@ -109,7 +110,7 @@ let LineChartDataStartXOffset: CGFloat = 10
         self.updateMask()
     }
     
-    func updateMask() {        
+    func updateMask() {
         self.graphMaskView.frame = self.bounds
     }
     
@@ -249,8 +250,6 @@ let LineChartDataStartXOffset: CGFloat = 10
                             }
                         }
                         
-//                        bezierPath.closePath()
-                        
                         for (index, value) in enumerate(pointsFinal) {
                             var currentPoint = CGPointMake(value.x * xIntersectGap + LineChartInnerEdgeInset.left + LineChartDataStartXOffset,
                                 value.y * yIntersectGap + LineChartInnerEdgeInset.top)
@@ -274,13 +273,19 @@ let LineChartDataStartXOffset: CGFloat = 10
         }
     }
     
+    func removeMarkers() {
+        for view in self.markerViews {
+            view.removeFromSuperview()
+        }
+        
+        self.yViews = [UIView]()
+    }
+    
     func addMarkers() {
         if let points = self.dataSource?.intersectsForLinechart(self) {
             let pointsFinal = points.sorted({ (first: CGPoint, second: CGPoint) -> Bool in
                 return first.x < second.x
             })
-            
-            self.markerViews = [UIView]()
             
             if let yIntersects = self.yIntersects {
                 if let xIntersects = self.xIntersects {
