@@ -28,15 +28,6 @@ import UIKit
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //MARK: - LineChartDataSource
     
     //for testing and ib

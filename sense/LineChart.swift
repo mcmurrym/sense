@@ -17,7 +17,7 @@ protocol LineChartDataSource {
     func intersectsForLinechart(lineChart: LineChart) -> [CGPoint]
 }
 
-let LineChartInnerEdgeInset = UIEdgeInsetsMake(10, 50, 50, 5)
+let LineChartInnerEdgeInset = UIEdgeInsetsMake(15, 30, 50, 5)
 let LineChartYViewOffset = UIOffsetMake(5, 0)
 let LineChartDataStartXOffset: CGFloat = 10
 
@@ -25,6 +25,7 @@ let LineChartDataStartXOffset: CGFloat = 10
 
     var yViews = [UIView]()
     var xViews = [UIView]()
+    var markerViews = [UIView]()
     var setNeedsReload = false
     var yIntersects: Int? = 0
     var xIntersects: Int? = 0
@@ -64,6 +65,23 @@ let LineChartDataStartXOffset: CGFloat = 10
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.addSubview(self.graphMaskView)
+        self.bringSubviewToFront(self.graphMaskView)
+        
+        self.graphMaskView.layer.mask = lineGraph
+        self.lineGraph.fillColor = UIColor.clearColor().CGColor
+        self.lineGraph.strokeColor = UIColor.redColor().CGColor
+        self.lineGraph.lineCap = kCALineCapRound
+        self.lineGraph.lineJoin = kCALineCapRound
+        self.lineGraph.strokeStart = 0.0
+        self.lineGraph.strokeEnd = 1.0
+        
+        self.lineGraph.lineWidth = 10
+    }
+    
     func reloadData() {
         self.yIntersects = self.dataSource?.numberOfYIntersectionsForLineChart(self)
         self.xIntersects = self.dataSource?.numberOfXIntersectionsForLineChart(self)
@@ -84,41 +102,23 @@ let LineChartDataStartXOffset: CGFloat = 10
             self.addXViews()
             self.removeLineGraph()
             self.addLineGraph()
+            self.addMarkers()
 
         }
         
         self.updateMask()
     }
     
-    func updateMask() {
-        var frame = self.graphMaskView.frame
-        frame.origin.x = 0
-        frame.size.width = self.frame.size.width
-        frame.origin.y = 0
-        frame.size.height = self.frame.size.height
-        
-        self.graphMaskView.frame = frame
-        
-        self.addSubview(self.graphMaskView)
-        self.bringSubviewToFront(self.graphMaskView)
-        
-        self.graphMaskView.layer.mask = lineGraph
+    func updateMask() {        
+        self.graphMaskView.frame = self.bounds
     }
     
     func removeLineGraph() {
-        
+        self.lineGraph.path = UIBezierPath().CGPath
     }
     
     func addLineGraph () {
-        self.layer.addSublayer(self.lineGraph)
         self.lineGraph.frame = self.bounds
-        self.lineGraph.fillColor = UIColor.clearColor().CGColor
-        self.lineGraph.strokeColor = UIColor.redColor().CGColor
-        self.lineGraph.lineCap = kCALineCapRound
-        self.lineGraph.lineJoin = kCALineCapRound
-
-        self.lineGraph.lineWidth = 15
-        
         let pointOffset: CGFloat = 10
         let controlYPointOffset: CGFloat = 5
         let controlXPointOffset: CGFloat = 5
@@ -248,11 +248,91 @@ let LineChartDataStartXOffset: CGFloat = 10
                                 nextPoint = nil
                             }
                         }
+                        
+//                        bezierPath.closePath()
+                        
+                        for (index, value) in enumerate(pointsFinal) {
+                            var currentPoint = CGPointMake(value.x * xIntersectGap + LineChartInnerEdgeInset.left + LineChartDataStartXOffset,
+                                value.y * yIntersectGap + LineChartInnerEdgeInset.top)
+                        
+                            let size: CGFloat = 11.0
+                            let circle = UIBezierPath(ovalInRect: CGRectMake(currentPoint.x - size/2, currentPoint.y - size/2, size, size))
+                            bezierPath.appendPath(circle)
+                            bezierPath.closePath()
+                        }
                     }
                 }
             }
             
+            var animation = CABasicAnimation(keyPath: "strokeEnd")
+            animation.duration = 2
+            animation.fromValue = 0.0
+            animation.toValue = 1.0
+            self.lineGraph.addAnimation(animation, forKey: "drawy")
+            
             self.lineGraph.path = bezierPath.CGPath
+        }
+    }
+    
+    func addMarkers() {
+        if let points = self.dataSource?.intersectsForLinechart(self) {
+            let pointsFinal = points.sorted({ (first: CGPoint, second: CGPoint) -> Bool in
+                return first.x < second.x
+            })
+            
+            self.markerViews = [UIView]()
+            
+            if let yIntersects = self.yIntersects {
+                if let xIntersects = self.xIntersects {
+                    
+                    let height = self.lineGraph.bounds.size.height - LineChartInnerEdgeInset.top - LineChartInnerEdgeInset.bottom
+                    
+                    let width = self.lineGraph.bounds.size.width - LineChartInnerEdgeInset.left - LineChartInnerEdgeInset.right - LineChartDataStartXOffset * 2
+                    
+                    
+                    if (yIntersects > 0 && height > CGFloat(yIntersects)) &&
+                        (xIntersects > 0 && width > CGFloat(xIntersects)) {
+                            
+                        let yIntersectGap: CGFloat = height / (CGFloat(yIntersects) - 1.0)
+                        let xIntersectGap: CGFloat = width / (CGFloat(xIntersects) - 1.0)
+                        
+                        for (index, value) in enumerate(pointsFinal) {
+                            var currentPoint = CGPointMake(value.x * xIntersectGap + LineChartInnerEdgeInset.left + LineChartDataStartXOffset,
+                                                           value.y * yIntersectGap + LineChartInnerEdgeInset.top)
+                            
+                            let size: CGFloat = 16.0
+                            let view = UIView(frame: CGRectMake(currentPoint.x - size/2, currentPoint.y - size/2, size, size))
+                            view.layer.cornerRadius = size / 2
+                            view.backgroundColor = UIColor.whiteColor()
+                            self.addSubview(view)
+                            view.layer.zPosition = 1
+                            
+                            view.transform = CGAffineTransformMakeScale(0.01, 0.01)
+                            
+                            var duration: NSTimeInterval = 0.5
+                            UIView.animateKeyframesWithDuration(duration,
+                                delay: Double(1.7 + (0.03 * Double(index))),
+                                options: UIViewKeyframeAnimationOptions.AllowUserInteraction,
+                                animations: { () -> Void in
+                                    UIView.addKeyframeWithRelativeStartTime(0 * duration,
+                                        relativeDuration: duration,
+                                        animations: { () -> Void in
+                                            view.transform = CGAffineTransformMakeScale(1.1, 1.1)
+                                    })
+                                    UIView.addKeyframeWithRelativeStartTime(1 * duration,
+                                        relativeDuration: duration,
+                                        animations: { () -> Void in
+                                            view.transform = CGAffineTransformIdentity
+                                    })
+                            }, completion: { (completed) -> Void in
+                                
+                            })
+                            
+                            self.markerViews.append(view)
+                        }
+                    }
+                }
+            }
         }
     }
     
