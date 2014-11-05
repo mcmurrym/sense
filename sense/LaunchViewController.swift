@@ -45,4 +45,8 @@ import UIKit
             self.runOnce = true
         }
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
 }

@@ -47,7 +47,10 @@ class MoodLogViewController: UIViewController {
         self.smile.center = startPoint
         
         self.smile.hidden = false
-        
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     override func prepareForInterfaceBuilder() {
@@ -55,13 +58,10 @@ class MoodLogViewController: UIViewController {
         self.updateColors()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func cancelLogging(sender: AnyObject) {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Slide)
     }
     
     //MARK: - panhandling

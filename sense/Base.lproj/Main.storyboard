@@ -15,7 +15,7 @@
         <scene sceneID="aah-nl-VB4">
             <objects>
                 <navigationController navigationBarHidden="YES" id="hyB-nP-ZXI" sceneMemberID="viewController">
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pae-cM-eAS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -57,7 +57,7 @@
                                 <rect key="frame" x="190" y="258" width="220" height="83"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simply capture how you feel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-Ku-dwQ">
-                                <rect key="frame" x="172" y="51.5" width="257.5" height="498"/>
+                                <rect key="frame" x="172" y="51" width="258" height="498"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1FS-Ku-dwQ" secondAttribute="height" multiplier="16:31" id="4Tr-Ai-sMt"/>
                                 </constraints>
@@ -76,9 +76,9 @@
                             <constraint firstAttribute="centerY" secondItem="1FS-Ku-dwQ" secondAttribute="centerY" id="YKG-Lg-iFI"/>
                             <constraint firstItem="zvl-aA-kXC" firstAttribute="leading" secondItem="0m9-03-Ans" secondAttribute="leading" id="c5V-XD-7iO"/>
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1FS-Ku-dwQ" secondAttribute="trailing" constant="187" id="cdr-eu-Pzd"/>
-                            <constraint firstItem="Eew-Gf-QZ2" firstAttribute="top" secondItem="X2C-7F-3JV" secondAttribute="bottom" id="fCz-tQ-J5w"/>
+                            <constraint firstItem="Eew-Gf-QZ2" firstAttribute="top" secondItem="X2C-7F-3JV" secondAttribute="bottom" constant="-20" id="fCz-tQ-J5w"/>
                             <constraint firstAttribute="centerX" secondItem="Zut-hS-JfP" secondAttribute="centerX" id="nj7-Xp-Bgl"/>
-                            <constraint firstItem="zvl-aA-kXC" firstAttribute="top" secondItem="X2C-7F-3JV" secondAttribute="bottom" id="odf-h4-ukF"/>
+                            <constraint firstItem="zvl-aA-kXC" firstAttribute="top" secondItem="X2C-7F-3JV" secondAttribute="bottom" constant="-20" id="odf-h4-ukF"/>
                             <constraint firstItem="BVN-rR-uGc" firstAttribute="top" secondItem="Eew-Gf-QZ2" secondAttribute="bottom" id="u8D-cC-nSI"/>
                             <constraint firstAttribute="trailing" secondItem="Eew-Gf-QZ2" secondAttribute="trailing" id="xng-dd-coK"/>
                             <constraint firstAttribute="centerX" secondItem="1FS-Ku-dwQ" secondAttribute="centerX" constant="-0.5" id="yHA-aZ-N4I"/>
