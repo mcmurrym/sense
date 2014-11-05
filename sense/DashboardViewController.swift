@@ -54,4 +54,11 @@ import UIKit
     func intersectsForLinechart(lineChart: LineChart) -> [CGPoint] {
         return [CGPointMake(0, 0), CGPointMake(1, 2), CGPointMake(2, 4), CGPointMake(4, 0), CGPointMake(5, 1), CGPointMake(6, 3), CGPointMake(7, 2), CGPointMake(8, 4), CGPointMake(9, 3)]
     }
+    
+    func willShowAnnotation(annotation: LineTip, forIntersect: CGPoint) {
+        annotation.timeLabel.text = "3:45pm"
+        annotation.temperatureLabel.text = "45°"
+        annotation.stepLabel.text = "8,556"
+        annotation.feelLabel.text = ["Pretty dang good", "Feeling good", "Meh", "Bad day", "Today is the worst!"][Int(forIntersect.y)]
+    }
 }

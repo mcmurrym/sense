@@ -27,6 +27,10 @@
 		BE71453519E09D2B00B3A042 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453419E09D2B00B3A042 /* String.swift */; };
 		BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71453719E0CECC00B3A042 /* PillButton.swift */; };
 		BEAC9A9C19F725790096A297 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC9A9B19F725790096A297 /* LineChart.swift */; };
+		BEBAB7F01A0A98E600AE7D31 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBAB7EF1A0A98E600AE7D31 /* Bubble.swift */; };
+		BEBAB7F21A0A9E8F00AE7D31 /* LineTip.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEBAB7F11A0A9E8F00AE7D31 /* LineTip.xib */; };
+		BEBAB7F41A0AA2B100AE7D31 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBAB7F31A0AA2B100AE7D31 /* Clock.swift */; };
+		BEBAB7F71A0AC92A00AE7D31 /* LineTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBAB7F61A0AC92A00AE7D31 /* LineTip.swift */; };
 		BEDE7AE219F9727100BB6B1A /* AllMoodColorGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE7AE119F9727100BB6B1A /* AllMoodColorGradientView.swift */; };
 		BEF4483019EEE1EB00767339 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4482F19EEE1EB00767339 /* Location.swift */; };
 		BEF4483419EEEC1C00767339 /* SharedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4483319EEEC1C00767339 /* SharedUIView.swift */; };
@@ -77,6 +81,11 @@
 		BE71453419E09D2B00B3A042 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BE71453719E0CECC00B3A042 /* PillButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 		BEAC9A9B19F725790096A297 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		BEBAB7EF1A0A98E600AE7D31 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		BEBAB7F11A0A9E8F00AE7D31 /* LineTip.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineTip.xib; sourceTree = "<group>"; };
+		BEBAB7F31A0AA2B100AE7D31 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		BEBAB7F51A0AC50500AE7D31 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		BEBAB7F61A0AC92A00AE7D31 /* LineTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineTip.swift; sourceTree = "<group>"; };
 		BEDE7AE119F9727100BB6B1A /* AllMoodColorGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMoodColorGradientView.swift; sourceTree = "<group>"; };
 		BEF4482F19EEE1EB00767339 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		BEF4483319EEEC1C00767339 /* SharedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedUIView.swift; sourceTree = "<group>"; };
@@ -203,6 +212,7 @@
 		BE4825D619DED2D4008B56DE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				BEBAB7F51A0AC50500AE7D31 /* Roboto-Regular.ttf */,
 				BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */,
 				BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */,
 			);
@@ -234,15 +244,27 @@
 		BE71453619E0CEB000B3A042 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BEBAB7F81A0ACAFF00AE7D31 /* LineChart */,
 				BE71453719E0CECC00B3A042 /* PillButton.swift */,
 				BE0A82AD19EC375B005392E2 /* Health.swift */,
 				BEF4482F19EEE1EB00767339 /* Location.swift */,
 				BEF4483319EEEC1C00767339 /* SharedUIView.swift */,
 				BEF548B819F6AC940063965A /* TemporaryUser.swift */,
-				BEAC9A9B19F725790096A297 /* LineChart.swift */,
 				BEDE7AE119F9727100BB6B1A /* AllMoodColorGradientView.swift */,
+				BEBAB7F31A0AA2B100AE7D31 /* Clock.swift */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		BEBAB7F81A0ACAFF00AE7D31 /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				BEAC9A9B19F725790096A297 /* LineChart.swift */,
+				BEBAB7EF1A0A98E600AE7D31 /* Bubble.swift */,
+				BEBAB7F61A0AC92A00AE7D31 /* LineTip.swift */,
+				BEBAB7F11A0A9E8F00AE7D31 /* LineTip.xib */,
+			);
+			name = LineChart;
 			sourceTree = "<group>";
 		};
 		BEF4483519EEFA1300767339 /* Dash */ = {
@@ -353,6 +375,7 @@
 				BE4825DB19DF02E1008B56DE /* signin.storyboard in Resources */,
 				BEF4483B19EEFA8A00767339 /* dashboard.storyboard in Resources */,
 				BE06AF4519DCB35A0045C011 /* Main.storyboard in Resources */,
+				BEBAB7F21A0A9E8F00AE7D31 /* LineTip.xib in Resources */,
 				BE4825DD19DF0FD9008B56DE /* Roboto-Light.ttf in Resources */,
 				BE06AF4719DCB35A0045C011 /* Images.xcassets in Resources */,
 				BE4825D819DED457008B56DE /* Roboto-Thin.ttf in Resources */,
@@ -423,8 +446,11 @@
 				BEF548B919F6AC940063965A /* TemporaryUser.swift in Sources */,
 				BEF4483F19EF068700767339 /* EmotionView.swift in Sources */,
 				BE71453819E0CECC00B3A042 /* PillButton.swift in Sources */,
+				BEBAB7F01A0A98E600AE7D31 /* Bubble.swift in Sources */,
 				BEF632CD19EDD6C000D683A2 /* SignUpGenderViewController.swift in Sources */,
 				BE0A82AE19EC375B005392E2 /* Health.swift in Sources */,
+				BEBAB7F41A0AA2B100AE7D31 /* Clock.swift in Sources */,
+				BEBAB7F71A0AC92A00AE7D31 /* LineTip.swift in Sources */,
 				BE0A82A219E8534D005392E2 /* SignUpHealthConnectViewController.swift in Sources */,
 				BEF4483919EEFA7300767339 /* DashboardViewController.swift in Sources */,
 			);
@@ -569,8 +595,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = sense/sense.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/matt.mcmurry/Downloads/parse-library-1",

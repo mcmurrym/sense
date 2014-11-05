@@ -15,6 +15,7 @@ protocol LineChartDataSource {
     func numberOfXIntersectionsForLineChart(lineChart: LineChart) -> Int
     func lineChart(lineChart: LineChart, viewForXIntersect: Int) -> UIView
     func intersectsForLinechart(lineChart: LineChart) -> [CGPoint]
+    func willShowAnnotation(annotation: LineTip, forIntersect: CGPoint)
 }
 
 let LineChartInnerEdgeInset = UIEdgeInsetsMake(15, 30, 50, 5)
@@ -31,6 +32,7 @@ let LineChartDataStartXOffset: CGFloat = 10
     var xIntersects: Int? = 0
     let lineGraph = CAShapeLayer()
     let graphMaskView = AllMoodColorGradientView()
+    var lineTipView: LineTip?
     
     @IBInspectable var dataSource: LineChartDataSource? {
         didSet {
@@ -80,6 +82,67 @@ let LineChartDataStartXOffset: CGFloat = 10
         self.lineGraph.strokeEnd = 1.0
         
         self.lineGraph.lineWidth = 10
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: Selector("panned:"))
+        self.addGestureRecognizer(panGesture)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tapped:"))
+        self.addGestureRecognizer(tapGesture)
+        
+        
+    }
+    
+    func loadLineTipView() {
+        if self.lineTipView == nil {
+            let aNib = UINib(nibName: "LineTip", bundle: nil)
+            if let view: AnyObject = aNib.instantiateWithOwner(self, options: nil).first {
+                if let line = view as? LineTip {
+                    self.lineTipView = line
+                }
+            }
+        }
+    }
+    
+    func showLineTipforView(view: UIView) {
+        
+        var center = view.center
+        center.y -= 55
+        
+        if let lineTip = self.lineTipView {
+            lineTip.center = center
+            lineTip.drawPointX = lineTip.bounds.size.width / 2
+            
+            if lineTip.frame.origin.x < LineChartInnerEdgeInset.left {
+                var rect = lineTip.frame
+                rect.origin.x = LineChartInnerEdgeInset.left
+                lineTip.frame = rect
+                
+                let diff = lineTip.center.x - center.x
+                
+                lineTip.drawPointX -= diff
+                
+            } else if lineTip.frame.origin.x + lineTip.frame.size.width > self.bounds.size.width - LineChartInnerEdgeInset.right {
+                var rect = lineTip.frame
+                rect.origin.x = self.bounds.size.width - rect.size.width
+                lineTip.frame = rect
+                
+                let diff = center.x - lineTip.center.x
+                
+                lineTip.drawPointX += diff
+            }
+            
+            var finalRect = lineTip.frame
+            finalRect.origin.x = floor(finalRect.origin.x)
+            finalRect.origin.y = floor(finalRect.origin.y)
+            lineTip.frame = finalRect
+            
+            lineTip.setNeedsDisplay()
+            self.addSubview(lineTip)
+        }
+    }
+    
+    func willShowAnnotation(annotation: LineTip, forIntersect intersect:CGPoint) {
+        self.dataSource?.willShowAnnotation(self.lineTipView!, forIntersect: intersect)
     }
     
     func reloadData() {
@@ -91,6 +154,7 @@ let LineChartDataStartXOffset: CGFloat = 10
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.loadLineTipView()
         if setNeedsReload {
             setNeedsReload = false
             
@@ -306,11 +370,12 @@ let LineChartDataStartXOffset: CGFloat = 10
                                                            value.y * yIntersectGap + LineChartInnerEdgeInset.top)
                             
                             let size: CGFloat = 16.0
-                            let view = UIView(frame: CGRectMake(currentPoint.x - size/2, currentPoint.y - size/2, size, size))
+                            let view = Bubble(frame: CGRectMake(currentPoint.x - size/2, currentPoint.y - size/2, size, size))
+                            view.intersect = value
                             view.layer.cornerRadius = size / 2
                             view.backgroundColor = UIColor.whiteColor()
                             self.addSubview(view)
-                            view.layer.zPosition = 1
+//                            view.layer.zPosition = 1
                             
                             view.transform = CGAffineTransformMakeScale(0.01, 0.01)
                             
@@ -417,6 +482,27 @@ let LineChartDataStartXOffset: CGFloat = 10
                 }
             }
         }
+    }
+    
+    func panned(panGesture: UIPanGestureRecognizer) {
+        var view = self.hitTest(panGesture.locationInView(self), withEvent: nil)
+        if let theView = view as? Bubble {
+            self.willShowAnnotation(self.lineTipView!, forIntersect: theView.intersect)
+            self.showLineTipforView(theView)
+        } else {
+            self.lineTipView?.removeFromSuperview()
+        }
+    }
+    
+    func tapped(tapGesture: UITapGestureRecognizer) {
+        var view = self.hitTest(tapGesture.locationInView(self), withEvent: nil)
+        if let theView = view as? Bubble {
+            self.willShowAnnotation(self.lineTipView!, forIntersect: theView.intersect)
+            self.showLineTipforView(theView)
+        } else {
+            self.lineTipView?.removeFromSuperview()
+        }
+
     }
     
     override func prepareForInterfaceBuilder() {
