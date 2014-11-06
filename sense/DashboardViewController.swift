@@ -60,9 +60,11 @@ struct MoodItem {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    @IBAction func segmentChanged(sender: AnyObject) {
+        self.lineChart.reloadData()
+    }
     //MARK: - LineChartDataSource
     
-    //for testing and ib
     func gridForLineChart(lineChart: LineChart) -> (x: Int, y: Int) {
         return (10, 5)
     }
