@@ -23,6 +23,7 @@ class SignUpHealthConnectViewController: UIViewController {
         self.healthIcon.layer.shadowColor = UIColor.blackColor().CGColor
         self.healthIcon.layer.shadowOffset = CGSizeMake(0, 4)
         self.healthIcon.layer.shadowOpacity = 0.3
+        self.activityIndicator.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
