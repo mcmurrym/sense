@@ -150,8 +150,9 @@
 		BE06AF3C19DCB35A0045C011 /* sense */ = {
 			isa = PBXGroup;
 			children = (
-				BE0A82A319E8548B005392E2 /* sense.entitlements */,
 				BE71453619E0CEB000B3A042 /* Shared */,
+				BE8424E71A0C086900AAB7B5 /* Model */,
+				BE0A82A319E8548B005392E2 /* sense.entitlements */,
 				BEF4483519EEFA1300767339 /* Dash */,
 				BE4825D919DF02C8008B56DE /* Signup/in */,
 				BE2214D819DDBB0F00429F22 /* Launch */,
@@ -254,6 +255,13 @@
 				BEBAB7F31A0AA2B100AE7D31 /* Clock.swift */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		BE8424E71A0C086900AAB7B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BEBAB7F81A0ACAFF00AE7D31 /* LineChart */ = {
