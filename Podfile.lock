@@ -3,6 +3,7 @@ PODS:
   - Facebook-iOS-SDK (3.17.0):
     - Bolts
   - FXPageControl (1.3.2)
+  - JBChartView (2.8.10)
   - libPhoneNumber-iOS (0.7.3)
   - Parse (1.4.1):
     - Bolts (~> 1.1.2)
@@ -16,6 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - FXPageControl (~> 1.3)
+  - JBChartView (~> 2.8.9)
   - libPhoneNumber-iOS (~> 0.7)
   - Parse (~> 1.4)
   - ParseFacebookUtils (~> 1.4)
@@ -25,9 +27,10 @@ SPEC CHECKSUMS:
   Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
   Facebook-iOS-SDK: f20274d809f112ba540842e2b6cbe50128d51b7b
   FXPageControl: f0e43e4773e266cfafef6cf251de2d2560c656a9
+  JBChartView: 50b221ef68d0934f5aea417a369a5b02167848a9
   libPhoneNumber-iOS: 98fc07d70c8fdb5e6a8e3442c37e97353065c20e
   Parse: db1a09c832b7509edcc88a65dc07229f5e578c73
   ParseFacebookUtils: 625da00d0f36a34e25ebae7f543385a0f19ccf1e
   UIColor+Hex: ac7e1ae4eeea4f522fe3f6eda35de4af69244432
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.4
