@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Roboto-Light.ttf">
@@ -49,19 +50,19 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zog-tD-FOP">
                                 <rect key="frame" x="277" y="57" width="46" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="dAc-vL-S8n"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHk-qf-tYA" customClass="LineChart" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="108" width="600" height="360"/>
+                                <rect key="frame" x="10" y="102" width="580" height="314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="360" id="aAa-12-1SG"/>
-                                </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xm7-qS-PNx">
-                                <rect key="frame" x="16" y="8" width="568" height="29"/>
+                                <rect key="frame" x="16" y="12" width="568" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="L4f-Kg-Av9"/>
                                 </constraints>
@@ -76,17 +77,29 @@
                                     <action selector="segmentChanged:" destination="xvS-57-lRw" eventType="valueChanged" id="K5f-xB-4PX"/>
                                 </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVY-uT-s6s">
+                                <rect key="frame" x="0.0" y="411" width="600" height="145"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="Ujw-DQ-SiD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tHk-qf-tYA" secondAttribute="trailing" id="1S9-aY-Tvn"/>
-                            <constraint firstItem="xm7-qS-PNx" firstAttribute="top" secondItem="z9V-7A-YdO" secondAttribute="bottom" constant="8" id="2xb-86-4HQ"/>
+                            <constraint firstAttribute="trailing" secondItem="tHk-qf-tYA" secondAttribute="trailing" constant="10" id="1S9-aY-Tvn"/>
+                            <constraint firstItem="tHk-qf-tYA" firstAttribute="height" secondItem="ijZ-oi-YUM" secondAttribute="height" multiplier="0.6" priority="750" id="2Pj-h7-UMI"/>
+                            <constraint firstItem="xm7-qS-PNx" firstAttribute="top" secondItem="z9V-7A-YdO" secondAttribute="bottom" constant="12" id="2xb-86-4HQ"/>
                             <constraint firstItem="xm7-qS-PNx" firstAttribute="leading" secondItem="ijZ-oi-YUM" secondAttribute="leading" constant="16" id="4Jz-BA-oeH"/>
-                            <constraint firstItem="zog-tD-FOP" firstAttribute="top" secondItem="xm7-qS-PNx" secondAttribute="bottom" constant="21" id="N0g-a4-0zn"/>
+                            <constraint firstItem="zog-tD-FOP" firstAttribute="top" secondItem="xm7-qS-PNx" secondAttribute="bottom" constant="17" id="N0g-a4-0zn"/>
+                            <constraint firstItem="eVY-uT-s6s" firstAttribute="top" secondItem="tHk-qf-tYA" secondAttribute="bottom" constant="-5" id="PSg-eJ-aoJ"/>
                             <constraint firstAttribute="trailing" secondItem="xm7-qS-PNx" secondAttribute="trailing" constant="16" id="T4x-8J-ab2"/>
-                            <constraint firstItem="tHk-qf-tYA" firstAttribute="leading" secondItem="ijZ-oi-YUM" secondAttribute="leading" id="u6b-3Z-DmJ"/>
+                            <constraint firstAttribute="trailing" secondItem="eVY-uT-s6s" secondAttribute="trailing" id="aFk-et-31t"/>
+                            <constraint firstItem="abq-h9-dRl" firstAttribute="top" secondItem="eVY-uT-s6s" secondAttribute="bottom" id="hhx-ul-AR6"/>
+                            <constraint firstItem="eVY-uT-s6s" firstAttribute="leading" secondItem="ijZ-oi-YUM" secondAttribute="leading" id="nsv-lw-5zN"/>
+                            <constraint firstItem="tHk-qf-tYA" firstAttribute="leading" secondItem="ijZ-oi-YUM" secondAttribute="leading" constant="10" id="u6b-3Z-DmJ"/>
                             <constraint firstAttribute="centerX" secondItem="zog-tD-FOP" secondAttribute="centerX" id="uZP-6n-weR"/>
-                            <constraint firstItem="tHk-qf-tYA" firstAttribute="top" secondItem="zog-tD-FOP" secondAttribute="bottom" constant="28" id="y6d-1Q-g2N"/>
+                            <constraint firstItem="tHk-qf-tYA" firstAttribute="top" secondItem="zog-tD-FOP" secondAttribute="bottom" constant="22" id="y6d-1Q-g2N"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="deS-BK-EvX">
@@ -102,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9g-xO-82q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="369"/>
+            <point key="canvasLocation" x="713" y="228"/>
         </scene>
         <!--Mood Log View Controller-->
         <scene sceneID="nsk-T9-PNt">
