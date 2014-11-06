@@ -184,6 +184,11 @@ let LineChartDataStartXOffset: CGFloat = 10
             self.addLineGraph()
             self.removeMarkers()
             self.addMarkers()
+            
+            var popTime = dispatch_time(DISPATCH_TIME_NOW, (Int64)(2 * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+                self.loadLineTipView()
+            })
 
         }
         
@@ -376,14 +381,11 @@ let LineChartDataStartXOffset: CGFloat = 10
                         var currentPoint = CGPointMake(value.x * xIntersectGap + LineChartInnerEdgeInset.left + LineChartDataStartXOffset,
                                                        value.y * yIntersectGap + LineChartInnerEdgeInset.top)
                         
-                        let size: CGFloat = 16.0
+                        let size: CGFloat = 32.0
                         let view = Bubble(frame: CGRectMake(currentPoint.x - size/2, currentPoint.y - size/2, size, size))
                         view.intersect = value
                         view.index = index
-                        view.layer.cornerRadius = size / 2
-                        view.backgroundColor = UIColor.whiteColor()
                         self.addSubview(view)
-//                            view.layer.zPosition = 1
                         
                         view.transform = CGAffineTransformMakeScale(0.01, 0.01)
                         
@@ -494,9 +496,10 @@ let LineChartDataStartXOffset: CGFloat = 10
     func panned(panGesture: UIPanGestureRecognizer) {
         var view = self.hitTest(panGesture.locationInView(self), withEvent: nil)
         if let theView = view as? Bubble {
-            self.loadLineTipView()
-            self.willShowAnnotation(self.lineTipView!, atIndex: theView.index)
-            self.showLineTipforView(theView)
+            if let lineTip = self.lineTipView {
+                self.willShowAnnotation(self.lineTipView!, atIndex: theView.index)
+                self.showLineTipforView(theView)
+            }
         } else {
             self.lineTipView?.removeFromSuperview()
         }

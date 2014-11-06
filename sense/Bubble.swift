@@ -12,12 +12,24 @@ class Bubble: UIView {
 
     var intersect: CGPoint = CGPointZero
     var index: Int = 0
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.clearColor()
     }
-    */
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func drawRect(rect: CGRect) {
+        
+        UIColor.whiteColor().setFill()
+
+        let iRect = CGRectInset(rect, rect.size.width / 4, rect.size.height / 4)
+        
+        let bez = UIBezierPath(ovalInRect: iRect)
+        bez.fill()
+    }
 
 }
