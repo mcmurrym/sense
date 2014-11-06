@@ -11,6 +11,7 @@ import UIKit
 class Bubble: UIView {
 
     var intersect: CGPoint = CGPointZero
+    var index: Int = 0
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

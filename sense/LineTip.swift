@@ -11,12 +11,24 @@ import UIKit
 class LineTip: UIView {
 
     @IBOutlet weak var feelLabel: UILabel!
-    @IBOutlet weak var clock: Clock!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet private weak var clock: Clock!
+    @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var stepIcon: UIImageView!
     @IBOutlet weak var stepLabel: UILabel!
+    var date: NSDate = NSDate() {
+        didSet {
+            self.clock.date = date
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "h:mma"
+            
+            let dateString = dateFormatter.stringFromDate(date).lowercaseString
+            
+            self.timeLabel.text = dateString
+        }
+    }
     
     let arrowWidth: CGFloat = 10.0
     var drawPointX: CGFloat = 0

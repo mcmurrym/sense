@@ -10,12 +10,15 @@ import UIKit
 
 protocol LineChartDataSource {
     
-    func numberOfYIntersectionsForLineChart(lineChart: LineChart) -> Int
+//    func numberOfYIntersectionsForLineChart(lineChart: LineChart) -> Int
+//    func numberOfXIntersectionsForLineChart(lineChart: LineChart) -> Int
+    func gridForLineChart(lineChart: LineChart) -> (x: Int, y: Int)
     func lineChart(lineChart: LineChart, viewForYIntersect: Int) -> UIView
-    func numberOfXIntersectionsForLineChart(lineChart: LineChart) -> Int
     func lineChart(lineChart: LineChart, viewForXIntersect: Int) -> UIView
-    func intersectsForLinechart(lineChart: LineChart) -> [CGPoint]
-    func willShowAnnotation(annotation: LineTip, forIntersect: CGPoint)
+    func numberOfDataPointsForLineChart(lineChart: LineChart) -> Int
+//    func intersectsForLinechart(lineChart: LineChart) -> [CGPoint]
+    func lineChart(lineChart: LineChart, dataPointAtIndex index: Int) -> CGPoint
+    func willShowAnnotation(annotation: LineTip, atIndex index: Int)
 }
 
 let LineChartInnerEdgeInset = UIEdgeInsetsMake(15, 30, 50, 5)
@@ -30,6 +33,8 @@ let LineChartDataStartXOffset: CGFloat = 10
     var setNeedsReload = false
     var yIntersects: Int? = 0
     var xIntersects: Int? = 0
+    var dataPointCount = 0
+    var dataPoints: [CGPoint] = []
     let lineGraph = CAShapeLayer()
     let graphMaskView = AllMoodColorGradientView()
     var lineTipView: LineTip?
@@ -83,13 +88,9 @@ let LineChartDataStartXOffset: CGFloat = 10
         
         self.lineGraph.lineWidth = 10
         
-        let panGesture = UIPanGestureRecognizer(target: self, action: Selector("panned:"))
-        self.addGestureRecognizer(panGesture)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tapped:"))
-        self.addGestureRecognizer(tapGesture)
-        
-        
+        let longPress = UILongPressGestureRecognizer(target: self, action: Selector("panned:"))
+        longPress.minimumPressDuration = 0.0
+        self.addGestureRecognizer(longPress)
     }
     
     func loadLineTipView() {
@@ -141,20 +142,35 @@ let LineChartDataStartXOffset: CGFloat = 10
         }
     }
     
-    func willShowAnnotation(annotation: LineTip, forIntersect intersect:CGPoint) {
-        self.dataSource?.willShowAnnotation(self.lineTipView!, forIntersect: intersect)
+    func willShowAnnotation(annotation: LineTip, atIndex index:Int) {
+        self.dataSource?.willShowAnnotation(annotation, atIndex: index)
+    }
+    
+    func getDataPoints() -> [CGPoint]? {
+        self.dataPoints = []
+        if let dataSource = self.dataSource {
+            self.dataPointCount = dataSource.numberOfDataPointsForLineChart(self)
+            
+            for i in 0...self.dataPointCount - 1 {
+                let point = dataSource.lineChart(self, dataPointAtIndex: i)
+                self.dataPoints.append(point)
+            }
+        }
+        return self.dataPoints
     }
     
     func reloadData() {
-        self.yIntersects = self.dataSource?.numberOfYIntersectionsForLineChart(self)
-        self.xIntersects = self.dataSource?.numberOfXIntersectionsForLineChart(self)
-        setNeedsReload = true
-        self.setNeedsLayout()
+        
+        if let grid = self.dataSource?.gridForLineChart(self) {
+            self.yIntersects = grid.y
+            self.xIntersects = grid.x
+            setNeedsReload = true
+            self.setNeedsLayout()
+        }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.loadLineTipView()
         if setNeedsReload {
             setNeedsReload = false
             
@@ -189,11 +205,7 @@ let LineChartDataStartXOffset: CGFloat = 10
         let controlXPointOffset: CGFloat = 5
         let arcGapOffset: CGFloat = 20
         
-        if let points = self.dataSource?.intersectsForLinechart(self) {
-            let pointsFinal = points.sorted({ (first: CGPoint, second: CGPoint) -> Bool in
-                return first.x < second.x
-            })
-            
+        if let points = self.getDataPoints() {
             let bezierPath = UIBezierPath()
             
             if let yIntersects = self.yIntersects {
@@ -213,7 +225,7 @@ let LineChartDataStartXOffset: CGFloat = 10
                         var nextPoint: CGPoint? = nil
                         var previousPoint: CGPoint = CGPointZero
                         
-                        for (index, value) in enumerate(pointsFinal) {
+                        for (index, value) in enumerate(points) {
                             var currentPoint = CGPointMake(value.x * xIntersectGap + LineChartInnerEdgeInset.left + LineChartDataStartXOffset,
                                                            value.y * yIntersectGap + LineChartInnerEdgeInset.top)
                             
@@ -222,14 +234,14 @@ let LineChartDataStartXOffset: CGFloat = 10
                                 previousPoint = currentPoint
                             } else {
                                 if index < points.count - 1 {
-                                    let aPoint = pointsFinal[index + 1]
+                                    let aPoint = points[index + 1]
                                     
                                     nextPoint = CGPointMake(aPoint.x * xIntersectGap + LineChartInnerEdgeInset.left + LineChartDataStartXOffset,
                                         aPoint.y * yIntersectGap + LineChartInnerEdgeInset.top)
                                 }
                                 
                                 
-                                let lastPoint = pointsFinal[index - 1]
+                                let lastPoint = points[index - 1]
 
                                 if let nextPoint = nextPoint {
                                     let prevYDiff = fabsf(Float(previousPoint.y - currentPoint.y))
@@ -314,7 +326,7 @@ let LineChartDataStartXOffset: CGFloat = 10
                             }
                         }
                         
-                        for (index, value) in enumerate(pointsFinal) {
+                        for (index, value) in enumerate(points) {
                             var currentPoint = CGPointMake(value.x * xIntersectGap + LineChartInnerEdgeInset.left + LineChartDataStartXOffset,
                                 value.y * yIntersectGap + LineChartInnerEdgeInset.top)
                         
@@ -346,60 +358,55 @@ let LineChartDataStartXOffset: CGFloat = 10
     }
     
     func addMarkers() {
-        if let points = self.dataSource?.intersectsForLinechart(self) {
-            let pointsFinal = points.sorted({ (first: CGPoint, second: CGPoint) -> Bool in
-                return first.x < second.x
-            })
-            
-            if let yIntersects = self.yIntersects {
-                if let xIntersects = self.xIntersects {
-                    
-                    let height = self.lineGraph.bounds.size.height - LineChartInnerEdgeInset.top - LineChartInnerEdgeInset.bottom
-                    
-                    let width = self.lineGraph.bounds.size.width - LineChartInnerEdgeInset.left - LineChartInnerEdgeInset.right - LineChartDataStartXOffset * 2
-                    
-                    
-                    if (yIntersects > 0 && height > CGFloat(yIntersects)) &&
-                        (xIntersects > 0 && width > CGFloat(xIntersects)) {
-                            
-                        let yIntersectGap: CGFloat = height / (CGFloat(yIntersects) - 1.0)
-                        let xIntersectGap: CGFloat = width / (CGFloat(xIntersects) - 1.0)
+        if let yIntersects = self.yIntersects {
+            if let xIntersects = self.xIntersects {
+                
+                let height = self.lineGraph.bounds.size.height - LineChartInnerEdgeInset.top - LineChartInnerEdgeInset.bottom
+                
+                let width = self.lineGraph.bounds.size.width - LineChartInnerEdgeInset.left - LineChartInnerEdgeInset.right - LineChartDataStartXOffset * 2
+                
+                
+                if (yIntersects > 0 && height > CGFloat(yIntersects)) &&
+                    (xIntersects > 0 && width > CGFloat(xIntersects)) {
                         
-                        for (index, value) in enumerate(pointsFinal) {
-                            var currentPoint = CGPointMake(value.x * xIntersectGap + LineChartInnerEdgeInset.left + LineChartDataStartXOffset,
-                                                           value.y * yIntersectGap + LineChartInnerEdgeInset.top)
-                            
-                            let size: CGFloat = 16.0
-                            let view = Bubble(frame: CGRectMake(currentPoint.x - size/2, currentPoint.y - size/2, size, size))
-                            view.intersect = value
-                            view.layer.cornerRadius = size / 2
-                            view.backgroundColor = UIColor.whiteColor()
-                            self.addSubview(view)
+                    let yIntersectGap: CGFloat = height / (CGFloat(yIntersects) - 1.0)
+                    let xIntersectGap: CGFloat = width / (CGFloat(xIntersects) - 1.0)
+                    
+                    for (index, value) in enumerate(self.dataPoints) {
+                        var currentPoint = CGPointMake(value.x * xIntersectGap + LineChartInnerEdgeInset.left + LineChartDataStartXOffset,
+                                                       value.y * yIntersectGap + LineChartInnerEdgeInset.top)
+                        
+                        let size: CGFloat = 16.0
+                        let view = Bubble(frame: CGRectMake(currentPoint.x - size/2, currentPoint.y - size/2, size, size))
+                        view.intersect = value
+                        view.index = index
+                        view.layer.cornerRadius = size / 2
+                        view.backgroundColor = UIColor.whiteColor()
+                        self.addSubview(view)
 //                            view.layer.zPosition = 1
+                        
+                        view.transform = CGAffineTransformMakeScale(0.01, 0.01)
+                        
+                        var duration: NSTimeInterval = 0.5
+                        UIView.animateKeyframesWithDuration(duration,
+                            delay: Double(1.7 + (0.03 * Double(index))),
+                            options: UIViewKeyframeAnimationOptions.AllowUserInteraction,
+                            animations: { () -> Void in
+                                UIView.addKeyframeWithRelativeStartTime(0 * duration,
+                                    relativeDuration: duration,
+                                    animations: { () -> Void in
+                                        view.transform = CGAffineTransformMakeScale(1.1, 1.1)
+                                })
+                                UIView.addKeyframeWithRelativeStartTime(1 * duration,
+                                    relativeDuration: duration,
+                                    animations: { () -> Void in
+                                        view.transform = CGAffineTransformIdentity
+                                })
+                        }, completion: { (completed) -> Void in
                             
-                            view.transform = CGAffineTransformMakeScale(0.01, 0.01)
-                            
-                            var duration: NSTimeInterval = 0.5
-                            UIView.animateKeyframesWithDuration(duration,
-                                delay: Double(1.7 + (0.03 * Double(index))),
-                                options: UIViewKeyframeAnimationOptions.AllowUserInteraction,
-                                animations: { () -> Void in
-                                    UIView.addKeyframeWithRelativeStartTime(0 * duration,
-                                        relativeDuration: duration,
-                                        animations: { () -> Void in
-                                            view.transform = CGAffineTransformMakeScale(1.1, 1.1)
-                                    })
-                                    UIView.addKeyframeWithRelativeStartTime(1 * duration,
-                                        relativeDuration: duration,
-                                        animations: { () -> Void in
-                                            view.transform = CGAffineTransformIdentity
-                                    })
-                            }, completion: { (completed) -> Void in
-                                
-                            })
-                            
-                            self.markerViews.append(view)
-                        }
+                        })
+                        
+                        self.markerViews.append(view)
                     }
                 }
             }
@@ -487,22 +494,12 @@ let LineChartDataStartXOffset: CGFloat = 10
     func panned(panGesture: UIPanGestureRecognizer) {
         var view = self.hitTest(panGesture.locationInView(self), withEvent: nil)
         if let theView = view as? Bubble {
-            self.willShowAnnotation(self.lineTipView!, forIntersect: theView.intersect)
+            self.loadLineTipView()
+            self.willShowAnnotation(self.lineTipView!, atIndex: theView.index)
             self.showLineTipforView(theView)
         } else {
             self.lineTipView?.removeFromSuperview()
         }
-    }
-    
-    func tapped(tapGesture: UITapGestureRecognizer) {
-        var view = self.hitTest(tapGesture.locationInView(self), withEvent: nil)
-        if let theView = view as? Bubble {
-            self.willShowAnnotation(self.lineTipView!, forIntersect: theView.intersect)
-            self.showLineTipforView(theView)
-        } else {
-            self.lineTipView?.removeFromSuperview()
-        }
-
     }
     
     override func prepareForInterfaceBuilder() {
@@ -512,18 +509,14 @@ let LineChartDataStartXOffset: CGFloat = 10
     }
     
     //for testing and ib
-    func numberOfYIntersectionsForLineChart(lineChart: LineChart) -> Int {
-        return 5
+    func gridForLineChart(lineChart: LineChart) -> (x: Int, y: Int) {
+        return (10, 5)
     }
     
     func lineChart(lineChart: LineChart, viewForYIntersect: Int) -> UIView {
         let view = UIView(frame: CGRectMake(0, 0, 30, 30))
         view.backgroundColor = UIColor.greenColor()
         return view
-    }
-    
-    func numberOfXIntersectionsForLineChart(lineChart: LineChart) -> Int {
-        return 10
     }
     
     func lineChart(lineChart: LineChart, viewForXIntersect: Int) -> UIView {
@@ -533,7 +526,11 @@ let LineChartDataStartXOffset: CGFloat = 10
         return label
     }
     
-    func intersectsForLinechart(lineChart: LineChart) -> [CGPoint] {
-        return [CGPointMake(0, 0), CGPointMake(1, 2), CGPointMake(2, 4), CGPointMake(4, 0), CGPointMake(5, 1), CGPointMake(6, 3), CGPointMake(7, 2), CGPointMake(8, 4), CGPointMake(9, 3)]
+    func numberOfDataPointsForLineChart(lineChart: LineChart) -> Int {
+        return 9
+    }
+    
+    func lineChart(lineChart: LineChart, dataPointAtIndex index: Int) -> CGPoint {
+        return [CGPointMake(0, 0), CGPointMake(1, 2), CGPointMake(2, 4), CGPointMake(4, 0), CGPointMake(5, 1), CGPointMake(6, 3), CGPointMake(7, 2), CGPointMake(8, 4), CGPointMake(9, 3)][index]
     }
 }
