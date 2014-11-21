@@ -8,3 +8,4 @@
 #import <libPhoneNumber-iOS/NBPhoneNumberUtil.h>
 #import <libPhoneNumber-iOS/NBPhoneNumber.h>
 #import <FXPageControl/FXPageControl.h>
+#import <JBChartView/JBBarChartView.h>

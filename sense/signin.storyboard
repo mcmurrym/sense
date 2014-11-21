@@ -813,8 +813,8 @@ your location</string>
         <image name="maleOutline" width="137" height="194"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wro-4u-0hZ"/>
         <segue reference="Y6U-zk-ZU6"/>
-        <segue reference="mSj-IM-cMU"/>
-        <segue reference="M6C-Fh-5Cb"/>
+        <segue reference="vfd-df-yCH"/>
     </inferredMetricsTieBreakers>
 </document>
