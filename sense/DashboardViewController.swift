@@ -33,7 +33,9 @@ struct MoodItem {
     var dataSet: [MoodItem] = []
     var barValues: [CGFloat] = []
     let stepsNumberFormatter = NSNumberFormatter()
-    var blanks = 0
+
+    var calendarDates: [NSDate] = []
+    var accountCreationDate = NSDate(timeIntervalSinceNow: -60.0 * 60.0 * 24.0 * 25.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +70,8 @@ struct MoodItem {
         
         self.barValues = [10.0, 20.0, 35.0, 4.0, 50.0]
         self.paddValues()
+        
+        self.calendarDates = self.generateDays()
     }
     
     func paddValues () {
@@ -185,9 +189,8 @@ struct MoodItem {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("logCell", forIndexPath: indexPath) as CalendarLogCollectionViewCell
-            println(self.blanks)
-            if indexPath.item <= self.blanks {
-                println(indexPath.item)
+            
+            if self.dateAfterOrOnCreationDate(self.calendarDates[indexPath.item]){
                 cell.loggedImageView.hidden = true
             } else {
                 cell.loggedImageView.hidden = false
@@ -209,7 +212,16 @@ struct MoodItem {
         case 0:
             return 7
         default:
-            return self.totalDaysToShow()
+            return self.calendarDates.count
+        }
+    }
+    
+    func dateAfterOrOnCreationDate(date: NSDate) -> Bool {
+        let compare = date.compare(self.accountCreationDate)
+        if compare == NSComparisonResult.OrderedSame || compare == NSComparisonResult.OrderedAscending {
+            return true
+        } else {
+            return false
         }
     }
     
@@ -228,46 +240,25 @@ struct MoodItem {
         println("Offset Of Given Weekday: \(offsetOfGivenWeekday)")
         
         let maxDaysOffset = maxDays - offsetOfGivenWeekday
+        return maxDaysOffset;
+    }
+    
+    func generateDays() -> [NSDate] {
+        let today = NSDate()
         
-        println("Max Days Offset: \(maxDaysOffset)")
+        var dates: [NSDate] = []
         
-        let accountDaysOld = self.accountDaysOldInclusive()
-        
-        println("Account Days Old: \(accountDaysOld)")
-        
-        if accountDaysOld >= maxDaysOffset {
-            println("Account Days old is greater than or equal to Max Days Offset")
-            return maxDaysOffset
-        } else {
-            println("Account Days old is less than Max Days Offset")
+        for var i = self.totalDaysToShow(); i > 0; i-- {
+            let timeInterval: NSTimeInterval = -60.0 * 60.0 * 24.0 * Double(i)
             
-            let daysToShow = accountDaysOld - 1 + self.accountStartDayIndex()
-
-            println("Days to Show: \(daysToShow)")
+            let aDate = NSDate(timeIntervalSinceNow: timeInterval)
             
-            let returnDaysToShow = min(maxDaysOffset, daysToShow)
-            
-            println("Return Days To Show: \(returnDaysToShow)")
-            
-            return returnDaysToShow
+            dates.append(aDate)
         }
-    }
-    
-    func accountDaysOldInclusive() -> Int {
-        return 10
-    }
-    
-    /**
-    Day Index that Account was started on
-    
-    :returns: Day Index 0-6 that account was started on
-    */
-    func accountStartDayIndex() -> Int {
-        return 4
-    }
-    
-    func cellBlanks() -> Int {
-        return 1
+        
+        dates.append(today)
+        
+        return dates
     }
     
     func offsetGivenWeekday(idx: Int) -> Int{
@@ -290,6 +281,4 @@ struct MoodItem {
             return 0
         }
     }
-
-    
 }
