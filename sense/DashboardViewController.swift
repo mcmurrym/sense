@@ -239,7 +239,7 @@ struct MoodItem {
         
         println("Offset Of Given Weekday: \(offsetOfGivenWeekday)")
         
-        let maxDaysOffset = maxDays - offsetOfGivenWeekday
+        let maxDaysOffset = maxDays - offsetOfGivenWeekday - 1 //we start the week on Monday
         return maxDaysOffset;
     }
     
@@ -248,7 +248,7 @@ struct MoodItem {
         
         var dates: [NSDate] = []
         
-        for var i = self.totalDaysToShow(); i > 0; i-- {
+        for var i = self.totalDaysToShow(); i > 1; i-- {
             let timeInterval: NSTimeInterval = -60.0 * 60.0 * 24.0 * Double(i)
             
             let aDate = NSDate(timeIntervalSinceNow: timeInterval)
