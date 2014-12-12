@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hyB-nP-ZXI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hyB-nP-ZXI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Roboto-Thin.ttf">
-            <string>Roboto-Thin</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="aah-nl-VB4">
@@ -45,51 +39,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eew-Gf-QZ2" customClass="LaunchBackgroundView" customModule="sense" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4s1-rS-dwm">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvl-aA-kXC" customClass="LaunchBackgroundView" customModule="sense" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Zut-hS-JfP">
-                                <rect key="frame" x="190" y="258" width="220" height="83"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simply capture how you feel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-Ku-dwQ">
-                                <rect key="frame" x="172" y="51" width="258" height="498"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1FS-Ku-dwQ" secondAttribute="height" multiplier="16:31" id="4Tr-Ai-sMt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="66"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1FS-Ku-dwQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0m9-03-Ans" secondAttribute="leading" constant="10" id="1qZ-Kt-nmE"/>
-                            <constraint firstAttribute="centerY" secondItem="Zut-hS-JfP" secondAttribute="centerY" id="4aU-6Z-a1a"/>
-                            <constraint firstItem="BVN-rR-uGc" firstAttribute="top" secondItem="zvl-aA-kXC" secondAttribute="bottom" id="Hxa-yl-TYV"/>
-                            <constraint firstAttribute="trailing" secondItem="zvl-aA-kXC" secondAttribute="trailing" id="LV8-m4-6Fa"/>
-                            <constraint firstItem="Eew-Gf-QZ2" firstAttribute="leading" secondItem="0m9-03-Ans" secondAttribute="leading" id="MNM-Hl-rSU"/>
-                            <constraint firstAttribute="centerY" secondItem="1FS-Ku-dwQ" secondAttribute="centerY" id="YKG-Lg-iFI"/>
-                            <constraint firstItem="zvl-aA-kXC" firstAttribute="leading" secondItem="0m9-03-Ans" secondAttribute="leading" id="c5V-XD-7iO"/>
-                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1FS-Ku-dwQ" secondAttribute="trailing" constant="187" id="cdr-eu-Pzd"/>
-                            <constraint firstItem="Eew-Gf-QZ2" firstAttribute="top" secondItem="X2C-7F-3JV" secondAttribute="bottom" constant="-20" id="fCz-tQ-J5w"/>
-                            <constraint firstAttribute="centerX" secondItem="Zut-hS-JfP" secondAttribute="centerX" id="nj7-Xp-Bgl"/>
-                            <constraint firstItem="zvl-aA-kXC" firstAttribute="top" secondItem="X2C-7F-3JV" secondAttribute="bottom" constant="-20" id="odf-h4-ukF"/>
-                            <constraint firstItem="BVN-rR-uGc" firstAttribute="top" secondItem="Eew-Gf-QZ2" secondAttribute="bottom" id="u8D-cC-nSI"/>
-                            <constraint firstAttribute="trailing" secondItem="Eew-Gf-QZ2" secondAttribute="trailing" id="xng-dd-coK"/>
-                            <constraint firstAttribute="centerX" secondItem="1FS-Ku-dwQ" secondAttribute="centerX" constant="-0.5" id="yHA-aZ-N4I"/>
+                            <constraint firstItem="4s1-rS-dwm" firstAttribute="top" secondItem="X2C-7F-3JV" secondAttribute="bottom" constant="-20" id="9wr-PR-pKG"/>
+                            <constraint firstAttribute="trailing" secondItem="4s1-rS-dwm" secondAttribute="trailing" id="BZU-ab-UGc"/>
+                            <constraint firstItem="BVN-rR-uGc" firstAttribute="top" secondItem="4s1-rS-dwm" secondAttribute="bottom" id="Y7r-ns-QRD"/>
+                            <constraint firstItem="4s1-rS-dwm" firstAttribute="leading" secondItem="0m9-03-Ans" secondAttribute="leading" id="rt3-qt-fJK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t4c-UJ-Ger"/>
                     <connections>
-                        <outlet property="backgroundView" destination="zvl-aA-kXC" id="EmW-EW-Kwx"/>
-                        <outlet property="logoImageView" destination="Zut-hS-JfP" id="7Os-Rb-LqN"/>
-                        <outlet property="mask" destination="Eew-Gf-QZ2" id="hfT-GR-Wdb"/>
-                        <outlet property="simpleLabel" destination="1FS-Ku-dwQ" id="VPO-iv-nID"/>
+                        <outlet property="imageView" destination="4s1-rS-dwm" id="pHn-dp-3RD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0D-rb-KZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,7 +61,4 @@
             <point key="canvasLocation" x="684" y="514"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="logo" width="220" height="83"/>
-    </resources>
 </document>

@@ -19,6 +19,9 @@
 		BE2214DA19DDBBC200429F22 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214D919DDBBC200429F22 /* LaunchViewController.swift */; };
 		BE2214DC19DDBFE600429F22 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DB19DDBFE600429F22 /* Settings.swift */; };
 		BE2214DF19DDC32900429F22 /* LaunchBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */; };
+		BE402D301A3B5CA000A51B37 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEBAB7F51A0AC50500AE7D31 /* Roboto-Regular.ttf */; };
+		BE402D321A3B5CDF00A51B37 /* SourceSansPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE402D311A3B5CDF00A51B37 /* SourceSansPro-Light.otf */; };
+		BE402D341A3B5DA700A51B37 /* SourceSansPro-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE402D331A3B5DA700A51B37 /* SourceSansPro-ExtraLight.otf */; };
 		BE41080219EE2A5F006F8DB1 /* SignUpBirthdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41080119EE2A5F006F8DB1 /* SignUpBirthdateViewController.swift */; };
 		BE41080419EE2E6E006F8DB1 /* SignUpCompensationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41080319EE2E6E006F8DB1 /* SignUpCompensationViewController.swift */; };
 		BE4825D819DED457008B56DE /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */; };
@@ -79,6 +82,8 @@
 		BE2214D919DDBBC200429F22 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		BE2214DB19DDBFE600429F22 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BE2214DE19DDC32900429F22 /* LaunchBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchBackgroundView.swift; sourceTree = "<group>"; };
+		BE402D311A3B5CDF00A51B37 /* SourceSansPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.otf"; sourceTree = "<group>"; };
+		BE402D331A3B5DA700A51B37 /* SourceSansPro-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.otf"; sourceTree = "<group>"; };
 		BE41080119EE2A5F006F8DB1 /* SignUpBirthdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBirthdateViewController.swift; sourceTree = "<group>"; };
 		BE41080319EE2E6E006F8DB1 /* SignUpCompensationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCompensationViewController.swift; sourceTree = "<group>"; };
 		BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
@@ -233,6 +238,8 @@
 		BE4825D619DED2D4008B56DE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				BE402D331A3B5DA700A51B37 /* SourceSansPro-ExtraLight.otf */,
+				BE402D311A3B5CDF00A51B37 /* SourceSansPro-Light.otf */,
 				BEBAB7F51A0AC50500AE7D31 /* Roboto-Regular.ttf */,
 				BE4825DC19DF0FD9008B56DE /* Roboto-Light.ttf */,
 				BE4825D719DED2E2008B56DE /* Roboto-Thin.ttf */,
@@ -406,14 +413,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE4825DB19DF02E1008B56DE /* signin.storyboard in Resources */,
+				BE402D301A3B5CA000A51B37 /* Roboto-Regular.ttf in Resources */,
 				BEF4483B19EEFA8A00767339 /* dashboard.storyboard in Resources */,
 				BE06AF4519DCB35A0045C011 /* Main.storyboard in Resources */,
 				BEBAB7F21A0A9E8F00AE7D31 /* LineTip.xib in Resources */,
 				BE4825DD19DF0FD9008B56DE /* Roboto-Light.ttf in Resources */,
 				BEC550DF1A1A932A00484112 /* CalendarLogCollectionViewCell.xib in Resources */,
 				BE06AF4719DCB35A0045C011 /* Images.xcassets in Resources */,
+				BE402D321A3B5CDF00A51B37 /* SourceSansPro-Light.otf in Resources */,
 				BEC550DB1A1A8BBC00484112 /* CalendarDayLabelCollectionViewCell.xib in Resources */,
 				BE4825D819DED457008B56DE /* Roboto-Thin.ttf in Resources */,
+				BE402D341A3B5DA700A51B37 /* SourceSansPro-ExtraLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,36 +11,43 @@ import UIKit
 @IBDesignable class LaunchViewController: UIViewController {
 
     var runOnce = false
-    @IBOutlet weak var simpleLabel: UILabel!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var backgroundView: LaunchBackgroundView!
-    @IBOutlet weak var mask: LaunchBackgroundView!
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.mask.layer.mask = self.simpleLabel.layer
+    @IBOutlet weak var imageView: UIImageView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        var launchImageName = ""
+        
+        let height = UIScreen.mainScreen().bounds.size.height
+        switch (height) {
+        case 667:
+            launchImageName = "LaunchImage-800-667h"
+        case 736:
+            launchImageName = "LaunchImage-800-Portrait-736h"
+        case 568:
+            launchImageName = "LaunchImage-700-568h"
+        default:
+            launchImageName = "LaunchImage-700"
+        }
+        
+        self.imageView.image = UIImage(named: launchImageName)
     }
     
-    override func viewDidLayoutSubviews() {
-        
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC))
         if !self.runOnce {
             if let user = PFUser.currentUser() {
                 if let navigationController = self.navigationController {
-                    DashboardViewController.showDashboardInNavigationController(navigationController)
+                    dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+                        DashboardViewController.showDashboardInNavigationController(navigationController)
+                    })
                 }
             } else {
-                UIView.animateWithDuration(0.50,
-                                           delay: 0.5,
-                                           options: UIViewAnimationOptions.CurveEaseOut,
-                                           animations: { () -> Void in
-                                                self.backgroundView.alpha = 0.0
-                                                self.logoImageView.alpha = 0.0
-                                           }) { (completed: Bool) -> Void in
-                                                var popTime = dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC));
-                                                dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
-                                                    var storyBoard = UIStoryboard(name: "signin", bundle: nil)
-                                                    self.navigationController?.pushViewController(storyBoard.instantiateInitialViewController() as UIViewController, animated: true)
-                                               })
-                                           }
+                dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+                    let storyBoard = UIStoryboard(name: "signin", bundle: nil)
+                    self.navigationController?.pushViewController(storyBoard.instantiateInitialViewController() as UIViewController,
+                        animated: true)
+                })
             }
             self.runOnce = true
         }
